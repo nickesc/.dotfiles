@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# install go using homebrew
+brew install go
+
+# check Go version
+go version
+
+# echo the GOPATH variable to ensure it is in the projects folder
+echo $GOPATH

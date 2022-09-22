@@ -1,0 +1,33 @@
+Node.js Installation Information:
+
+    local = local to current directory/project
+    global/-g = global to node version installation
+
+    Node.js installed using n (https://github.com/tj/n) and n-install (https://github.com/mklement0/n-install)
+    To update n using n-install:
+        n-update -y
+    
+    To list installed Node.js versions:
+        nodeversion
+        or
+        n
+    To install a new Node.js version:
+        n <version>
+        or
+        nodeinstall <version>
+    To switch Node.js versions:
+        n -> select version from list
+        or
+        nodeuse  # will download if not already on machine
+    For more n usage:
+        n --help
+    
+    To update local npm packages:
+        npm update
+    To update global npm packages (if you are sure that's what you want to do)
+    * careful when switching versions, global packages may become unusable:
+        npm update -g
+    
+    Default npm installations are found in the NPMfile ~/Workspace/__space__/.dotfiles/packages/NPMfile
+    npm configurations are found in ~/.npmrc (symlink from dotfiles)
+    

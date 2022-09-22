@@ -1,0 +1,39 @@
+#!/usr/bin/env zsh
+
+# install SDKMAN!
+curl -s "https://get.sdkman.io" | bash
+
+# reload sdkman
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# make sure installation worked
+sdk version
+
+# copy and overwrite config file to enable auto-answer
+cp -f "$HOME/Workspace/__space__/.dotfiles/config/sdkman/configTemp" "$HOME/.sdkman/etc/config"
+
+# install the latest java version
+sdk install scala
+
+sdk install java 8.0.345-zulu
+sdk install java 11.0.16-zulu
+sdk install java 18.0.2-tem
+sdk install java 17.0.4-tem
+
+sdk default java 17.0.4-tem
+
+
+
+# copy and overwrite config file to disable auto-answer
+
+rm "$HOME/.sdkman/etc/config"
+ln -s "$HOME/Workspace/__space__/.dotfiles/config/sdkman/config" "$HOME/.sdkman/etc/"
+# cp -f "$HOME/Workspace/__space__/.dotfiles/config/sdkman/config2" "$HOME/.sdkman/etc/config"
+
+# reload the shell
+source $HOME/.zshrc
+
+# check for upgrades to those versions
+sdk upgrade
+
+# add sdkman aliases

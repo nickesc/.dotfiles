@@ -1,0 +1,30 @@
+Rust Installation Information:
+    
+    Rust is installed with Rustup (https://www.rust-lang.org/tools/install)
+    Versions also include channels 'nightly', 'stable' and 'beta'
+    
+    To update Rust:
+        rustup update
+    To get current Rust versions:
+        rustversions
+        or
+        rustup show
+    To install a new Rust version:
+        rustinstall <version>
+        or
+        rustup install <version>
+    To switch Ruby versions:
+        rustuse <version>
+        or
+        rustup default <version>
+    To set a default Rust version for a directory:
+        restenv <version>
+        or
+        rustup override set <version>
+    For more rustup usage:
+        chruby --help
+    
+    Ruby installations are found in ~/.rubies/
+    The default Ruby version is found in ~/.ruby-version (symlink from dotfiles)
+    Gem configurations are found in ~/.gemrc (symlink from dotfiles)
+

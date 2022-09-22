@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# install dependencies
+brew install automake bison openssl readline libyaml gdbm libffi
+
+# Install chruby ruby manager with Homebrew https://github.com/postmodern/chruby
+
+brew install chruby
+
+# install ruby-install with homebrew https://github.com/postmodern/ruby-install
+brew install ruby-install
+ruby-install --latest ruby

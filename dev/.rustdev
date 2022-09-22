@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+
+# install Rust using Rustup https://www.rust-lang.org/tools/install
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+1
+rustup update
+rustup default stable

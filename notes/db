@@ -1,0 +1,85 @@
+
+PosgreSQL Installation Information:
+
+    PostgreSQL is installed with brew.
+    By default, automatically starts the default server as a background brew service (daemon) at launch.
+    
+    To initialize a PosgreSQL server in the ~/Workspace/data/postgresql folder:
+        postgresqlinit <name> [start]  # optionally start the server at the same time
+    To start a PosgreSQL server:
+        postgresqlstart         # starts the default server
+        or
+        postgresqlstart <name>  # starts a named server in the ~/Workspace/data/postgresql folder
+    To stop a PosgreSQL server:
+        postgresqlstop          # stop the default server
+        or
+        postgresqlstop <name>   # stop a named server in the ~/Workspace/data/postgresql folder
+    To access the currenlty running server:
+        psql postgres
+    
+    For native server commands, use:
+        initdb <dirpath>                              # initialize a server in a specific directory
+        pg_ctl -D /usr/local/var/postgresql@14 start  # start the default server
+        pg_ctl -D <dirpath> -l <logfile> start        # start a server in a specific directory
+        pg_ctl -D /usr/local/var/postgresql@14 stop   # stop the default server
+        pg_ctl -D <dirpath> stop                      # stop a server in a specific directory
+    
+    For starting as a background service by brew:
+        brew services start postgresql
+        brew services stop postgresql
+        brew services restart postgresql  # restart after upgrade
+
+MySQL Installation Information:
+    
+    MySQL is installed with brew.
+    Run after installation while server is running to secure:
+        mysql_secure_installation
+    By default, automatically starts the server as a background brew service (daemon) at launch.
+    
+    To start the MySQL server:
+        mysqlstart
+        or
+        mysql.server start
+    To stop the MySQL server:
+        mysqlstop
+        or
+        mysql.server stop
+    To connect to the MySQL server:
+        mysqlconnect
+        or
+        mysql -u root -p
+    
+    To start as a background service with brew:
+        brew services start mysql
+        brew services stop mysql
+    
+MonogoDB Installation Information:
+
+    MongoDB is installed with brew.
+    By default, automatically starts the server as a background brew service (daemon) at launch.
+
+    To start the MonogoDB server:
+        mongodbstart
+        or
+        mongod --config /opt/homebrew/etc/mongod.conf --fork
+    To stop the MonogoDB server:
+        mongodbstop
+        or
+        mongo admin --eval "db.shutdownServer()"
+    To connect to the MonogoDB server:
+        mongodbconnect
+        or
+        mongosh
+    To use the MongoDB Database Tools:
+        mongotop
+    
+    To start as a background service with brew:
+        brew services start mongodb-community
+        brew services stop mongodb-community
+    
+    
+For status information on PostgreSQL, MySQL and MongoDB servers:
+
+    dbstatus
+    
+    

@@ -1,0 +1,92 @@
+#!/usr/bin/env zsh
+
+echo "------------------------------"
+echo "Setting up pip."
+
+# Install pip
+python -m ensurepip --upgrade
+python2 -m ensurepip --upgrade
+
+# update pip
+pip install --upgrade pip
+pip2 install --upgrade pip
+
+
+###############################################################################
+# Virtual Enviroments                                                         #
+###############################################################################
+
+pip2 install virtualenv
+
+###############################################################################
+# Python 2 Enviroment                                                         #
+###############################################################################
+
+echo "------------------------------"
+echo "Setting up python2 environment."
+
+# Install Python data modules
+pip2 install numpy
+pip2 install scipy
+pip2 install matplotlib
+pip2 install pandas
+pip2 install sympy
+pip2 install nose
+pip2 install unittest2
+pip2 install seaborn
+pip2 install scikit-learn
+pip2 install "ipython[all]"
+pip2 install bokeh
+pip2 install Flask
+pip2 install sqlalchemy
+pip2 install mysql-python
+pip2 install requests
+pip2 install beautifulsoup4
+pip2 install urllib3
+pip2 install pytest
+pip2 install pillow
+
+###############################################################################
+# Python 3 Enviroment                                                         #
+###############################################################################
+
+echo "------------------------------"
+echo "Setting up python3 virtual environment."
+
+# Install Python data modules
+pip3 install numpy
+pip3 install scipy
+pip3 install matplotlib
+pip3 install pandas
+pip3 install sympy
+pip3 install nose
+pip3 install unittest2
+pip3 install seaborn
+pip3 install scikit-learn
+pip3 install "ipython[all]"
+pip3 install bokeh
+pip3 install Flask
+pip3 install sqlalchemy
+pip3 install mysqlclient
+pip3 install requests
+pip3 install beautifulsoup4
+pip3 install urllib3
+pip3 install pytest
+pip3 install pillow
+pip3 install nltk
+
+###############################################################################
+# Install IPython Profile
+###############################################################################
+
+echo "------------------------------"
+echo "Installing IPython Notebook Default Profile"
+
+# Add the IPython profile
+mkdir -p ~/.ipython
+cp -r ~/Workspace/__space__/.dotfiles/config/iPython ~/.ipython/profile_default
+
+echo "------------------------------"
+echo "Script completed."
+echo "Usage: use python/pip or python3/pip3 for Python 3.10.6"
+echo "Usage: use python2/pip2 for Python 2.7.18"

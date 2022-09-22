@@ -1,0 +1,11 @@
+Main Configuration Infromation:
+
+    Managed by dotfiles repo
+    in progress
+    oh boy
+    
+    Main terminal configurations are stored in ~/.zshrc.
+    To edit the configuration:
+        zshconfig
+    
+    Many packages and apps are installed using Homebrew. Default installations, not related to development enviroment, are located in ~/Workspace/__space__/.dotfiles/packages/Brewfile and ~/Workspace/__space__/.dotfiles/packages/Caskfile

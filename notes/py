@@ -1,0 +1,31 @@
+Python Installation Information:
+
+    Python is installed using pyenv (https://github.com/pyenv/pyenv)
+    
+    To update pyenv:
+        brew upgrade pyenv
+    To list installed Python versions:
+        pyversions
+        or
+        pyenv global
+    To install a new Python version:
+        pyinstall <version>
+        or
+        pyenv install <version>
+    To switch Python versions:
+        pyuse <py3_version> 2.7.18   # sets the default Python versions
+        or
+        pyenv shell <version>  # sets the Python version for the shell session
+    For more pyenv usage:
+        pyenv help
+    For information on Python virtual environments:
+        venv
+    
+    To dump currently installed pip packages to piprequirements.txt:
+        pipdump
+    To install pip packages from piprequirements.txt in the current directory
+        pipreq
+    
+    Default Python installations are found in the Pipfile ~/Workspace/__space__/.dotfiles/packages/Pipfile
+    Python installations are found in ~/.pyenv/versions/
+    

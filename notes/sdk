@@ -1,0 +1,31 @@
+Java (and related SDKs) Installation Information:
+
+    Java (and related SDKs) are installed using SDKMAN! (https://sdkman.io/)
+    
+    To update/flush SDKMAN!:
+        sdkupgrade  # to update, flush, and check for available SDK upgrades
+        sdkupdate   # to update only
+        sdkflush    # to flush only
+    
+    To list SDKs/versions available for installation:
+        sdk list <sdk>
+    To list SDKs currently in use:
+        sdkversions
+        or
+        sdk current
+    To install a new SDK:
+        sdkinstall <sdk> <version>
+        or
+        sdk install <sdk> <version>
+    To switch SDK versions:
+        sdkuse <sdk> <version>   # sets the default SDK
+        or
+        sdk use <sdk> <version>  # sets the SDK for the shell session
+    For more SDKMAN! usage:
+        sdk help
+    For information on SDK virtual environments:
+        sdkenv
+    
+    SDK installations are found in ~/.sdkman/candidates/
+    SDKMAN configurations are found in ~/.sdkman/etc/config (symlink from dotfiles)
+    

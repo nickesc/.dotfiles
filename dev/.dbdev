@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+# install PostgreSQL and check version
+brew install postgresql
+psql -V
+
+# install mySQL
+brew install mysql
+
+# install MongoDB
+brew tap mongodb/brew
+brew update
+brew install mongodb-community
+
+# start all 3 as background brew services (daemons)
+brew services start postgresql
+brew services start mysql
+brew services start mongodb-community

@@ -1,0 +1,51 @@
+Useful Aliases and Functions:
+
+    cat - 'bat'
+    _ - 'sudo'
+    g - 'git'
+    cppcompile - 'c++ -std=c++11 -stdlib=libc++', compile files in C++11
+    permex <target> - add permisson to execute to a file
+    prepend-path <target> - add something to the path
+    cdf - change working directory to the top-most Finder window location
+    cpwd - copy current absolute directory path
+    get <var> - get named variable
+    ip - get machine's IP address
+    path - get the PATH printed on seperate lines
+    desktopshow/desktophide - show/hide desktop icons
+    ql <target> - quick look file from command line
+    osupdate - update macOS
+    afk - put the screen to sleep
+    badge - Ring the terminal bell (useful after long commands)
+    ios - open iOS simulator
+    transfer <target> - trasnfer a file using trasnfer.sh
+    gitconfig - open ~/.gitconfig
+    zshconfig - open ~/.zshrc
+    zshlocal - open ~/.zshrc_local
+    reload - source ~/.zshrc
+    cleartest - clear the test directory
+    flushdns - flush the DNS
+    killfinder - quit and reloads Finder
+    killdock - quits and reloads the dock
+    killmenubar - quits and reloads the menu bar
+    killos - quits and reloads all three
+    
+Folder Aliases:
+    
+    dl - ~/Downloads
+    dt - ~/Desktop
+    space - ~/Workspace
+    _space - ~/Workspace/__space__
+    projects - ~/Workspace/projects
+    test - ~/Workspace/.test
+    dotfiles - ~/Workspace/__space__/.dotfiles
+    
+Application Aliases:
+
+    chrome
+    firefox
+    safari
+    plistbuddy
+    finder
+    xcode
+    sublime
+    

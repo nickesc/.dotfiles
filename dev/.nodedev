@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# install n from Homebrew https://github.com/tj/n
+#brew install n
+
+# install n from GitHub https://github.com/mklement0/n-install
+curl -L https://bit.ly/n-install | bash -s -- -
+
+# reload the shell
+source $HOME/.zshrc
+
+# install the lts version of node
+n lts
+
+# print current node/npm version
+node --version
+npm --version
+
+
+# run the NPMfile
+$HOME/Workspace/__space__/.dotfiles/packages/NPMfile
+
+# reload the shell
+source $HOME/.zshrc
+
+## add n aliases
+

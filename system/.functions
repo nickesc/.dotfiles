@@ -1,0 +1,293 @@
+# Get named var (usage: get "VAR_NAME")
+get() {
+  echo "${!1}"
+}
+
+# Add to path
+prepend-path() {
+  [ -d $1 ] && PATH="$1:$PATH"
+}
+
+cleartest() {
+    touch ~/Workspace/.test/TempClearTestDoc
+    rm -rf ~/Workspace/.test/{*,.*}
+}
+
+
+# Change working directory to the top-most Finder window location
+
+function cdf() {
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+}
+
+transfer() {
+  tmpfile=$( mktemp -t transferXXX )
+  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) >> $tmpfile;
+  cat $tmpfile;
+  cat $tmpfile | pbcopy;
+  rm -f $tmpfile;
+}
+
+logozsh() {
+    printf "                 ██\n                ░██\n  ██████  ██████░██\n ░░░░██  ██░░░░ ░██████\n    ██  ░░█████ ░██░░░██\n   ██    ░░░░░██░██  ░██\n  ██████ ██████ ░██  ░██\n ░░░░░░ ░░░░░░  ░░   ░░"
+}
+
+
+
+export VENVLOG="$HOME/Workspace/__space__/.dotfiles/.venvlog"
+
+venvactivate() {
+    venvName=$2
+    venvlog="$VENVLOG"
+    if [ "$1" = "init" ]; then
+        verb="Initialized";
+        printf "\nCreating new venv as (%s)...\n" $venvName;
+    else
+        verb="Started";
+    fi
+    deactivate 2> /dev/null
+    
+    venvpath=`find ~+ -type f -name "activate" -maxdepth 3`
+    
+    source $venvpath
+    if [ $? -eq 0 ]; then
+        touch $VENVLOG
+        grep -qxF $venvpath $VENVLOG || echo $venvpath >> $VENVLOG
+        #source $venvName/bin/activate
+        pyv=$(python -V)
+        version=${pyv#* }
+        #pyv="Python"
+        printf "%s virtual environment (%s) in Python %s -- don't forget to type 'deactivate' or 'venv end' when you're done! \n" $verb $venvName $version;
+    else
+        printf "%s could not be found -- do you have the right directory?\n" $venvName;
+    fi
+}
+
+venvusage() {
+    printf "\n venv [action] <venv>\n\nUsage:\n\nvenv help              --  use to display 'venv' usage. \n\nvenv init <venvName>   --  use to create a new venv in the current directory. If venvName is left blank, the default "venv" is used. \n\nvenv start <venvName>  --  use to activate the venv in the current directory. If venvName is left blank, the default "venv" is used. \n\nvenv end               --  used to deactivate the current venv.\n\nvenv log               --  used to open the 'venv' log file, logging all venvs created with this tool. The log is currently saved at '%s'\n\nUse 'venv2' for explicit Python 2 virtualenv and 'venv3' for explicit Python 3 venv -- 'venv' defaults to Python 3.\nUse 'sdkenv' for Java/Scala/Kotlin virtual environments\n\nFunctions wrap built-in Python 'venv' tool for Python 3 and 'virtualenv' for Python to create virtual environments, Python versions are managed by pyenv\n\n" $VENVLOG;
+}
+
+
+
+venv() {
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        venvusage
+    elif [ $# -ge 1 ]; then
+        if [[ -z "${2+present}" ]]; then
+            venvName="venv";
+        else
+            venvName=$2;
+        fi;
+        if [ "$1" = "init" ]; then
+            python -m venv $venvName;
+            touch $VENVLOG
+            echo `find ~+ -type f -name "activate" -maxdepth 3` >> $VENVLOG
+            venvactivate $1 $venvName ;
+        elif [ "$1" = "start" ]; then
+            venvactivate $1 $venvName;
+        elif [ "$1" = "end" ]; then
+            deactivate;
+        elif [ "$1" = "log" ]; then
+            touch $VENVLOG
+            open $VENVLOG;
+        else
+            venvusage
+        fi
+    fi
+}
+
+venv2() {
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        venvusage
+    elif [ $# -ge 1 ]; then
+        if [[ -z "${2+present}" ]]; then
+            venvName="venv";
+        else
+            venvName=$2;
+        fi;
+        if [ "$1" = "init" ]; then
+            virtualenv $venvName;
+            touch $VENVLOG
+            echo `find ~+ -type f -name "activate" -maxdepth 3` >> $VENVLOG
+            venvactivate $1 $venvName ;
+        elif [ "$1" = "start" ]; then
+            venvactivate $1 $venvName;
+        elif [ "$1" = "end" ]; then
+            deactivate;
+        elif [ "$1" = "log" ]; then
+            touch $VENVLOG
+            open $VENVLOG;
+        else
+            venvusage
+        fi
+    fi
+}
+
+venv3() {
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        venvusage
+    elif [ $# -ge 1 ]; then
+        if [[ -z "${2+present}" ]]; then
+            venvName="venv";
+        else
+            venvName=$2;
+        fi;
+        if [ "$1" = "init" ]; then
+            python3 -m venv $venvName;
+            touch $VENVLOG
+            echo `find ~+ -type f -name "activate" -maxdepth 3` >> $VENVLOG
+            venvactivate $1 $venvName ;
+        elif [ "$1" = "start" ]; then
+            venvactivate $1 $venvName;
+        elif [ "$1" = "end" ]; then
+            deactivate;
+        elif [ "$1" = "log" ]; then
+            touch $VENVLOG
+            open $VENVLOG;
+        else
+            venvusage
+        fi
+    fi
+}
+
+
+export SDKENVLOG="$HOME/Workspace/__space__/.dotfiles/.sdkenvlog"
+#export SDKENVLOG="$HOME/.sdkenvlog"
+
+sdkenvactivate() {
+    sdkenvName=$2
+    sdkenvlog="$SDKENVLOG"
+    if [ "$1" = "init" ]; then
+        verb="Initialized";
+        printf "\nCreating new sdkenv as (%s)...\n" $sdkenvName;
+    else
+        verb="Started";
+    fi
+    sdk env clear 2> /dev/null
+    
+    sdkenvpath=`find ~+ -maxdepth 1 -type f -name ".sdkmanrc"`
+    
+    sdk env
+    if [ $? -eq 0 ]; then
+        touch $SDKENVLOG
+        grep -qxF $sdkenvpath $SDKENVLOG || echo $sdkenvpath >> $SDKENVLOG
+        vertext=$(sdk current)
+        version=${vertext#* }
+        distro=${version#* }
+        printf "%s virtual environment (%s) %s -- don't forget to type 'sdk env clear' or 'sdkenv end' when you're done! \n\n" $verb $sdkenvName $version;
+    else
+        printf "%s could not be found -- do you have the right directory?\n\n" $sdkenvName;
+    fi
+}
+
+sdkenvusage() {
+    printf "\n sdkenv [action]\n\nUsage:\n\nsdkenv help   --  use to display 'sdkenv' usage. \n\nsdkenv init   --  use to create a new sdkenv in the current directory. \n\nsdkenv start  --  use to activate the sdkenv in the current directory.\n\nsdkenv end    --  used to clear the current sdkenv.\n\nsdkenv log    --  used to open the 'sdkenv' log file, logging all sdkenv created with this tool. The log is currently saved at '%s'\n\nUse 'venv' for Python virtual environments\n\nFunctions wrap SDKMAN!!\n\n" $SDKENVLOG;
+}
+
+
+
+sdkenv() {
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        sdkenvusage
+    elif [ $# -ge 1 ]; then
+        if [[ -z "${2+present}" ]]; then
+            sdkenvName="sdkenv";
+        else
+            sdkenvName=$2;
+        fi;
+        if [ "$1" = "init" ]; then
+            sdk env init;
+            touch $SDKENVLOG
+            echo `find ~+ -maxdepth 1 -type f -name ".sdkmanrc"` >> $SDKENVLOG
+            sdkenvactivate $1 $sdkenvName
+        elif [ "$1" = "start" ]; then
+            sdkenvactivate $1 $sdkenvName
+        elif [ "$1" = "end" ]; then
+            sdk env clear;
+        elif [ "$1" = "log" ]; then
+            touch $SDKENVLOG
+            open $SDKENVLOG;
+        else
+            sdkenvusage
+        fi
+    fi
+}
+
+sdkflush(){
+    sdk flush
+    sdk flush broadcast
+    sdk flush archives
+    sdk flush tmp
+}
+
+sdkupdate(){
+    sdk selfupdate
+    sdk update
+}
+
+sdkupgrade(){
+    sdkflush
+    sdkupdate
+    sdk upgrade
+}
+
+export DATA="$HOME/Workspace/data"
+
+export DATA="$HOME/testdata"
+
+postgresqlinit(){
+    if [ $# -eq 0 ]; then
+        printf "\nMust name the server.\nUsage:\n\n    postgresqlinit <name>\n\n"
+    else
+        mkdir -p $DATA/postgresql/"$1"
+        mkdir -p $DATA/postgresql/logs/"$1"
+        initdb $DATA/postgresql/"$1"
+    
+        if [ "$2" = "start" ]; then
+            #touch "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
+            pg_ctl -D "$DATA/postgresql/$1" -l "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
+        fi
+    fi
+}
+
+postgresqlstart() {
+    if [ $# -eq 0 ]; then
+        # start the default server on no args
+        pg_ctl -D /usr/local/var/postgresql@14 start
+    else
+        #touch "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
+        pg_ctl -D "$DATA/postgresql/$1" -l "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
+    fi
+}
+
+postgresqlstop() {
+    if [ $# -eq 0 ]; then
+        # stop the default server on no args
+        pg_ctl -D /usr/local/var/postgresql@14 stop
+    else
+        pg_ctl -D "$DATA/postgresql/$1" stop
+    fi
+}
+
+dbstatus(){
+    printf "\nBrew services:\n\n"
+    brew services list
+    printf "\n\nRunning processes for PostgreSQL, MySQL and MongoDB:\n\n"
+    ps aux | grep -v grep | grep 'mongod\|postgresql\|mysql'
+
+}
+
+
+info() {
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        cat $HOME/Workspace/__space__/.dotfiles/notes/main
+        printf "\nFor program specific information:\n    info <page>:"
+        ls $HOME/Workspace/__space__/.dotfiles/notes
+    elif [ "$1" = "all" ]; then
+        cat $HOME/Workspace/__space__/.dotfiles/notes/*
+    elif cat $HOME/Workspace/__space__/.dotfiles/notes/$1; then
+        echo "For more information, type 'info help'"
+    else
+        echo "Command failed"
+    fi
+}
