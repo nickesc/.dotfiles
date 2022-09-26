@@ -1,0 +1,45 @@
+
+           ██   ██
+    █████ ░░   ░██
+   ██░░░██ ██ ██████
+  ░██  ░██░██░░░██░
+  ░░██████░██  ░██
+   ░░░░░██░██  ░██
+    █████ ░██  ░░██
+   ░░░░░  ░░    ░░
+
+Git Installation Information
+    
+    The global .gitconfig is located at ~/.gitconfig (symlinked from dotfiles).
+    The global .gitignore is located at ~/.gitignore (symlinked from dotfiles).
+    The global .gitattributes is located at ~/.gitattributes (symlinked from dotfiles).
+    
+    Main Configurations:
+    
+        name: N. Escobar
+        email: nick@nescobar.media
+        github: nickesc
+        default branch: main
+        whitespace: trimmed trailing and leading
+        color ui: auto
+    
+    Aliases:
+    
+        g - git
+        amend - ammend commit
+        br - branch
+        ci - commit
+        co - checkout
+        contrib - view contributors
+        cr - clone recursive
+        l - pretty graph log
+        p - push
+        pf - push force
+        s - status
+        unstage - unstage changes
+        aa - add all
+        
+    For more configurations:
+        gitconfig
+        
+        

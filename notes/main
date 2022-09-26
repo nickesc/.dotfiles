@@ -1,11 +1,32 @@
+
+   ██            ████
+  ░░            ░██░
+   ██ ███████  ██████  ██████
+  ░██░░██░░░██░░░██░  ██░░░░██
+  ░██ ░██  ░██  ░██  ░██   ░██
+  ░██ ░██  ░██  ░██  ░██   ░██
+  ░██ ███  ░██  ░██  ░░██████
+  ░░ ░░░   ░░   ░░    ░░░░░░
+
 Main Configuration Infromation:
 
-    Managed by dotfiles repo
-    in progress
-    oh boy
-    
-    Main terminal configurations are stored in ~/.zshrc.
+    Hotkeys:
+        alt+left - go to previous directory
+        alt+right - go to next directory
+        alt+up - move to the parent directory
+        alt+down - move to the first child directory (alphabetical)
+        esc+esc - correct the previous command with The Fuck
+        ctrl-o - copy the current command in the command line
+        
+    This terminal uses zsh with oh-my-zsh. Main terminal configurations are stored in ~/.zshrc
     To edit the configuration:
         zshconfig
     
-    Many packages and apps are installed using Homebrew. Default installations, not related to development enviroment, are located in ~/Workspace/__space__/.dotfiles/packages/Brewfile and ~/Workspace/__space__/.dotfiles/packages/Caskfile
+    Many packages and apps are installed using Homebrew. Default package installation lists are located in ~/Workspace/__space__/.dotfiles/packages/Brewfile and ~/Workspace/__space__/.dotfiles/packages/Caskfile
+
+    .editor config defines universal editor options, compatible with many editors. Mainly sets indents to 4 spaces
+    
+    Themes:
+        Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), and oh-my-zsh-syntax-highlighting uses Catpuccin (https://github.com/catppuccin/zsh-syntax-highlighting)
+        Header font by xero <x@xero.nu> (https://github.com/xero/dotfiles/blob/master/figlet/3d.flf) using FIGlet.js (https://github.com/patorjk/figlet.js)
+    

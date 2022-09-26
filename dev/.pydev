@@ -33,5 +33,8 @@ pyenv global 3.10.6 2.7.18
 # run pipfile
 ~/Workspace/__space__/.dotfiles/packages/Pipfile
 
+brew install pipx
+pipx ensurepath
+
 ## add pyenv aliases
 

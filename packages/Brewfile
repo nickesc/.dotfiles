@@ -1,3 +1,13 @@
+
+#   ██████                               ████ ██  ██
+#  ░█░░░░██                             ░██░ ░░  ░██
+#  ░█   ░██  ██████  █████  ███     ██ ██████ ██ ░██  █████
+#  ░██████  ░░██░░█ ██░░░██░░██  █ ░██░░░██░ ░██ ░██ ██░░░██
+#  ░█░░░░ ██ ░██ ░ ░███████ ░██ ███░██  ░██  ░██ ░██░███████
+#  ░█    ░██ ░██   ░██░░░░  ░████░████  ░██  ░██ ░██░██░░░░
+#  ░███████ ░███   ░░██████ ███░ ░░░██  ░██  ░██ ███░░██████
+#  ░░░░░░░  ░░░     ░░░░░░ ░░░    ░░░   ░░   ░░ ░░░  ░░░░░░
+
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -6,7 +16,8 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/autoupdate"
 tap "homebrew/services"
-# tap "buo/cask-upgrade"
+tap "buo/cask-upgrade"
+brew "mas"
 
 cask_args appdir: "/Applications"
 
@@ -61,6 +72,9 @@ brew "ack"
 brew "git"
 brew "git-lfs"
 brew "git-delta"
+brew "git-extras"
+brew "gh"
+brew "gist"
 brew "gs"
 brew "lua"
 brew "p7zip"
@@ -81,9 +95,7 @@ brew "blueutil"
 brew "minicom"
 brew "ffmpeg"
 brew "qemu"
-brew "gh"
 brew "tldr"
-brew "mas"
 brew "youtube-dl"
 brew "hub"
 brew "fd"
@@ -99,3 +111,16 @@ brew "arduino-cli"
 brew "htop"
 brew "task"
 brew "midnight-commander"
+brew "watch"
+brew "switchaudio-osx"
+brew "sphinx-doc"
+brew "readline"
+brew "nnn"
+brew "memtester"
+brew "hstr"
+brew "gotop"
+brew "stow"
+brew "oath-toolkit"
+brew "chroma"
+brew "catimg"
+brew "thefuck"

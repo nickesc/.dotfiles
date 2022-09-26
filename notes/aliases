@@ -1,9 +1,23 @@
+
+              ██ ██
+             ░██░░
+    ██████   ░██ ██  ██████    ██████  █████   ██████
+   ░░░░░░██  ░██░██ ░░░░░░██  ██░░░░  ██░░░██ ██░░░░
+    ███████  ░██░██  ███████ ░░█████ ░███████░░█████
+   ██░░░░██  ░██░██ ██░░░░██  ░░░░░██░██░░░░  ░░░░░██
+  ░░████████ ███░██░░████████ ██████ ░░██████ ██████
+   ░░░░░░░░ ░░░ ░░  ░░░░░░░░ ░░░░░░   ░░░░░░ ░░░░░░
+
 Useful Aliases and Functions:
 
     cat - 'bat'
     _ - 'sudo'
     g - 'git'
+    h - 'history'
+    hf <text> - 'history | grep -i', search history for text
     cppcompile - 'c++ -std=c++11 -stdlib=libc++', compile files in C++11
+    newreact - 'npx create-react-app'
+    f <keyword> - fast, recursive search for file name in directories
     permex <target> - add permisson to execute to a file
     prepend-path <target> - add something to the path
     cdf - change working directory to the top-most Finder window location
@@ -12,16 +26,22 @@ Useful Aliases and Functions:
     ip - get machine's IP address
     path - get the PATH printed on seperate lines
     desktopshow/desktophide - show/hide desktop icons
+    showhidden/hidehidden - show/hide hidden files
     ql <target> - quick look file from command line
     osupdate - update macOS
     afk - put the screen to sleep
     badge - Ring the terminal bell (useful after long commands)
     ios - open iOS simulator
     transfer <target> - trasnfer a file using trasnfer.sh
+    whois <url> - get whois record for domain
+    getcertnames <url> - Show all names in SSL cert for a given domain
+    airport - shortcut to the Airport CLI
+    wifis - list nearby wifi networks
     gitconfig - open ~/.gitconfig
     zshconfig - open ~/.zshrc
     zshlocal - open ~/.zshrc_local
     reload - source ~/.zshrc
+    nomnom - killall
     cleartest - clear the test directory
     flushdns - flush the DNS
     killfinder - quit and reloads Finder
@@ -29,6 +49,37 @@ Useful Aliases and Functions:
     killmenubar - quits and reloads the menu bar
     killos - quits and reloads all three
     
+Useful Plugin Aliases:
+
+    acs - view all aliases provied by plugins
+    wd - warp directory
+        wd add [target] - add a warp point at the current/target directory
+        wd rm [target] - remove a warp point in the current/target directory
+        wd ..\... - return to the previous directory
+        wd list - list warp points
+    dirhist - show the last 20 unique directories visited
+    <searchengine> <terms> - search the web using the command line
+    compress <format> <files> - compress the files into an archive
+    extract <archive> - extract a number of different archive formats
+    pp_json - pretty print a .json file
+    is_json - returns true if valid json; false otherwise
+    ofd - open the current directory in a Finder window
+    pfd - return the path of the frontmost Finder window
+    pfs - return the current Finder selection
+    cdx - cd to the current Xcode project directory
+    man-preview - open a specified man page in Preview app
+    spotify <command> - control and search Spotify; use "spotify help" for usage
+    btrestart - Restart the Bluetooth daemon
+    gi list - list .gitignore templates
+    gi [TEMPLATENAME] >> .gitignore - add .gitignore of template to the directory
+    genpass - generate a secure password
+    sm [target] - launch sublime-merge, opening the targetr if there is one
+    
+Scripts:
+    
+    bonsai - create a bonsai tree
+    uu - universal update
+
 Folder Aliases:
     
     dl - ~/Downloads

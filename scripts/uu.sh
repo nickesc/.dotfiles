@@ -4,10 +4,12 @@
 sudo softwareupdate -i -a
 
 # Update Homebrew (Cask) & packages
-# brew update
-# brew upgrade
-# brew cleanup
-# brew doctor
+brew update
+brew upgrade
+brew cleanup
+brew doctor
+brew cu --yes
+# brew cu --all --yes
 
 # Update npm & packages
 npm install npm -g
@@ -16,6 +18,7 @@ npm update -g
 # Update Ruby & gems
 sudo gem update -system
 sudo gem update
+sudo gem cleanup
 
 
 ## Node.js, npm, npx, yarn
@@ -23,5 +26,7 @@ sudo gem update
 n-update -y
 
 ## Python, pyenv, pip
-brew upgrade pyenv
+python -m pip install --upgrade pip
+python2 -m pip install --upgrade pip
+
 pyenv rehash

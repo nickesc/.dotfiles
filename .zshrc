@@ -1,13 +1,14 @@
-#                 ██
-#                ░██
-#  ██████  ██████░██      ██████  █████
-# ░░░░██  ██░░░░ ░██████ ░░██░░█ ██░░░██
-#    ██  ░░█████ ░██░░░██ ░██ ░ ░██  ░░
-#   ██    ░░░░░██░██  ░██ ░██   ░██   ██
-#  ██████ ██████ ░██  ░██░███   ░░█████
-# ░░░░░░ ░░░░░░  ░░   ░░ ░░░     ░░░░░
 
-# WAIT! Don't add things here, do it in .zshrc_local for this computer OR add to the .aliases or .functions files in the remote repo -- keep this file clean!
+#                     ██
+#                    ░██
+#      ██████  ██████░██      ██████  █████
+#     ░░░░██  ██░░░░ ░██████ ░░██░░█ ██░░░██
+#        ██  ░░█████ ░██░░░██ ░██ ░ ░██  ░░
+#   ██  ██    ░░░░░██░██  ░██ ░██   ░██   ██
+#  ░██ ██████ ██████ ░██  ░██░███   ░░█████
+#  ░░ ░░░░░░ ░░░░░░  ░░   ░░ ░░░     ░░░░░
+
+# WAIT! Don't add things here, do it in .zshrc_local for this computer OR add to the .aliases or .functions files in the remote repo -- keep this file clean unless you know what you're doing!
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -15,7 +16,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-DOTPATH=$(pwd)
+export DOTFILES="$HOME/Workspace/__space__/"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -61,6 +62,7 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_CHAR_SYMBOL=">"
 SPACESHIP_CHAR_SYMBOL_ROOT=":"
+SPACESHIP_CHAR_SUFFIX=" "
 
 # INSTALLED: "headline/headline", "spaceship-prompt/spaceship"
 
@@ -101,12 +103,46 @@ SPACESHIP_CHAR_SYMBOL_ROOT=":"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
+source $HOME/Workspace/__space__/.dotfiles/themes/omz/catppuchin_mocha-zsh-syntax-highlighting/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
+# configure wd warp point record location
+export WD_CONFIG="$HOME/Workspace/__space__/wd/.warprc"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    xcode
+#    vscode
+    git
+    screen
+#    gh
+#    pyenv
+    brew
+    web-search
+    universalarchive
+#    extract
+    wd
+    dirpersist
+    aliases
+    jsontools
+    macos
+    gitignore
+    genpass
+    copybuffer
+    dirhistory
+#    thefuck
+    safe-paste
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+
+
+
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root cursor)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +163,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+export QMK_HOME='~/Workspace/__space__/qmk_firmware' # Optional, set the location for `qmk_firmware`
 
 : '
 # Important aliases

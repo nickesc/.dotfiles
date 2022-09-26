@@ -1,4 +1,14 @@
-Rust Installation Information:
+
+                            ██
+                           ░██
+   ██████ ██   ██  ██████ ██████
+  ░░██░░█░██  ░██ ██░░░░ ░░░██░
+   ░██ ░ ░██  ░██░░█████   ░██
+   ░██   ░██  ░██ ░░░░░██  ░██
+  ░███   ░░██████ ██████   ░░██
+  ░░░     ░░░░░░ ░░░░░░     ░░
+
+ Rust Installation Information:
     
     Rust is installed with Rustup (https://www.rust-lang.org/tools/install)
     Versions also include channels 'nightly', 'stable' and 'beta'

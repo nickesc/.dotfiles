@@ -1,4 +1,14 @@
-Ruby Installation Information:
+
+                  ██
+                 ░██       ██   ██
+   ██████ ██   ██░██      ░░██ ██
+  ░░██░░█░██  ░██░██████   ░░███
+   ░██ ░ ░██  ░██░██░░░██   ░██
+   ░██   ░██  ░██░██  ░██   ██
+  ░███   ░░██████░██████   ██
+  ░░░     ░░░░░░ ░░░░░    ░░
+
+ Ruby Installation Information:
     
     Rubies are installed using ruby-install (https://github.com/postmodern/ruby-install) and managed with chruby (https://github.com/postmodern/chruby)
     
@@ -23,14 +33,16 @@ Ruby Installation Information:
     For (limited) chruby usage:
         chruby --help
         
-    To update RubyGems:
-        gem update --system
-    To update all gems or a particular gem:
-        gem update [gemname]
     List installed gems:
         gem list
     List outdated gems:
         gem outdated
+    To update RubyGems:
+        gem update --system
+    To update gems:
+        gem update  # to update all gems
+        or
+        gem update [gemname]  # to update a specific gem
     Cleanup old gem versions:
         gem cleanup
     Ruby installations are found in ~/.rubies/

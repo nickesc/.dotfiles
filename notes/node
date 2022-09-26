@@ -1,4 +1,14 @@
-Node.js Installation Information:
+
+                          ██
+                         ░██
+   ███████   ██████      ░██  █████
+  ░░██░░░██ ██░░░░██  ██████ ██░░░██
+   ░██  ░██░██   ░██ ██░░░██░███████
+   ░██  ░██░██   ░██░██  ░██░██░░░░
+   ███  ░██░░██████ ░░██████░░██████
+  ░░░   ░░  ░░░░░░   ░░░░░░  ░░░░░░
+
+ Node.js Installation Information:
 
     local = local to current directory/project
     global/-g = global to node version installation

@@ -1,0 +1,73 @@
+
+                  ██
+                 ░██
+   ██████  ██████░██
+  ░░░░██  ██░░░░ ░██████
+     ██  ░░█████ ░██░░░██
+    ██    ░░░░░██░██  ░██
+   ██████ ██████ ░██  ░██
+  ░░░░░░ ░░░░░░  ░░   ░░
+
+ Zsh Configuration Information:
+    
+    Main terminal configurations are stored in ~/.zshrc.
+    
+        The .zshrc stores important startup configurations, including sourcing functions and aliases and setting up Oh-My-Zsh plugins and themes
+        The ~/.zshrc_local file is also sourced at the end, which allows for machine specific aliases and functions
+        Some configurations are stored in ~/.zprofile, but it is reserved for use when needed
+        
+    Oh-My-Zsh:
+        Oh-My-Zsh is a framework for managing your Zsh configuration, defining things like themes and plugins
+        
+        Plugins:
+            xcode - provides a few utilities that can help you on your daily use of Xcode and iOS development
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/xcode)
+            vscode - provides useful aliases to simplify the interaction between the command line and VS Code
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode)
+            git - provides many aliases and a few useful functions for git
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+            screen - sets the title and hardstatus of the tab window for screen
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/screen)
+            gh - adds completion for the GitHub CLI
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh)
+            pyenv - looks for pyenv and loads it if it's found
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv)
+            brew - adds several aliases for common brew commands
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew)
+            web-search - adds aliases for searching with Google and other popular services
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search)
+            universalarchive - lets you compress files by a command, supporting various compression formats
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/universalarchive)
+            extract - defines a function that extracts the archive file you pass it, supporting various formats
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract)
+            wd - lets you jump to custom directories in zsh using warp points
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/wd)
+            dirpersist - keeps a running tally of the previous 20 unique directories
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirpersist)
+            alieases - helps list the shortcuts that are currently available based on your plugins
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases)
+            jsontools - handy command line tools for dealing with json data
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
+            macos - provides a few utilities to make it more enjoyable on macOS
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos)
+            gitignore - enables you the use of gitignore.io from the command line
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore)
+            genpass - provides three unique password generators for zsh
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/genpass)
+            zsh-autosuggestions - suggests commands as you type based on history and completions
+                (https://github.com/zsh-users/zsh-autosuggestions)
+            copybuffer - adds a keyboard shortcut to copy the current text in the command line to the clipboard
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer)
+            dirhistory - adds keyboard shortcuts for navigating directory history and hierarchy
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
+            thefuck - magnificent app which corrects your previous console command
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thefuck)
+            safe-paste - preventing any code from running while pasting so you have a chance to review
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/safe-paste)
+            zsh-syntax-highlighting - provides syntax highlighting for the shell zsh
+                (https://github.com/zsh-users/zsh-syntax-highlighting)
+        
+        Themes:
+            Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), and oh-my-zsh-syntax-highlighting uses Catpuccin (https://github.com/catppuccin/zsh-syntax-highlighting)
+    To edit the configuration:
+        zshconfig

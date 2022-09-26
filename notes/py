@@ -1,4 +1,13 @@
-Python Installation Information:
+                   
+   ██████   ██   ██
+  ░██░░░██ ░░██ ██
+  ░██  ░██  ░░███
+  ░██████    ░██
+  ░██░░░     ██
+  ░██       ██
+  ░░       ░░
+
+ Python Installation Information:
 
     Python is installed using pyenv (https://github.com/pyenv/pyenv)
     
@@ -20,6 +29,12 @@ Python Installation Information:
         pyenv help
     For information on Python virtual environments:
         venv
+    
+    To run as iPython:
+        ipython <target>
+        
+    Share local directory as a HTTP server using Python:
+        pyserver
     
     To dump currently installed pip packages to piprequirements.txt:
         pipdump

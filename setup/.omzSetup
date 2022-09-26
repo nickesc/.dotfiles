@@ -23,6 +23,11 @@ omz update
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git ~/Workspace/__space__/.dotfiles/themes/omz/spaceship-prompt --depth=1
 ln -s ~/Workspace/__space__/.dotfiles/themes/omz/spaceship-prompt "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+# install zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# install zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # reload the shell
 source $HOME/.zshrc

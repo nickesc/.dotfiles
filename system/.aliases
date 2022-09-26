@@ -1,3 +1,13 @@
+
+#                 ██ ██
+#                ░██░░
+#       ██████   ░██ ██  ██████    ██████  █████   ██████
+#      ░░░░░░██  ░██░██ ░░░░░░██  ██░░░░  ██░░░██ ██░░░░
+#       ███████  ░██░██  ███████ ░░█████ ░███████░░█████
+#   ██ ██░░░░██  ░██░██ ██░░░░██  ░░░░░██░██░░░░  ░░░░░██
+#  ░██░░████████ ███░██░░████████ ██████ ░░██████ ██████
+#  ░░  ░░░░░░░░ ░░░ ░░  ░░░░░░░░ ░░░░░░   ░░░░░░ ░░░░░░
+
 alias ls="ls -a --color=auto"
 
 # alias ls="exa -a"
@@ -38,11 +48,16 @@ alias ql="qlmanage -p &>/dev/null"
 alias desktopshow="defaults write com.apple.finder CreateDesktop -bool true && killfinder"
 alias desktophide="defaults write com.apple.finder CreateDesktop -bool false && killfinder"
 
+# Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
 # Reload native apps
 alias killfinder="killall Finder"
 alias killdock="killall Dock"
 alias killmenubar="killall SystemUIServer NotificationCenter"
 alias killos="killfinder && killdock && killmenubar"
+alias nomnom="killall"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -85,6 +100,22 @@ alias plistbuddy="/usr/libexec/PlistBuddy"
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
 
+alias h='history'
+#alias hf='history | grep -i'
+
+# view list of dirs from dirpersist plugin
+alias dirhist="cat $HOME/.zdirs"
+
+alias compress="ua"
+
+alias genpass="genpass-apple"
+
+# Run proper IPython regarding current virtualenv (if any)
+alias ipython="python3 -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
+# Share local directory as a HTTP server
+alias pyserver="python3 -m http.server"
+
 
 alias permex="chmod +x"
 
@@ -99,6 +130,16 @@ alias sinfo="info"
 # get machine's ip address
 alias ip="ipconfig getifaddr en0"
 
+#alias grep='grep --color=auto'
+#alias fgrep='fgrep --color=auto'
+#alias egrep='egrep --color=auto'
+
+# Airport CLI alias
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+
+# List nearby wifi networks
+alias wifis="airport -s"
+
 # type sublime . to open current folder in Sublime Text
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
 
@@ -108,6 +149,7 @@ alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -
 # Dev Aliases
 alias rustenv="rustup override set"
 alias venvend="deactivate"
+alias newreact="npx create-react-app"
 
 alias pipdump="pip freeze > piprequirements.txt"
 alias pipreq="pip install -r piprequirements.txt"
@@ -142,3 +184,7 @@ alias mongodbconnect="mongosh"
 
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 '
+
+# Suffix-aliases - alias -s extension=name-of-the-tool
+# Markdown files
+alias -s {cs,ts,html,md,}=xed

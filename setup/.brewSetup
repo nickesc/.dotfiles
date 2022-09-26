@@ -51,5 +51,8 @@ brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/MASfile
 
 dotnet tool install --global PowerShell
 
+brew install qmk/qmk/qmk
+qmk setup
+
 # Remove outdated versions from the cellar.
 brew cleanup

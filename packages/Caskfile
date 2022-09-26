@@ -1,3 +1,13 @@
+
+#     ██████                    ██       ████ ██  ██
+#    ██░░░░██                  ░██      ░██░ ░░  ░██
+#   ██    ░░   ██████    ██████░██  ██ ██████ ██ ░██  █████
+#  ░██        ░░░░░░██  ██░░░░ ░██ ██ ░░░██░ ░██ ░██ ██░░░██
+#  ░██         ███████ ░░█████ ░████    ░██  ░██ ░██░███████
+#  ░░██    ██ ██░░░░██  ░░░░░██░██░██   ░██  ░██ ░██░██░░░░
+#   ░░██████ ░░████████ ██████ ░██░░██  ░██  ░██ ███░░██████
+#    ░░░░░░   ░░░░░░░░ ░░░░░░  ░░  ░░   ░░   ░░ ░░░  ░░░░░░
+
 cask_args appdir: "/Applications"
 
 cask "iterm2"
@@ -70,15 +80,13 @@ cask "tiled"
 cask "godot"
 cask "macdown"
 cask "vial"
+cask "kodi"
+cask "vmware-fusion"
+cask "sublime-merge"
 
-qmkrepo = "homebrew/cask-drivers"
-tap repo, "https://github.com/#{qmkrepo}.git"
+qmkrepo="homebrew/cask-drivers"
+tap qmkrepo, "https://github.com/#{qmkrepo}.git"
 cask "qmk-toolbox"
-
-# ptrepo = "popcorn-official/popcorn-desktop"
-# tap repo, "https://github.com/#{ptrepo}.git"
-# #ENV["HOMEBREW_POPCORN_TIME_BUILD"] = "false"
-# cask "popcorn-time" #, args: { "no-quarantine": true }
 
 # cask "visual-studio-code"
 # cask "google-chrome"

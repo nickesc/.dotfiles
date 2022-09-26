@@ -1,1 +1,2 @@
-printf "\n                 ██\n                ░██\n  ██████  ██████░██\n ░░░░██  ██░░░░ ░██████\n    ██  ░░█████ ░██░░░██\n   ██    ░░░░░██░██  ░██\n  ██████ ██████ ░██  ░██\n ░░░░░░ ░░░░░░  ░░   ░░\n\n   Host: ${HOST%%.*}\n   User: $USER\n   $(date)\n\n"
+logonickesc
+printf "\n\n    Host: ${HOST%%.*}\n    User: $USER\n    $(date)\n    For help use 'info'\n\n"
