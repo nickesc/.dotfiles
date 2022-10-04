@@ -1,0 +1,243 @@
+#!/usr/bin/env zsh
+
+# http://collletttivo.it/
+# https://beautifulwebtype.com/
+# https://www.typewolf.com/
+# https://beautifulwebtype.com/v1/
+# http://web.mit.edu/kenta/www/three/postscript/0-All.html
+# http://www.ep.ph.bham.ac.uk/general/printing/psfonts.html
+
+
+# Copy files from the fonts folder
+
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/FivoSans/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Objectivity/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Jost/fonts/Jost/Jost-VF.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Jost/fonts/StGeorge/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Dejavu/ttf/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Droid/droid/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/BrassMono/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/CooperHewitt/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Arkibal/OTF/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Ignazio/desktop/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/MaziusDisplay/desktop/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Messapia/desktop/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/NectoMono/desktop/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Ortica/desktop/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Selawik/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/CourierScreenplay/*.ttf $HOME/Library/Fonts
+
+# Clone fonts from GitHub
+
+# Download and install Powerline-fonts
+git clone https://github.com/powerline/fonts.git ~/Workspace/__space__/.dotfiles/fonts/powerline  --depth=1
+~/Workspace/__space__/.dotfiles/fonts/powerline/install.sh
+
+# Download ibm-courier
+git clone https://github.com/dse/ibm-courier.git ~/Workspace/__space__/.dotfiles/fonts/ibm-courier
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/ibm-courier/fonts/*.otf $HOME/Library/Fonts
+
+# download public sans
+git clone https://github.com/uswds/public-sans.git ~/Workspace/__space__/.dotfiles/fonts/public-sans
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/public-sans/fonts/otf/*.otf $HOME/Desktop
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/public-sans/fonts/variable/*.ttf $HOME/Desktop
+
+# gidole https://github.com/larsenwork/Gidole
+git clone https://github.com/larsenwork/Gidole.git ~/Workspace/__space__/.dotfiles/fonts/gidole
+unzip ~/Workspace/__space__/.dotfiles/fonts/gidole/gidole.zip -d ~/Workspace/__space__/.dotfiles/fonts/gidole
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/gidole/GidoleFont/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/gidole/GidoleFont/*.otf $HOME/Library/Fonts
+
+# Cairo and Cairo Play
+git clone https://github.com/Gue3bara/Cairo.git ~/Workspace/__space__/.dotfiles/fonts/Cairo
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Cairo/fonts/Cairo/variable/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Cairo/fonts/CairoPlay/variable/*.ttf $HOME/Library/Fonts
+
+# Muli
+git clone https://github.com/vernnobile/MuliFont.git ~/Workspace/__space__/.dotfiles/fonts/Muli
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Muli/version-2.0/italic/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Muli/version-2.0/roman/*.ttf $HOME/Library/Fonts
+
+# Chunk Five
+git clone https://github.com/theleagueof/chunk.git ~/Workspace/__space__/.dotfiles/fonts/ChunkFive
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/ChunkFive/*.otf $HOME/Library/Fonts
+
+# Sprat
+git clone https://github.com/EthanNakache/Sprat-type.git ~/Workspace/__space__/.dotfiles/fonts/Sprat
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/Sprat/*.ttf $HOME/Library/Fonts
+
+# iA Writer
+git clone https://github.com/iaolo/iA-Fonts.git ~/Workspace/__space__/.dotfiles/fonts/iA
+cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Duo/Variable/*.ttf" $HOME/Library/Fonts
+cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Duospace/OTF (Mac)/*.ttf" $HOME/Library/Fonts
+cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Mono/Variable/*.ttf" $HOME/Library/Fonts
+cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Quattro/Variable/*.ttf" $HOME/Library/Fonts
+
+git clone https://github.com/iaolo/iA-Fonts.git ~/Workspace/__space__/.dotfiles/fonts/iA
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Duo"/Variable/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Duospace"/"OTF (Mac)"/*.otf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Mono"/Variable/*.ttf $HOME/Library/Fonts
+cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Quattro"/Variable/*.ttf $HOME/Library/Fonts
+
+# fnt for font package manager
+brew install fnt
+
+fnt install notosans
+fnt install notosansdisplay
+fnt install notosansmono
+fnt install notoserif
+fnt install notoserifdisplay
+fnt install notocoloremojicompattest
+fnt install notomusic
+fnt install notosanshebrew
+fnt install notosansmath
+fnt install notosanssymbols
+fnt install notosanssymbols2
+
+fnt install encodesans
+fnt install encodesanscondensed
+fnt install encodesansexpanded
+fnt install encodesanssc
+fnt install encodesanssemicondensed
+fnt install encodesanssemiexpanded
+
+fnt install ptmono
+fnt install ptsans
+fnt install ptsanscaption
+fnt install ptsansnarrow
+fnt install ptserif
+fnt install ptserifcaption
+
+fnt install ibmplexmono
+fnt install ibmplexsans
+fnt install ibmplexsanscondensed
+fnt install ibmplexsanshebrew
+fnt install ibmplexserif
+
+fnt install firacode
+fnt install firasans
+fnt install firasanscondensed
+fnt install firasansextracondensed
+
+fnt install robotoflex
+fnt install robotoserif
+fnt install roboto
+fnt install robotoslab
+
+fnt install dmmono
+fnt install dmsans
+fnt install dmserifdisplay
+fnt install dmseriftext
+
+fnt install sourcesans3
+fnt install sourcesanspro
+fnt install sourceserif4
+
+fnt install signika
+fnt install signikanegative
+fnt install signikanegativesc
+fnt install signikasc
+
+fnt install archivo
+fnt install archivoblack
+fnt install archivonarrow
+
+fnt install cabin
+fnt install cabinsketch
+fnt install cabincondensed
+
+fnt install zillaslab
+fnt install zillaslabhighlight
+
+fnt install merriweather
+fnt install merriweathersans
+
+fnt install cormorantgaramond
+fnt install cormorantsc
+
+fnt install nunito
+fnt install nunitosans
+
+fnt install inriasans
+fnt install inriaserif
+
+fnt install crimsonpro
+fnt install crimsontext
+
+fnt install vollkorn
+fnt install vollkornsc
+
+fnt install playfairdisplay
+fnt install playfairdisplaysc
+
+fnt install librecaslontext
+fnt install librecaslondisplay
+
+fnt install caveat
+fnt install caveatbrush
+
+fnt install quattrocento
+fnt install quattrocentosans
+
+fnt install mplus1code
+fnt install roundedmplus1c
+
+fnt install slabo13px
+fnt install slabo27px
+
+fnt install raleway
+fnt install domine
+fnt install dmseriftext
+fnt install sourceserifpro
+fnt install epilogue
+fnt install amstelvaralpha
+fnt install montserrat
+fnt install urbanist
+fnt install assistan
+fnt install inter
+fnt install manrope
+fnt install bitter
+fnt install oldstandardtt
+fnt install spacegrotesk
+fnt install fraunces
+fnt install lora
+fnt install worksans
+fnt install biorhyme
+fnt install librefranklin
+fnt install librebaskerville
+fnt install amiko
+fnt install cantoraone
+fnt install dosis
+fnt install lato
+fnt install oswald
+fnt install pacifico
+fnt install arvo
+
+# Fonts installed by powerline repo
+#fnt install cousine
+#fnt install spacemono
+#fnt install firamono
+#fnt install hack
+#fnt install inconsolata
+#fnt install robotomono
+#fnt install sourcecodepro
+
+
+# install fonts using homebrew
+brew tap homebrew/cask-fonts
+brew install --cask font-victor-mono
+brew install --cask font-iosevka
+brew install --cask font-twitter-color-emoji
+brew install font-maple
+# install cascadia code/mono and powerline variants https://github.com/microsoft/cascadia-code  https://gist.github.com/skylock/df4de48ae6a0d7540dad13c375c4b79f
+brew install --cask font-cascadia-code
+brew install --cask font-cascadia-code-pl
+brew install --cask font-cascadia-mono
+brew install --cask font-cascadia-mono-pl
+
+
+# download tools to edit fonts
+brew install --cask fontforge # http://designwithfontforge.com/en-US/Introduction.html
+brew install --cask birdfont # https://birdfont.org/doku/doku.php/create_a_font_from_images
+
+echo "after this is done, in the open Font Book window, press cmd+L or 'Edit > Look for enabled duplicates...'"

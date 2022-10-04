@@ -50,6 +50,27 @@ logonickesc() {
     printf "\n\n            ██         ██                            \n           ░░         ░██                            \n   ███████  ██  █████ ░██  ██  █████   ██████  █████ \n  ░░██░░░██░██ ██░░░██░██ ██  ██░░░██ ██░░░░  ██░░░██\n   ░██  ░██░██░██  ░░ ░████  ░███████░░█████ ░██  ░░ \n   ░██  ░██░██░██   ██░██░██ ░██░░░░  ░░░░░██░██   ██\n   ███  ░██░██░░█████ ░██░░██░░██████ ██████ ░░█████\n  ░░░   ░░ ░░  ░░░░░  ░░  ░░  ░░░░░░ ░░░░░░   ░░░░░\n"
 }
 
+# Bash Function To Extract File Archives Of Various Types
+extract () {
+     if [ -f $1 ] ; then
+         case $1 in
+             *.tar.bz2)   tar xjf $1     ;;
+             *.tar.gz)    tar xzf $1     ;;
+             *.bz2)       bunzip2 $1     ;;
+             *.rar)       rar x $1       ;;
+             *.gz)        gunzip $1      ;;
+             *.tar)       tar xf $1      ;;
+             *.tbz2)      tar xjf $1     ;;
+             *.tgz)       tar xzf $1     ;;
+             *.zip)       unzip $1       ;;
+             *.Z)         uncompress $1  ;;
+             *.7z)        7z x $1    ;;
+             *)           echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
 
 
 function whois() {
@@ -344,6 +365,45 @@ dbstatus(){
     printf "\n\nRunning processes for PostgreSQL, MySQL and MongoDB:\n\n"
     ps aux | grep -v grep | grep 'mongod\|postgresql\|mysql'
 
+}
+
+
+
+# SymLink the file, if it doesn't already exist
+# 1) Identifies what directory is being worked on.
+# 2) Unlinks, any existing file (if requested by option switch).
+# 3) Create the new link
+
+# symlink <target> <destination> [--force][-f]
+function symlink {
+    echo " "
+    echo "WORKING ON: $1"
+    # does it exist
+    f="$(basename $1)"
+    g="$(readlink -f $1)"
+    if [[ -e "$2/$f" ]] || [[ -h "$2/$f" ]]; then
+        echo "    WARNING: $2/$f already exists"
+        if [[ $* == *-f* ]]; then
+            echo "    FORCING LINK OF $g TO $2"
+            unlink "$2/$f"
+            ln -s $g $2
+        elif [[ $* == *-r* ]]; then
+            echo "    UNSAFELY FORCING LINK OF $g TO $2"
+            rm "$2/$f"
+            ln -s $g $2
+        else
+            echo "    SKIPPING $g."
+            echo " "
+            echo "    USE symlink $1 $2 --force TO FORCE A LINK"
+            echo "    USE symlink $1 $2 --remove TO UNSAFELY FORCE A LINK"
+        fi
+    # does not exist
+    else
+      # create the link
+      echo "    Linking $g to $2"
+      ln -s $g $2
+    fi
+    echo " "
 }
 
 

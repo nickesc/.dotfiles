@@ -1,0 +1,33 @@
+mkdir -p ~/Workspace/__space__/.dotfiles/profile/refs
+mkdir -p ~/Workspace/__space__/.dotfiles/profile/avatar/logo
+
+git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  https://github.com/nickesc/N.-Escobar-Media-Branding \
+;
+cd N.-Escobar-Media-Branding
+git sparse-checkout set Logos/nickesc
+cp -a Logos/nickesc ~/Workspace/__space__/.dotfiles/profile/avatar
+git sparse-checkout set Logos/nescobar
+cp -a Logos/nescobar ~/Workspace/__space__/.dotfiles/profile/avatar
+git sparse-checkout set Logos/signature
+cp -a Logos/signature ~/Workspace/__space__/.dotfiles/profile/refs
+rm -fr .git
+cd ..
+rm -r N.-Escobar-Media-Branding
+
+git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  https://github.com/nickesc/nickesc.github.io \
+;
+cd nickesc.github.io
+git sparse-checkout set assets/Resume.pdf
+cp -a assets/Resume.pdf ~/Workspace/__space__/.dotfiles/profile/refs
+rm -fr .git
+cd ..
+rm -r nickesc.github.io
+

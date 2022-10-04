@@ -32,12 +32,12 @@ testDir=/Users/nickesc/Workspace/.test
 
 #ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
-mkdir -p $testDir/Workspace/__space__
-mkdir -p $testDir/Workspace/profile
-mkdir -p $testDir/Workspace/projects
-mkdir -p $testDir/Workspace/.test
-
-mkdir -p $testDir/Workspace/profile/avatar
+mkdir -p ~/Workspace/__space__
+mkdir -p ~/Workspace/projects
+mkdir -p ~/Workspace/data
+mkdir -p ~/Workspace/.test
+mkdir -p ~/Workspace/.hidden
+cp ~/Workspace/__space__/.dotfiles/profile ~/Workspace/profile
 
 
 
@@ -45,12 +45,27 @@ mkdir -p $testDir/Workspace/profile/avatar
 
 ## still to do:
 # iterm setup
-# pipfile
-# omz plugins
 # install needed fonts
 # omz plugins
 # copy .zshrc
 # install langs (pyenv, sdkman, nvm, go, others)
 #
 
+
+
+
+
+
+
+symlink ~/Workspace/__space__/.dotfiles/.editorconfig ~
+symlink ~/Workspace/__space__/.dotfiles/.gemrc ~
+symlink ~/Workspace/__space__/.dotfiles/.gitattributes ~
+symlink ~/Workspace/__space__/.dotfiles/.gitconfig ~
+symlink ~/Workspace/__space__/.dotfiles/.gitignore ~
+symlink ~/Workspace/__space__/.dotfiles/.npmrc ~
+symlink ~/Workspace/__space__/.dotfiles/.screenrc ~
+symlink ~/Workspace/__space__/.dotfiles/.zlogout ~
+symlink ~/Workspace/__space__/.dotfiles/.zprofile ~
+symlink ~/Workspace/__space__/.dotfiles/.zshrc ~
+mv .zshrc_local ~
 

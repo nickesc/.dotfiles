@@ -10,7 +10,7 @@
 
 cask_args appdir: "/Applications"
 
-cask "iterm2"
+
 cask "rectangle"
 cask "docker"
 cask "slack"
@@ -83,6 +83,13 @@ cask "vial"
 cask "kodi"
 cask "vmware-fusion"
 cask "sublime-merge"
+cask "discord"
+cask "obs"
+cask "streamlabs-obs"
+cask "spotify"
+cask "gswitch"
+cask "fontgoggles"
+# cask "firefox"
 
 qmkrepo="homebrew/cask-drivers"
 tap qmkrepo, "https://github.com/#{qmkrepo}.git"
@@ -90,9 +97,5 @@ cask "qmk-toolbox"
 
 # cask "visual-studio-code"
 # cask "google-chrome"
-# cask "firefox"
-# cask "discord"
-# cask "spotify"
-# cask "obs"
-# cask "streamlabs-obs"
 # cask "blender"
+# cask "iterm2"

@@ -71,3 +71,5 @@
             Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), and oh-my-zsh-syntax-highlighting uses Catpuccin (https://github.com/catppuccin/zsh-syntax-highlighting)
     To edit the configuration:
         zshconfig
+        
+    The session blurb is made by either neofetch or pfetch (if neofetch is unavailable)

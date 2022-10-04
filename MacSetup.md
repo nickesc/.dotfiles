@@ -12,12 +12,8 @@ https://code.visualstudio.com/download
 https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
 chrome -- all extensions
 https://www.google.com/chrome/
-firefox
-https://www.mozilla.org/en-US/firefox/new/
 xquartz
 https://www.xquartz.org/
-spotify
-https://www.spotify.com/us/download/mac/
 creative cloud
 https://creativecloud.adobe.com/en/apps/download/creative-cloud
 vdownloader
@@ -28,9 +24,6 @@ parallels toolbox (if not already installed by parallels)
 https://www.parallels.com/products/toolbox/
 mega sync
 https://mega.io/desktop
-
-discord
-https://discord.com/download
 sdclone
 https://twocanoes.com/redownload
 winclone
@@ -51,10 +44,6 @@ google drive sync
 https://www.google.com/drive/download/
 logitech options
 https://www.logitech.com/en-us/software/logi-options-plus.html
-obs
-https://obsproject.com/download
-streamlabs
-https://streamlabs.com/streamlabs-live-streaming-software
 blender
 https://www.blender.org/
 

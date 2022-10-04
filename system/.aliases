@@ -143,6 +143,8 @@ alias wifis="airport -s"
 # type sublime . to open current folder in Sublime Text
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
 
+# open fontbook
+alias fontbook="open -b com.apple.FontBook"
 
 
 : '

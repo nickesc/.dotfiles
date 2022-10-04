@@ -186,10 +186,15 @@ source $HOME/Workspace/__space__/.dotfiles/system/.aliases
 source $HOME/Workspace/__space__/.dotfiles/system/.functions
 source $HOME/.zshrc_local
 
+
 : '
 postgresqlstart
 mysqlstart
 mongodbstart
+export PATH=$(brew --prefix)/bin/bash:$PATH
 '
+export PATH="$HOME/Workspace/__space__/.dotfiles/scripts:$PATH"
+
 source $HOME/Workspace/__space__/.dotfiles/system/.sessionBlurb
+
 

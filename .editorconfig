@@ -15,4 +15,8 @@ insert_final_newline = true
 [**.{md,rst}]
 trim_trailing_whitespace = false
 
+[*.{yaml,yml,json,xml,designspace,stylespace,md}]
+indent_style = space
+indent_size = 2
+
 

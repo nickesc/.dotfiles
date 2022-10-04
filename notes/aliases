@@ -19,6 +19,7 @@ Useful Aliases and Functions:
     newreact - 'npx create-react-app'
     f <keyword> - fast, recursive search for file name in directories
     permex <target> - add permisson to execute to a file
+    symlink <target> <destination> [-f -r][--force --remove] - a shortcut for symlinking files with ln
     prepend-path <target> - add something to the path
     cdf - change working directory to the top-most Finder window location
     cpwd - copy current absolute directory path
@@ -34,6 +35,8 @@ Useful Aliases and Functions:
     ios - open iOS simulator
     transfer <target> - trasnfer a file using trasnfer.sh
     whois <url> - get whois record for domain
+    pfetch - fetch system infomation with pfetch
+    neofetch - fetch system infomation with neofetch
     getcertnames <url> - Show all names in SSL cert for a given domain
     airport - shortcut to the Airport CLI
     wifis - list nearby wifi networks
@@ -99,4 +102,5 @@ Application Aliases:
     finder
     xcode
     sublime
+    fontbook
     

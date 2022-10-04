@@ -1,2 +1,13 @@
+#source $HOME/Workspace/__space__/.dotfiles/.pfetchrc
+#PF_INFO="ascii title os host kernel uptime pkgs memory shell editor palette"
+
 logonickesc
-printf "\n\n    Host: ${HOST%%.*}\n    User: $USER\n    $(date)\n    For help use 'info'\n\n"
+# printf "\n\n    Host: ${HOST%%.*}\n    User: $USER\n    $(date)\n    For help use 'info'\n\n"
+printf "\n\n"
+
+if ! command -v neofetch &> /dev/null; then
+    pfetch
+else
+    neofetch
+fi
+printf "For help use 'info'\n\n"
