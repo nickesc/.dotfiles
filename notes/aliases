@@ -35,8 +35,6 @@ Useful Aliases and Functions:
     ios - open iOS simulator
     transfer <target> - trasnfer a file using trasnfer.sh
     whois <url> - get whois record for domain
-    pfetch - fetch system infomation with pfetch
-    neofetch - fetch system infomation with neofetch
     getcertnames <url> - Show all names in SSL cert for a given domain
     airport - shortcut to the Airport CLI
     wifis - list nearby wifi networks
@@ -80,7 +78,8 @@ Useful Plugin Aliases:
     
 Scripts:
     
-    bonsai - create a bonsai tree
+    pfetch - fetch system infomation with pfetch
+    neofetch - fetch system infomation with neofetch
     uu - universal update
 
 Folder Aliases:
