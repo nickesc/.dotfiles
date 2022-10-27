@@ -123,6 +123,68 @@ function f() {
   find . -name "$1" 2>&1 | grep -v 'Permission denied'
 }
 
+encrypt (){
+
+    usage="\nusage:   encrypt <target> [password] [size]\n         encrypt create <name> [password] [size]\n         encrypt help\nEncrypts traget into a sparse bundle, default 5gb max-size\nFor more help see 'hdiutil help'\n\n"
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        printf $usage
+    elif [ "$1" = "create" ]; then
+        if [ $# -eq 1 ]; then
+            printf $usage
+        elif [ $# -eq 2 ]; then
+            hdiutil create -encryption -stdinpass -volname $(basename -s ".${2##*.}" "$2") -size 5g -type SPARSEBUNDLE "$2"
+        elif [ $# -eq 3 ]; then
+            echo -n "$3" | hdiutil create -encryption -stdinpass -volname $(basename -s ".${2##*.}" "$2") -size 5g -type SPARSEBUNDLE "$2"
+        elif [ $# -ge 4 ]; then
+            echo -n "$3" | hdiutil create -encryption -stdinpass -volname $(basename -s ".${2##*.}" "$2") -size "$4" -type SPARSEBUNDLE "$2"
+        fi
+    else
+        if [ $# -eq 1 ]; then
+            hdiutil create -encryption -stdinpass -format UDSB -srcfolder "$1" "$1"
+        elif [ $# -eq 2 ]; then
+            echo -n "$2" | hdiutil create -encryption -stdinpass -format UDSB -srcfolder "$1" "$1"
+        elif [ $# -ge 3 ]; then
+            echo -n "$2" | hdiutil create -encryption -stdinpass -size "$3" -format UDSB -srcfolder "$1" "$1"
+        fi
+    fi
+
+}
+decrypt (){
+
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        printf "\n\nusage:   decrypt <target> [password]\n\n"
+    elif [ $# -eq 1 ]; then
+        hdiutil attach -stdinpass "$1"
+        cd "/Volumes/$(basename -s ".${1##*.}" "$1")"
+    elif [ $# -eq 2 ]; then
+        echo -n "$2" | hdiutil attach -stdinpass "$1"
+        cd "/Volumes/$(basename -s ".${1##*.}" "$1")"
+    fi
+
+}
+
+detach (){
+
+    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+        printf "\nusage:   detach <volume>\n\n"
+    else
+        if hdiutil detach "/Volumes/$1"; then
+            echo "Detached $1"
+        else
+            echo "Moving to home directory and retrying"
+            cd
+            if hdiutil detach "/Volumes/$1"; then
+                echo "Detached $1"
+            else
+                echo "Failed to detach $1"
+            fi
+        fi
+    fi
+
+}
+
+alias eject="detach"
+
 
 export VENVLOG="$HOME/Workspace/__space__/.dotfiles/.venvlog"
 

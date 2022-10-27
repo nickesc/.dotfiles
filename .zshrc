@@ -64,6 +64,14 @@ SPACESHIP_CHAR_SYMBOL=">"
 SPACESHIP_CHAR_SYMBOL_ROOT=":"
 SPACESHIP_CHAR_SUFFIX=" "
 
+SPACESHIP_DIR_COLOR="blue"
+SPACESHIP_GIT_STATUS_COLOR="green"
+SPACESHIP_NODE_COLOR="blue"
+SPACESHIP_VENV_COLOR="yellow"
+SPACESHIP_CONDA_COLOR="yellow"
+SPACESHIP_CHAR_COLOR_SUCCESS="red"
+SPACESHIP_CHAR_COLOR_FAILURE="green"
+
 # INSTALLED: "headline/headline", "spaceship-prompt/spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -166,34 +174,38 @@ source $ZSH/oh-my-zsh.sh
 
 export QMK_HOME='~/Workspace/__space__/qmk_firmware' # Optional, set the location for `qmk_firmware`
 
-: '
-# Important aliases
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-if [[ -r $(brew --prefix)/opt/chruby/share/chruby/chruby.sh ]]; then
-  source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-  source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-fi
-HISTFILE="$HOME/Workspace/__space__/.dotfiles/.zhistory"
-setopt APPEND_HISTORY
-HISTSIZE=5000
-SAVEHIST=1000
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt EXTENDED_HISTORY
-setopt SHARE_HISTORY
-'
+
+#alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+#if [[ -r $(brew --prefix)/opt/chruby/share/chruby/chruby.sh ]]; then
+#  source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+#  source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+#fi
+#HISTFILE="$HOME/Workspace/__space__/.dotfiles/.zhistory"
+#setopt APPEND_HISTORY
+#HISTSIZE=5000
+#SAVEHIST=1000
+#setopt HIST_EXPIRE_DUPS_FIRST
+#setopt EXTENDED_HISTORY
+#setopt SHARE_HISTORY
+
 
 source $HOME/Workspace/__space__/.dotfiles/system/.aliases
 source $HOME/Workspace/__space__/.dotfiles/system/.functions
+source $HOME/Workspace/__space__/.dotfiles/system/.keybindings
 source $HOME/.zshrc_local
 
 
-: '
-postgresqlstart
-mysqlstart
-mongodbstart
-export PATH=$(brew --prefix)/bin/bash:$PATH
-'
+
+#postgresqlstart
+#mysqlstart
+#mongodbstart
+
+#export PATH=$(brew --prefix)/bin/bash:$PATH
 export PATH="$HOME/Workspace/__space__/.dotfiles/scripts:$PATH"
+
+alias uu=". uu"
+
+source ~/.iterm2_shell_integration.zsh
 
 source $HOME/Workspace/__space__/.dotfiles/system/.sessionBlurb
 

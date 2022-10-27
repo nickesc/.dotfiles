@@ -4,9 +4,19 @@
 brew install --cask iterm2
 
 ## import plist
-symlink /Users/nickesc/Workspace/__space__/.dotfiles/config/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/ -r
+cp ~/Workspace/__space__/.dotfiles/config/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+defaults read com.googlecode.iterm2
+
+## Tell iTerm to look at the .dotfiles dir for the plist
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Workspace/__space__/.dotfiles/config/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 defaults read com.googlecode.iterm2
 
 ## Import profile jsons (exported from profile section of iTerm)
-mkdir -p ~/Library/Application Support/iTerm2/DynamicProfiles
-symlink /Users/nickesc/Workspace/__space__/.dotfiles/config/iterm2/Profiles.json ~/Library/Application Support/iTerm2/DynamicProfiles -r
+#mkdir -p ~/Library/Application Support/iTerm2/DynamicProfiles
+#symlink ~/Workspace/__space__/.dotfiles/config/iterm2/Profiles.json ~/Library/Application Support/iTerm2/DynamicProfiles -r
+
+# Clone Paradise Theme for further use:
+git clone https://github.com/paradise-theme/paradise.git 
+
+# for more terminal theemes: https://github.com/lysyi3m/macos-terminal-themes

@@ -1,37 +1,203 @@
 #!/usr/bin/env zsh
 
-# Update App Store apps
-sudo softwareupdate -i -a
+#source ~/.zshrc
 
-# Update Homebrew (Cask) & packages
-brew update
-brew upgrade
-brew cleanup
-brew doctor
-brew cu --yes
-# brew cu --all --yes
+uuos(){
+    # install system updates
+    sudo softwareupdate --install --os-only
+}
 
-# Update npm & packages
-npm install npm -g
-npm update -g
+uuosall(){
+    # install all available updates
+    sudo softwareupdate --install --all
+}
 
-# Update Ruby & gems
-sudo gem update -system
-sudo gem update
-sudo gem cleanup
+uuosrec(){
+    # install recommended updates
+    sudo softwareupdate --install --recommended
+}
 
+uumas(){
+    # install app updates
+    mas upgrade
+}
 
-## Node.js, npm, npx, yarn
-#Update n
-n-update -y
+uubrew(){
+    # Update Homebrew (Cask) & packages
+    brew update
+    brew upgrade
+    brew cleanup
+    brew doctor
+}
 
-## Python, pyenv, pip
-python -m pip install --upgrade pip
-python2 -m pip install --upgrade pip
+uucask(){
+    uubrew
+    brew cu --yes --cleanup
+}
 
-pyenv rehash
+uucaskforce(){
+    uubrew
+    brew cu --yes --all --cleanup
+}
 
-# update fnt font manager catalogue
-fnt update
+uunode(){
+    ## Node.js, npm
+    # Update npm and verify cache
+    npm install npm -g
+    npm cache verify
+    
+    #Update n
+    n-update -y
+}
 
+uunpm(){
+    # update node
+    uunode
 
+    # update npm packages
+    npm update -g
+    npm cache verify
+}
+
+uuruby(){
+    # Update rubygems
+    gem update --system
+    gem cleanup
+}
+
+uugems(){
+    # update gems
+    uuruby
+    sudo gem update
+    gem cleanup
+}
+
+uurust(){
+    # Rust and Cargo
+    rustup self update
+    rustup update
+}
+
+uugo(){
+    # Go
+    go get -u ./...
+}
+
+uupyenv(){
+    brew upgrade pyenv
+    pyenv rehash
+    
+    conda update conda
+    conda clean --all
+}
+
+uupip(){
+    ## Python, pyenv, pip
+    python -m pip install --upgrade pip
+    pip check
+    
+    python2 -m pip install --upgrade pip
+    pip2 check
+
+    uupyenv
+}
+
+uusdk(){
+    # update sdkman
+    sdk flush
+    sdk flush broadcast
+    sdk selfupdate
+    sdk update
+    sdk broadcast
+}
+
+uufont(){
+    # update fnt font manager catalogue
+    fnt update
+}
+
+uuomz(){
+    # omz
+    omz update
+}
+
+uuhelp(){
+    printf "\nTip: uu must be executed in your current shell; source the file or use '. uu' if the alias does not work"
+    printf "\nUsage:\n\n    uu <update>\n"
+    printf "\nUpdates:"
+    printf "\n           all|a - update all; does not force updates"
+    printf "\n       default|d - update the default, safe list (os cask node ruby py rust font omz)"
+    printf "\n             mas - update Mac App Store apps"
+    printf "\n      os [force] - update MacOS; 'force' will install app and OS updates"
+    printf "\n    brew [force] - update Homebrew Formulae; 'force' will only update Forulae and ignore Casks"
+    printf "\n    cask [force] - update Homebrew Casks and Formulae; 'force' will force auto-updating Casks to update"
+    printf "\n    node [force] - update n and npm; 'force' will update global npm packages"
+    printf "\n    ruby [force] - update RubyGems; 'force' will update Gems"
+    printf "\n      py [force] - update and cleanup pyenv and conda; 'force' will update pip"
+    printf "\n            rust - update rust and cargo with rustup to the latest stable versions"
+    printf "\n              go - update GO"
+    printf "\n            font - update font tools like fnt"
+    printf "\n             omz - update omz\n\n"
+}
+
+if [ "$1" = "help" ] || [ $# -eq 0 ]; then
+    uuhelp
+elif [ "$1" = "os" ] && [ "$2" = "force" ]; then
+    uuosall
+elif [ "$1" = "os" ]; then
+    uuos
+elif [ "$1" = "mas" ]; then
+    uumas
+elif [ "$1" = "brew" ] && [ "$2" = "force" ]; then
+    uubrew
+elif [ "$1" = "cask" ] && [ "$2" = "force" ]; then
+    uucaskforce
+elif [ "$1" = "cask" ] || [ "$1" = "brew" ]; then
+    uucask
+elif [ "$1" = "node" ] && [ "$2" = "force" ]; then
+    uunpm
+elif [ "$1" = "node" ]; then
+    uunode
+elif [ "$1" = "ruby" ] && [ "$2" = "force" ]; then
+    uugems
+elif [ "$1" = "ruby" ]; then
+    uuruby
+elif [ "$1" = "rust" ]; then
+    uurust
+elif [ "$1" = "go" ]; then
+    uugo
+elif [ "$1" = "py" ] && [ "$2" = "force" ]; then
+    uupip
+elif [ "$1" = "py" ]; then
+    uupyenv
+elif [ "$1" = "pip" ]; then
+    uupip
+elif [ "$1" = "font" ]; then
+    uufont
+elif [ "$1" = "omz" ]; then
+    uuomz
+elif [ "$1" = "default" ]  || [ "$1" = "d" ]; then
+    uuosrec
+    uucask
+    uunode
+    uuruby
+    uurust
+    uupyenv
+    uusdk
+    uufont
+    uuomz
+
+elif [ "$1" = "all" ] || [ "$1" = "a" ] ; then
+    uuosall
+    uucask
+    uunpm
+    uugems
+    uurust
+    uugo
+    uupip
+    uusdk
+    uufont
+    uuomz
+else
+    uuhelp
+fi

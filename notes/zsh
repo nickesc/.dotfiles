@@ -68,7 +68,7 @@
                 (https://github.com/zsh-users/zsh-syntax-highlighting)
         
         Themes:
-            Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), and oh-my-zsh-syntax-highlighting uses Catpuccin (https://github.com/catppuccin/zsh-syntax-highlighting)
+                    Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), oh-my-zsh-syntax-highlighting and the terminal use Paradise (https://github.com/paradise-theme/paradise)
     To edit the configuration:
         zshconfig
         

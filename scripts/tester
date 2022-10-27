@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+source $HOME/Workspace/__space__/.dotfiles/system/.aliases
+source $HOME/Workspace/__space__/.dotfiles/system/.functions
+
+echo "help"
+encrypt create test
+echo "breathe"
+

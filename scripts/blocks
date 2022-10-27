@@ -1,0 +1,42 @@
+#!/bin/sh
+
+cr="\033[0;0m\033[1;31m"
+cg="\033[0;0m\033[1;32m"
+cb="\033[0;0m\033[1;34m"
+
+help() { printf "${cg}block: print colored blocks
+Usage: blocks ${cb}[conf_file|val]${cg}
+  ${cb}0:${cg} black
+  ${cb}1:${cg} red
+  ${cb}2:${cg} green
+  ${cb}3:${cg} yellow
+  ${cb}4:${cg} blue
+  ${cb}5:${cg} magenta
+  ${cb}6:${cg} cyan
+  ${cb}7:${cg} white
+Example: blocks ${cb}~/Workspace/__space__/.dotfiles/scripts/test/blocks_test${cg}
+${cr}Source: https://github.com/manas140/sh/\n" && exit; }
+
+case $1 in
+  "") read="012345679";;
+  *h|*help) help;;
+  *) if [ -f $1 ]; then
+    read="$(cat $1)"
+  else
+    read="$@"
+  fi;;
+esac
+
+for text in $read; do
+  case $text in
+    "") break;;
+    *) chars=$(printf "$text" | grep -o [0-9] | grep -o . )
+      for char in $chars; do
+        printf "\033[7;3%sm" "$char"
+        printf "  "
+      done
+  esac
+  printf "\n"
+done
+printf "\033[0;0m\n"
+

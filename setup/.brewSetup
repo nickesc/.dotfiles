@@ -13,6 +13,9 @@ if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+
+brew doctor
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -24,6 +27,7 @@ BREW_PREFIX=$(brew --prefix)
 
 # Install a modern version of Bash.
 brew install bash
+brew install bash-completion@2
 echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
 
 
@@ -42,6 +46,20 @@ brew install gnu-sed --with-default-names
 brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/Brewfile
 brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/Caskfile
 brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/MASfile
+
+# quicklook plugins qlimagesize qlcolorcode(?) quicklookase qlvideo
+brew install qlstephen qlmarkdown suspicious-package apparency
+xattr -r ~/Library/QuickLook
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
+qlmanage -r cache
+qlmanage -r
+
+defaults write org.n8gray.QLColorCode font Monaco
+defaults write org.n8gray.QLColorCode fontSizePoints 9
+
+defaults write org.n8gray.QLColorCode darkTheme Zenburn-dark
+defaults write org.n8gray.QLColorCode lightTheme Zenburn-light
 
 dotnet tool install --global PowerShell
 

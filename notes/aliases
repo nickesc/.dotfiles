@@ -8,8 +8,7 @@
   ░░████████ ███░██░░████████ ██████ ░░██████ ██████
    ░░░░░░░░ ░░░ ░░  ░░░░░░░░ ░░░░░░   ░░░░░░ ░░░░░░
 
-Useful Aliases and Functions:
-
+Shortcuts:
     cat - 'bat'
     _ - 'sudo'
     g - 'git'
@@ -17,7 +16,8 @@ Useful Aliases and Functions:
     hf <text> - 'history | grep -i', search history for text
     cppcompile - 'c++ -std=c++11 -stdlib=libc++', compile files in C++11
     newreact - 'npx create-react-app'
-    f <keyword> - fast, recursive search for file name in directories
+    
+Terminal Utilities:
     permex <target> - add permisson to execute to a file
     symlink <target> <destination> [-f -r][--force --remove] - a shortcut for symlinking files with ln
     prepend-path <target> - add something to the path
@@ -26,6 +26,9 @@ Useful Aliases and Functions:
     get <var> - get named variable
     ip - get machine's IP address
     path - get the PATH printed on seperate lines
+    f <keyword> - fast, recursive search for file name in directories
+    
+System:
     desktopshow/desktophide - show/hide desktop icons
     showhidden/hidehidden - show/hide hidden files
     ql <target> - quick look file from command line
@@ -33,14 +36,25 @@ Useful Aliases and Functions:
     afk - put the screen to sleep
     badge - Ring the terminal bell (useful after long commands)
     ios - open iOS simulator
+
+Wifi:
     transfer <target> - trasnfer a file using trasnfer.sh
     whois <url> - get whois record for domain
     getcertnames <url> - Show all names in SSL cert for a given domain
     airport - shortcut to the Airport CLI
     wifis - list nearby wifi networks
+    
+Configs:
     gitconfig - open ~/.gitconfig
     zshconfig - open ~/.zshrc
     zshlocal - open ~/.zshrc_local
+    
+Encryption:
+    encrypt [create] <target> [pass] [size] - create an encrypted image or encrypt a folder
+    decrypt <target> [pass] - decrypt an image, attach it and cd in
+    detach - detach a volume; also useable on external drives. Can also be calleed with 'eject'
+
+Clear/Reset:
     reload - source ~/.zshrc
     nomnom - killall
     cleartest - clear the test directory
@@ -79,8 +93,9 @@ Useful Plugin Aliases:
 Scripts:
     
     pfetch - fetch system infomation with pfetch
-    neofetch - fetch system infomation with neofetch
+    colorscheme - display the main terminal colorscheme in various combinations
     uu - universal update
+    
 
 Folder Aliases:
     

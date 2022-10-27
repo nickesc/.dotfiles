@@ -8,7 +8,7 @@
   ░██ ███  ░██  ░██  ░░██████
   ░░ ░░░   ░░   ░░    ░░░░░░
 
-Main Configuration Infromation:
+Main Configuration Information:
 
     Hotkeys:
         alt+left - go to previous directory
@@ -17,6 +17,14 @@ Main Configuration Infromation:
         alt+down - move to the first child directory (alphabetical)
         esc+esc - correct the previous command with The Fuck
         ctrl-o - copy the current command in the command line
+        cmd+click - open path or url (opens in Chrome?)
+        alt+click - move the cursor the the mouse position in the prompt
+        shift+left - move the cursor to the beginning of the word
+        shift+right - move the cursor to the end of the word
+        shift+up/home - move the cursor to the beginning of the line
+        shift+down/end - move the cursor to the end of the line
+        pgUp - recall the first command in history
+        pgDn - recall the last command in history
         
     This terminal uses zsh with oh-my-zsh. Main terminal configurations are stored in ~/.zshrc
     To edit the configuration:
@@ -27,6 +35,5 @@ Main Configuration Infromation:
     .editor config defines universal editor options, compatible with many editors. Mainly sets indents to 4 spaces
     
     Themes:
-        Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), and oh-my-zsh-syntax-highlighting uses Catpuccin (https://github.com/catppuccin/zsh-syntax-highlighting)
+        Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), oh-my-zsh-syntax-highlighting and the terminal use Paradise (https://github.com/paradise-theme/paradise)
         Header font by xero <x@xero.nu> (https://github.com/xero/dotfiles/blob/master/figlet/3d.flf) using FIGlet.js (https://github.com/patorjk/figlet.js)
-    

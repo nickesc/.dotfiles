@@ -18,6 +18,7 @@ alias _space="cd ~/Workspace/__space__"
 alias projects="cd ~/Workspace/projects"
 alias test="cd ~/Workspace/.test"
 alias data="cd ~/Workspace/data"
+alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias xcode="xed"
 alias reload="source ~/.zshrc"
 alias dotfiles="cd ~/Workspace/__space__/.dotfiles"
@@ -145,6 +146,9 @@ alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -
 
 # open fontbook
 alias fontbook="open -b com.apple.FontBook"
+
+# update homebrew
+alias brewup=”brew update; brew upgrade; brew cleanup; brew doctor”
 
 
 : '

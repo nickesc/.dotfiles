@@ -3,6 +3,9 @@
 
 # install Rust using Rustup https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-1
+
+# reload the shell
+source $HOME/.zshrc
+
 rustup update
 rustup default stable

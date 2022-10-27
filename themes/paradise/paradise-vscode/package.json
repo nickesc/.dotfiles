@@ -1,0 +1,21 @@
+{
+  "name": "paradise",
+  "displayName": "paradise",
+  "description": "The Paradise Theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "paradise",
+        "uiTheme": "vs-dark",
+        "path": "./themes/paradise-color-theme.json"
+      }
+    ]
+  }
+}

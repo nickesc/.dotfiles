@@ -27,6 +27,8 @@
         sdkinstall <sdk> <version>
         or
         sdk install <sdk> <version>
+    To see outdated SDKs:
+        sdk upgrade
     To switch SDK versions:
         sdkuse <sdk> <version>   # sets the default SDK
         or

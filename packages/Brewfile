@@ -25,6 +25,7 @@ cask_args appdir: "/Applications"
 brew "moreutils"
 brew "findutils"
 brew "gnupg"
+brew "cmake"
 
 # Install more recent versions of some macOS tools.
 brew "grep"
@@ -120,5 +121,6 @@ brew "thefuck"
 brew "tmux"
 brew "toilet"
 brew "onefetch"
-
-
+brew "sqlite"
+brew "zlib"
+brew "tldr"

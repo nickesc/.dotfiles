@@ -212,6 +212,7 @@ fnt install lato
 fnt install oswald
 fnt install pacifico
 fnt install arvo
+fnt install jetbrainsmono
 
 # Fonts installed by powerline repo
 #fnt install cousine
