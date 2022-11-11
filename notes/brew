@@ -41,7 +41,7 @@ Tools:
     blueutil - get/set bluetooth power and discoverable state
     oauth-toolkit - command line authenticator
     chroma - syntax highlighter/color engine
-    arduin-cli - Arduino command-line interface
+    arduino-cli - Arduino command-line interface
     pandoc - swiss-army knife of markup format conversion
     ffmpeg - play, record, convert, and stream audio and video
     ssh-copy-id - add a public key to a remote machine's authorized_keys file

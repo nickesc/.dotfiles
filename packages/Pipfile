@@ -83,6 +83,8 @@ pip3 install urllib3
 pip3 install pytest
 pip3 install pillow
 pip3 install nltk
+pip3 install adafruit-ampy
+sudo pip3 install rshell
 
 ###############################################################################
 # Install IPython Profile

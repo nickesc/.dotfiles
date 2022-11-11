@@ -437,35 +437,45 @@ dbstatus(){
 # 3) Create the new link
 
 # symlink <target> <destination> [--force][-f]
-function symlink {
-    echo " "
-    echo "WORKING ON: $1"
-    # does it exist
-    f="$(basename $1)"
-    g="$(readlink -f $1)"
-    if [[ -e "$2/$f" ]] || [[ -h "$2/$f" ]]; then
-        echo "    WARNING: $2/$f already exists"
-        if [[ $* == *-f* ]]; then
-            echo "    FORCING LINK OF $g TO $2"
-            unlink "$2/$f"
-            ln -s $g $2
-        elif [[ $* == *-r* ]]; then
-            echo "    UNSAFELY FORCING LINK OF $g TO $2"
-            rm "$2/$f"
-            ln -s $g $2
+function symlink {  
+    
+    usage="usage: symlink <target> <destination> [--force|-f]|[--remove|-r]"
+    
+    if [ "$1" = "help" ] || [ $# -eq 0 ]; then
+        echo $usage
+    elif [ $# -ge 2 ]; then
+        echo " "
+        echo "WORKING ON: $1"
+        # does it exist
+        f="$(basename $1)"
+        g="$(readlink -f $1)"
+        if [[ -e "$2/$f" ]] || [[ -h "$2/$f" ]]; then
+            echo "    WARNING: $2/$f already exists"
+            if [[ $* == *-f* ]]; then
+                echo "    FORCING LINK OF $g TO $2"
+                unlink "$2/$f"
+                ln -s $g $2
+            elif [[ $* == *-r* ]]; then
+                echo "    UNSAFELY FORCING LINK OF $g TO $2"
+                rm "$2/$f"
+                ln -s $g $2
+            else
+                echo "    SKIPPING $g."
+                echo " "
+                echo "    USE symlink $1 $2 --force TO FORCE A LINK"
+                echo "    USE symlink $1 $2 --remove TO UNSAFELY FORCE A LINK"
+            fi
+        # does not exist
         else
-            echo "    SKIPPING $g."
-            echo " "
-            echo "    USE symlink $1 $2 --force TO FORCE A LINK"
-            echo "    USE symlink $1 $2 --remove TO UNSAFELY FORCE A LINK"
+          # create the link
+          echo "    Linking $g to $2"
+          ln -s $g $2
         fi
-    # does not exist
+        echo " "
     else
-      # create the link
-      echo "    Linking $g to $2"
-      ln -s $g $2
+        echo "symlink: $@: Invalid arguments"
+        echo $usage
     fi
-    echo " "
 }
 
 

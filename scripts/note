@@ -1,0 +1,147 @@
+#!/usr/bin/env zsh
+
+export NOTES="$HOME/Workspace/Notes"
+mkdir -p "$NOTES"
+
+notehelp(){
+    printf "\nTip: note must be executed in your current shell; source the file or use '. note' if the alias does not work"
+    printf "\n\n    note - create notes and notebooks as directories in your Workspace (~/Worksapce/Notes/[notebook])\n"
+    printf "\nUsage:    note <name> - creates a note in the General notebook"
+    printf "\n          note <notebook> <name> - creates a note in a new or existing notebook"
+    printf "\n          note book|b <notebook> [note] - opens or creates a notebook or note"
+    printf "\n          note close|c <notebook> - deletes a notebook"
+    printf "\n          note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks\n\n"
+    printf "\n          note project|p <notebook> <projectPath> - symlink a notebook to a project folder\n\n"
+}
+
+notebookinfo(){
+    printf "\nNotebook: $1\nNotes:\n\n    "
+    ls -AF
+    printf "\n"
+}
+
+newnotebook(){
+    notebook="$1"
+    num=2
+    
+    if [ "$notebook" = "book" ] || [ "$notebook" = "b" ] || [ "$notebook" = "close" ] || [ "$notebook" = "c" ] || [ "$notebook" = "help" ] || [ "$notebook" = "h" ] || [ "$notebook" = "project" ] || [ "$notebook" = "p" ]; then
+        echo "note: $notebook: Unable to create notebook with the name '$notebook' - is it a note command (help, book, close, list, etc.)?"
+        return 1
+    fi
+    
+    listAfter=0
+    if [ -d "$NOTES/$notebook" ] && [ "$2" != "note" ]; then
+        listAfter=1
+    fi
+    
+    mkdir -p "$NOTES/$notebook"
+    cd "$NOTES/$notebook"
+    if [ $listAfter = 1 ]; then
+        notebookinfo $notebook
+    fi
+}
+
+
+# newnote notebook name
+newnote(){
+
+    notebook=$1
+    name=$2
+    
+    newnotebook "$notebook" "note"
+    
+    if [ $? = 1 ]; then
+        return 1
+    else
+        note="$name.md"
+        
+        #num=2
+        #while [ -e "$note" ]; do
+        #    note="$name_$num.md"
+        #    num=$(( num + 1 ))
+        #done
+    
+        touch "$NOTES/$notebook/$note"
+        nano "$NOTES/$notebook/$note"
+        notebookinfo $notebook
+    fi
+    
+}
+
+# if ask for help
+if [ "$1" = "help" ] || [ "$1" = "h" ]; then
+    notehelp
+    
+# if ask for list of notebooks ('note list')
+elif [ "$1" = "list" ] || [ "$1" = "l" ]; then
+    temp=$(pwd)
+    cd "$NOTES"
+    printf "\nNotebooks:\n\n    "
+    
+    if [ "$2" = "-a" ] || [ "$2" = "--all" ]; then
+        ls -dAF */ .*/
+    else
+        ls -dAF */
+    fi
+    
+    printf "\n\n"
+    cd "$temp"
+
+# if ask for new note with specified name and notebook ('note book test example')
+elif [ "$1" = "book" ] || [ "$1" = "b" ] && [ $# -ge 3 ]; then
+    newnote "$2" "$3"
+
+# if ask for new notebook ('note book test')
+elif [ "$1" = "book" ] || [ "$1" = "b" ] && [ $# -ge 2 ]; then
+    newnotebook "$2"
+
+# if ask for symlink notebook to project ('note project notebook target')
+elif [ "$1" = "project" ] || [ "$1" = "p" ]; then
+    target="$NOTES/$2"
+    destination="$3"
+    if [ $# -ge  3 ]; then
+        symlink "$target" "$destination"
+    else
+        echo "note: project: Unable to link notebook '$2' with project '$3' - were the correct arguments provided?"
+        echo "    usage:  note project [notebook] [projectPath]"
+        return 1
+    fi
+    
+# if ask for close notebook ('note close test')
+elif [ "$1" = "close" ] || [ "$1" = "c" ] && [ $# -ge 2 ]; then
+    if [ -d "$NOTES/$2" ]; then
+        yn="n"
+        read -k "yn?Close the $2 notebook (y|n [default]): "
+        printf "\n"
+        if [ "$yn" = "y" ] || [ "$yn" = "Y" ]; then
+            currloc=$(echo "$(pwd)" | tr '[:upper:]' '[:lower:]')
+            noteloc=$(echo "$NOTES/$2" | tr '[:upper:]' '[:lower:]')
+            if [ "$currloc" = "$noteloc" ]; then
+                cd "$NOTES"
+            fi
+            rm -rv "$NOTES/$2"
+        else
+            echo "Aborted closing the $2 notebook"
+            return 1
+        fi
+    else
+        echo "note: $2: '$2' does not match any notebooks - is the name right?"
+        return 1
+    fi
+    
+# if ask for new note with no specified name ('note')
+elif [ "$1" = "zle_bracketed_paste" ] || [ $# -eq 0 ]; then
+    newnote "General" "note"
+
+# if ask for new note with specified name and notebook ('note test example')
+elif [ $# -ge 2 ]; then
+    newnote "$1" "$2"
+
+# if ask for new note with specified name ('note exampleNote')
+elif [ $# = 1 ] && [ "$1" != "zle_bracketed_paste" ]; then
+    newnote "General" "$1"
+
+else
+    notehelp
+fi
+

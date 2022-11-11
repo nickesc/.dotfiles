@@ -203,6 +203,8 @@ source $HOME/.zshrc_local
 #export PATH=$(brew --prefix)/bin/bash:$PATH
 export PATH="$HOME/Workspace/__space__/.dotfiles/scripts:$PATH"
 
+alias note=". note"
+
 alias uu=". uu"
 
 source ~/.iterm2_shell_integration.zsh

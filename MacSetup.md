@@ -303,7 +303,7 @@ https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint
 
 
 Left:
-2. vs code extensions (workspace recommended extensions and install from vsix https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
+/2. vs code extensions (workspace recommended extensions and install from vsix https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 2. vimrc and nanorcn and editor info page, w ides and editors w configs (https://linuxhint.com/configure_nano_text_editor_nanorc/ and https://github.com/scopatz/nanorc)
 3. bash_profile integration
 4. execute setup files
@@ -318,6 +318,7 @@ Left:
 13. list chrome extensions
 14. powershell brew setup? (https://formulae.brew.sh/cask/powershell#default)
 15. vscode telemtery disable?, install paradise for vscode (https://themes.vscode.one/theme/nickesc/q4IdC2a6) (https://css-tricks.com/creating-a-vs-code-theme/) (https://medium.com/wearelaika/vscode-create-your-own-custom-theme-extension-96c67bd753f6)
+16. notes in workspace! setup dirs, then aliases/functions/scripts (use note as function base, note + name puts it in a general category, note + category + name makes a new note in a specific category, note new + category makes a new category for notes, note open + category changes the active dir to the category)
 .ardupy? (https://github.com/Seeed-Studio/ArduPy) (https://marketplace.visualstudio.com/items?itemName=Seeed.seeed-micropython-ide)
 . decide on notch/menubar shit
 . add headers to remaining files

@@ -1,0 +1,73 @@
+
+note  # new note w note as title in general
+note test1  # new note w test1 as title in general
+
+note help  # help dialogue
+note book  # new note w book as title in general
+note close  # new note w close as title in general
+note h  # help dialogue
+note b  # new note w b as title in general
+note c  # new note w c as title in general
+
+note help test2  # help dialogue
+note book test3  # new notebook w test3 as title
+note close test4  # error
+note h test5  # help dialogue
+note b test6  # new notebook w test6 as title
+note c test7    # error
+
+note help help  # help dialogue
+note book book  # error
+note close close  # error
+note h h  # help dialogue
+note b b  # error
+note c c  # error
+
+
+note  # new note w note_2 as title in general
+note close general  # error
+note close General  # close the general notebook
+note  # new note w note_2 as title in general
+note close General test8  # close the general notebook
+note c General  # close the general notebook
+note book test8  # new notebook named test8
+note book test8 test9  # new note named test9 in test8
+note test8 test10  # new note named test10 in test8
+note test8  # new note named test8 in general
+note test11 close  # new note named close in test11
+note test8 close  # new note named close in test8
+note close test8  # close test8
+
+note test12  # new note named test12 in general
+note test12  # new note named test12_2 in general
+note test12  # new book named test12_3 in general
+note test12_2  # new book named test12_2_2
+note close test12  # close test12
+note close test12_3  # close test12_3
+note close test12_2_2  # close test12_2_2
+note test12  # new note test12 in general
+
+note test13 test14  # new note test14 in test13
+note test13 test14  # new note test14_2 in test13
+note test13 test15  # new note test15 in test13
+note test16 test17  # new note test17 in test16
+note test18 test19 test20  # new note test19 in test18
+note book test21 test22  # new note test21 in test22
+
+note book book  # error
+note book b  # error
+note book book test23  # error
+note book help  # error
+note book h  # error
+note book help test24  # error
+note book close  # error
+note book c  # error
+note book close test25  # error
+
+note list
+note list test26
+note l
+note l tet27
+
+
+#test project, list --all, chapters
