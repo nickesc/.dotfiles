@@ -8,147 +8,134 @@
 #  ░██░░████████ ███░██░░████████ ██████ ░░██████ ██████
 #  ░░  ░░░░░░░░ ░░░ ░░  ░░░░░░░░ ░░░░░░   ░░░░░░ ░░░░░░
 
-alias ls="ls -A --color=auto"
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+alias _="sudo"
 
+
+## Command replacment/abbreviation
+alias ls="ls -A --color=auto"
 # alias ls="exa -a"
 # alias cat="bat"
+    # Exclude macOS specific files in ZIP archives
+alias zip="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
+alias g="git"
+alias h='history'
+#alias hf='history | grep -i'
+    # Exa aliases
+#x1 = "exa --oneline --all --group-directories-first"
+#x = "exa --all --all --long --header --group --group-directories-first --time-style long-iso --git"
+#xt = "exa --all --group-directories-first --ignore-glob '*.git' --git-ignore --tree"
+#alias grep='grep --color=auto'
+#alias fgrep='fgrep --color=auto'
+#alias egrep='egrep --color=auto'
 
+
+## Directory Shortcuts
 alias space="cd ~/Workspace"
 alias _space="cd ~/Workspace/__space__"
 alias projects="cd ~/Workspace/projects"
 alias test="cd ~/Workspace/.test"
-alias data="cd ~/Workspace/data"
+alias hidden="cd ~/Workspace/.hidden"
+alias data="cd ~/Workspace/Data"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias xcode="xed"
-alias reload="source ~/.zshrc"
 alias dotfiles="cd ~/Workspace/__space__/.dotfiles"
-alias _="sudo"
-# Copy pwd to clipboard
-alias cpwd="pwd|tr -d '\n'|pbcopy && pwd"
-
-alias chrome="open -a /Applications/Google\ Chrome.app"
-alias firefox="open -a /Applications/Firefox.app"
-alias safari="open -a Safari"
-
-
-# Exclude macOS specific files in ZIP archives
-alias zip="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
-
-# Open iOS Simulator
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
-
-# Flush DNS
-alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-
-
-# Quick-Look preview files from the command line
-alias ql="qlmanage -p &>/dev/null"
-
-# Show/hide desktop icons
-alias desktopshow="defaults write com.apple.finder CreateDesktop -bool true && killfinder"
-alias desktophide="defaults write com.apple.finder CreateDesktop -bool false && killfinder"
-
-# Show/hide hidden files in Finder
-alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Reload native apps
-alias killfinder="killall Finder"
-alias killdock="killall Dock"
-alias killmenubar="killall SystemUIServer NotificationCenter"
-alias killos="killfinder && killdock && killmenubar"
-alias nomnom="killall"
-
-# Easier navigation: .., ..., ...., ....., ~ and -
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+    # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 
-# Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
 
-alias finder="open ."
-alias g="git"
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# MacOS Update
-alias osupdate "sudo softwareupdate -i -a"
-
-# Lock the screen (when going AFK)
-alias afk="pmset displaysleepnow"
-
-# Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
-
-# edit global zsh configuration
-alias zshconfig="xcode ~/.zshrc"
-# edit local zsh configuration
-alias zshlocal="xcode ~/.zshrc_local"
-
-# edit global git configuration
-alias gitconfig="xcode ~/.gitconfig"
-
-# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-alias plistbuddy="/usr/libexec/PlistBuddy"
-
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-# (useful when executing time-consuming commands)
-alias badge="tput bel"
-
-alias h='history'
-#alias hf='history | grep -i'
-
-# view list of dirs from dirpersist plugin
-alias dirhist="cat $HOME/.zdirs"
-
-alias compress="ua"
-
-alias genpass="genpass-apple"
-
-# Run proper IPython regarding current virtualenv (if any)
-alias ipython="python3 -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
-
-# Share local directory as a HTTP server
-alias pyserver="python3 -m http.server"
-
-
-alias permex="chmod +x"
-
-# Exa aliases
-#x1 = "exa --oneline --all --group-directories-first"
-#x = "exa --all --all --long --header --group --group-directories-first --time-style long-iso --git"
-#xt = "exa --all --group-directories-first --ignore-glob '*.git' --git-ignore --tree"
-
-# reset info
-alias sinfo="info"
-
-# get machine's ip address
-alias ip="ipconfig getifaddr en0"
-
-#alias grep='grep --color=auto'
-#alias fgrep='fgrep --color=auto'
-#alias egrep='egrep --color=auto'
-
-# Airport CLI alias
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
-
-# List nearby wifi networks
-alias wifis="airport -s"
-
-# type sublime . to open current folder in Sublime Text
+## Editor Shortcuts
+alias xcode="xed"
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
 
-# open fontbook
+
+## App Shortcuts
+alias chrome="open -a /Applications/Google\ Chrome.app"
+alias firefox="open -a /Applications/Firefox.app"
+alias safari="open -a Safari"
+    # Open iOS Simulator
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
 alias fontbook="open -b com.apple.FontBook"
 
-# update homebrew
+
+## Terminal Utilities
+    # add execution permissions to a file
+alias permex="chmod +x"
+alias reload="source ~/.zshrc"
+    # edit global zsh configuration
+alias zshconfig="xcode ~/.zshrc"
+    # edit local zsh configuration
+alias zshlocal="xcode ~/.zshrc_local"
+    # edit global git configuration
+alias gitconfig="xcode ~/.gitconfig"
+    # Quick-Look preview files from the command line
+alias ql="qlmanage -p &>/dev/null"
+    # view list of dirs from dirpersist plugin
+alias dirhist="cat $HOME/.zdirs"
+alias compress="ua"
+alias genpass="genpass-apple"
+    # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+alias plistbuddy="/usr/libexec/PlistBuddy"
+    # Airport CLI alias
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+    # List nearby wifi networks
+alias wifis="airport -s"
+    # get machine's ip address
+alias ip="ipconfig getifaddr en0"
+    # Share local directory as a HTTP server
+alias pyserver="python3 -m http.server"
+    # Run proper IPython regarding current virtualenv (if any)
+alias ipython="python3 -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+    # update homebrew
 alias brewup="brew update; brew upgrade; brew cleanup; brew doctor "
+alias keep="touch .gitkeep"
+alias gitkeep="keep"
+
+
+## Computer Utilities
+    # Show/hide desktop icons
+alias desktopshow="defaults write com.apple.finder CreateDesktop -bool true && killfinder"
+alias desktophide="defaults write com.apple.finder CreateDesktop -bool false && killfinder"
+    # Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+    # Reload native apps
+alias killfinder="killall Finder"
+alias killdock="killall Dock"
+alias killmenubar="killall SystemUIServer NotificationCenter"
+alias killos="killfinder && killdock && killmenubar"
+alias nomnom="killall"
+    # Open dir in finder
+alias finder="open ."
+    # Open current dir in finder
+alias ofd="open_command $PWD"
+    # MacOS Update
+alias osupdate "sudo softwareupdate -i -a"
+    # Lock the screen (when going AFK)
+alias afk="pmset displaysleepnow"
+    # Disable Spotlight
+alias spotoff="sudo mdutil -a -i off"
+    # Enable Spotlight
+alias spoton="sudo mdutil -a -i on"
+    # # Empty the Trash on all mounted volumes and the main HDD. Also, clear Apple’s System Logs to improve shell startup speed. Finally, clear download history from quarantine. https://mths.be/bum
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+
+## Actions
+    # Copy pwd to clipboard
+alias cpwd="pwd|tr -d '\n'|pbcopy && pwd"
+    # Flush DNS
+alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
+    # Print each PATH entry on a separate line
+alias printpath='echo -e ${PATH//:/\\n}'
+    # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+alias badge="tput bel"
 
 
 : '
@@ -190,6 +177,7 @@ alias mongodbconnect="mongosh"
 
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 '
+
 
 # Suffix-aliases - alias -s extension=name-of-the-tool
 # Markdown files

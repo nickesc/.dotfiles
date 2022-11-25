@@ -9,13 +9,17 @@
 /* Begin PBXFileReference section */
 		E502AF7428DD053D00EC5AB8 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
 		E502AF7528E0CED500EC5AB8 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
-		E54CD08F28ECBF39005E66B1 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .dotfiles; sourceTree = "<group>"; };
+		E54CD08F28ECBF39005E66B1 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
+		E5CCB6A02922F5CD0039D887 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
+		E5CCB6A129309E370039D887 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .dotfiles; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		E502AF6B28DD010800EC5AB8 = {
 			isa = PBXGroup;
 			children = (
+				E5CCB6A129309E370039D887 /* .dotfiles */,
+				E5CCB6A02922F5CD0039D887 /* .dotfiles */,
 				E54CD08F28ECBF39005E66B1 /* .dotfiles */,
 				E502AF7528E0CED500EC5AB8 /* .dotfiles */,
 				E502AF7428DD053D00EC5AB8 /* .dotfiles */,

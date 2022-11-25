@@ -17,6 +17,7 @@
         Some configurations are stored in ~/.zprofile, but it is reserved for use when needed
         
     Oh-My-Zsh:
+    
         Oh-My-Zsh is a framework for managing your Zsh configuration, defining things like themes and plugins
         
         Plugins:
@@ -68,7 +69,8 @@
                 (https://github.com/zsh-users/zsh-syntax-highlighting)
         
         Themes:
-                    Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), oh-my-zsh-syntax-highlighting and the terminal use Paradise (https://github.com/paradise-theme/paradise)
+            Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), oh-my-zsh-syntax-highlighting and the terminal use Paradise (https://github.com/paradise-theme/paradise)
+            
     To edit the configuration:
         zshconfig
         

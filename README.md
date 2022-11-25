@@ -7,5 +7,5 @@ To automate setup using `.dotfile`s, clone the repo using this command:
 
 and run the installer using
 
-`. ~/Workspace/__space__/.dotfiles/install`
+`. ~/Workspace/__space__/.dotfiles/bootstrap.sh`
 

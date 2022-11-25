@@ -1,0 +1,161 @@
+
+                             ██
+                            ░██
+    █████   ██████    ██████░██  ██
+   ██░░░██ ░░░░░░██  ██░░░░ ░██ ██
+  ░██  ░░   ███████ ░░█████ ░████
+  ░██   ██ ██░░░░██  ░░░░░██░██░██
+  ░░█████ ░░████████ ██████ ░██░░██
+   ░░░░░   ░░░░░░░░ ░░░░░░  ░░  ░░
+
+Homebrew Casks:
+
+    Utilities
+        rectangle - Move and resize windows using keyboard shortcuts or snap areas
+        hiddenabr - Utility to hide menu bar items
+        caffeine - Utility that prevents the system from going to sleep
+        notunes - Simple application that will prevent iTunes or Apple Music from launching
+        gswitch - Set which graphics card to use
+        mediainfo - Display technical and tag data for video and audio files
+        handbrake - Open-source video transcoder
+        vlc - Multimedia player
+        elmedia-player - Video and audio player
+        syncplay - Synchronises media players
+        iswiff - Play Flash games, animations and movies without your web browser
+        obs - Open-source software for live streaming and screen recording
+        streamlabs-obs - All-in-one live streaming software
+        daisydisk - Disk space visualizer
+        disk-inventory-x - Disk usage utility
+        sdformatter - Tool to format memory cards complying with the SD File System spec
+        balenaetcher - Tool to flash OS images to SD cards & USB drives
+        usbimager - Very minimal GUI app that can write/read to disk images and USB drives
+        hex-fiend - Hex editor focussing on speed
+        folx - Download manager with a torrent client
+        transmission - Open-source BitTorrent client
+        cyberduck - Server and cloud storage browser
+
+    Browsers
+        google-chrome - Web browser
+        firefox - Web browser
+        opera - Web browser
+        opera-gx - Alternate version of the Opera web browser to complement gaming
+        vivaldi - Web browser with built-in email client focusing on customization and control
+        tor-browser - Web browser focusing on security
+
+    Apps
+        iterm2 - Terminal emulator as alternative to Apple's Terminal app
+        keyboard-maestro - Automation software
+        via - Keyboard configurator
+        vial - Configurator of compatible keyboards in real time
+        qmk-toolbox - A Toolbox companion for QMK Firmware
+        multipatch - File patching utility
+        unetbootin - Tool to install Linux/BSD distributions to a partition or USB drive
+        raspberry-pi-imager - Imaging utility to install operating systems to a microSD card
+        applepi-baker - Backup and restore SD cards, USB drives, external HDD, etc
+        zotero - Collect, organize, cite, and share research sources
+        mendeley-reference-manager - Research management tool
+        calibre - E-books management software
+        simple-comic - Comic viewer/reader
+        fontgoggles - Font viewer for various font formats
+        apparency - Inspect application bundles
+        suspicious-package - Application for inspecting installer packages
+        qlmarkdown - QuickLook generator for Markdown files
+        qlstephen - QuickLook plugin for plaintext files without an extension
+        quicklook-pat - Adobe Photoshop patterns Quicklook plugin
+        github - Desktop client for GitHub repositories
+        gitkraken - Git client focusing on productivity
+        sublime-merge - Git client
+        megasync - Syncs files between computers and MEGA
+        postman - Collaboration platform for API development
+        kodi - Free and open-source media player
+        spotify - Music streaming service
+        google-drive - Client for the Google Drive storage service
+        snagit - Screen capture software
+        zoom - Video communication and virtual meeting platform
+        slack - Team communication and collaboration software
+        telegram - Messaging app with a focus on speed and security
+        discord - Voice and text chat software
+        dotnet-sdk - Developer platform
+        # xquartz - Open-source version of the X.Org X Window System
+
+    "Editors"
+        jetbrains-toolbox - JetBrains tools manager
+        visual-studio-code - Open-source code editor
+        notion - App to write, plan, collaborate, and get organized
+        libreoffice - Office suite
+        sublime-text - Text editor for code, markup and prose
+        atom - Text editor
+        arduino - Electronics prototyping platform
+        mars - Mips Assembly and Runtime Simulator
+        rstudio - Data science software focusing on R and Python
+        numi - Calculator and converter application
+        mactex - Full TeX Live distribution with GUI applications
+        macdown - Open-source Markdown editor
+        musescore - Open-source music notation software
+        audacity - Multi-track audio editor and recorder
+        bfxr - program for people looking to make sound effects for computer games
+        sweet-home3d - Interior design application
+        tiled - Flexible level editor
+        godot - Game development engine
+        unity-hub - Management tool for Unity
+        epic-games - Launcher for Epic Games and Unreal
+        magicavoxel - 8-bit 3D voxel editor and interactive path tracing renderer
+        balsamiq-wireframes - UI wireframing tool
+        beekeeper-studio - Cross platform SQL editor and database management app
+        mu-editor - Small, simple editor for beginner Python programmers
+        eclipse-java - Eclipse IDE for Java developers
+
+    Virtualization and Emulation
+        parallels - a powerful application for running virtual machines on a Mac
+        utm - Virtual machines UI using QEMU
+        vmware-fusion - Create, manage, and run virtual machines
+        virtualbox - Virtualizer for x86 hardware
+        docker - Pack, ship and run any application as a lightweight container
+        vagrant - Development environment
+        vagrant-manager - Manage your vagrant machines in one place
+        citra - Nintendo 3DS emulator
+        dolphin - Emulator to play GameCube and Wii games
+        retroarch-metal - Emulator frontend (Metal graphics API version)
+        openemu - Retro video game emulation
+        dosbox-x - Fork of the DOSBox project
+        wine-stable - Compatibility layer to run Windows applications
+
+MAS Apps:
+
+    Xcode - IDE and text editor for MacOS
+    Bear - a focused, flexible notes app
+    Highland 2 - a better way to write screenplays
+    Yoink - improves drag and drop between windows by providing a temporary "shelf" for your files
+    iMazing HEIC Converter - convert pictures and videos taken in the new HEIC/HEIF and HEVC formats
+    EXIFPurge - utility that removes EXIF meta data from images
+    Any File Info - tool to view and browse files’ information
+    Hotspot Shield - the fastest VPN for streaming and secure access
+    VPN Unlimited - Stay Private While Browsing and Enjoy Your Online Freedom with No Ads
+    Spark - personal email client and a revolutionary email for teams
+    Genki Arcade - allows you to connect your favorite HDMI device to your computer
+    Teleprompter - an easy-to-use yet powerful prompting application
+    Wayback Machine Safari extension - go back in time to see how a website has changed
+    Dashlane Safari extension - the perfect place for all your passwords
+
+Manually Installed:
+
+    Creative Cloud - apps and services for photography, designa and video
+    VDownloader - software that allows you to download videos as MP4 files
+    SD Clone - Fastest, easiest and most reliable way to clone SD cards
+    Winclone - Clone, Migrate, and Restore Windows Boot Camp on macOS
+    NiTRo Mac - Stream high quality footage from your 3DS console wirelessly
+    Steam - Video game digital distribution service
+    Origin - a video game distribution platform developed by Electronic Arts
+    Minecraft - Sandbox construction video game
+    Logitech Options - an application that customizes your Logitech devices
+    Bosca Ceoil - A free easy to use tool for creating music
+    Blender - 3D creation suite
+    +
+    vscode
+    chrome
+    firefox
+    iterm2
+    xquartz
+    
+    
+    

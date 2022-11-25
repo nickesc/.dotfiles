@@ -7,7 +7,7 @@
   ░██       ██
   ░░       ░░
 
- Python Installation Information:
+Python Installation Information:
 
     Python is installed using pyenv (https://github.com/pyenv/pyenv)
     
@@ -43,4 +43,27 @@
     
     Default Python installations are found in the Pipfile ~/Workspace/__space__/.dotfiles/packages/Pipfile
     Python installations are found in ~/.pyenv/versions/
+    
+Global Pip Packages:
+
+    numpy - Fundamental package for array computing with Python
+    scipy - Fundamental algorithms for scientific computing in Python
+    matplotlib - Python plotting package
+    pandas - Powerful data structures for data analysis, time series, and statistics
+    sympy - Computer algebra system (CAS) in Python
+    seaborn - Statistical data visualization
+    scikit-learn - A set of python modules for machine learning and data mining
+    ipython - Productive Interactive Computing
+    bokeh - Interactive plots and applications in the browser from Python
+    Flask - A simple framework for building complex web applications
+    sqlalchemy - Database Abstraction Library
+    mysqlclient - Python interface to MySQL
+    requests - Python HTTP for Humans
+    beautifulsoup4 - Screen-scraping library
+    urllib3 - HTTP library with thread-safe connection pooling, file post, and more
+    pytest - simple powerful testing with Python
+    pillow - Python Imaging Library (Fork)
+    nltk - Natural Language Toolkit
+    rshell - A remote shell for working with MicroPython boards
+    adafruit-ampy - A command line tool to interact with a CircuitPython or MicroPython boards over a serial connection
     

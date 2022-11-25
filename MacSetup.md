@@ -12,18 +12,11 @@ https://code.visualstudio.com/download
 https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
 chrome -- all extensions
 https://www.google.com/chrome/
-xquartz
-https://www.xquartz.org/
+
 creative cloud
 https://creativecloud.adobe.com/en/apps/download/creative-cloud
 vdownloader
 https://vdownloader.com/en
-parallels
-https://www.parallels.com/welcome-new/
-parallels toolbox (if not already installed by parallels)
-https://www.parallels.com/products/toolbox/
-mega sync
-https://mega.io/desktop
 sdclone
 https://twocanoes.com/redownload
 winclone
@@ -32,16 +25,10 @@ nitromac
 https://archive.org/details/ni-tro-mac.app
 steam
 https://store.steampowered.com/about/
-minecraft
-https://www.minecraft.net/en-us/download
-unity
-https://unity3d.com/get-unity/download
-epic Games and unreal
-https://store.epicgames.com/en-US/download
 origin
 https://www.origin.com/usa/en-us/store/download
-google drive sync
-https://www.google.com/drive/download/
+minecraft
+https://www.minecraft.net/en-us/download
 logitech options
 https://www.logitech.com/en-us/software/logi-options-plus.html
 blender
@@ -49,7 +36,23 @@ https://www.blender.org/
 Bosca Ceoil and Adobe Air Runtime
 https://terrycavanagh.itch.io/bosca-ceoil
 https://airsdk.harman.com/runtime
-Lab Chirp
+
+//unity
+//https://unity3d.com/get-unity/download
+//epic Games and unreal
+//https://store.epicgames.com/en-US/download
+//google drive sync
+//https://www.google.com/drive/download/
+//parallels
+//https://www.parallels.com/welcome-new/
+//parallels toolbox (if not already installed by parallels)
+//https://www.parallels.com/products/toolbox/
+//mega sync
+//https://mega.io/desktop
+
+//xquartz
+//https://www.xquartz.org/
+//Lab Chirp
 
 remap command+Q to literally anything else - to prevent accidental close-all
 
@@ -303,24 +306,42 @@ https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint
 
 
 Left:
-/2. vs code extensions (workspace recommended extensions and install from vsix https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
-2. vimrc and nanorcn and editor info page, w ides and editors w configs (https://linuxhint.com/configure_nano_text_editor_nanorc/ and https://github.com/scopatz/nanorc)
-3. bash_profile integration
 4. execute setup files
+5. execute dev files
 5. worlkspace setup and finish profile setup
-6. order package files sensibly, finish cask notes, add npm and pip installations to their notes files
-7. order aliases and functions
-8. wallpapers readme
-9. vm notes page (virtualbox vagrant vagrant-manager vm-warefusion parallels docker) (https://app.vagrantup.com/boxes/search)
-10. tmux config
-11. sublimetext extensions?
 12. pipenv (https://github.com/gangleri/oh-my-zsh/tree/pipenv_plugin/plugins/pipenv) (https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjl8-edoPr6AhWfFlkFHek1D0sQFnoECBkQAw&url=https%3A%2F%2Fwww.rootstrap.com%2Fblog%2Fhow-to-manage-your-python-projects-with-pipenv-pyenv%2F&usg=AOvVaw1tD2Us4MrHItHSYdz3cRdq) (https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjl8-edoPr6AhWfFlkFHek1D0sQFnoECAsQAQ&url=https%3A%2F%2Fmedium.com%2Fntust-aivc%2Fhow-to-install-pyenv-pipenv-in-ubuntu-and-use-multiple-versions-of-python-and-its-suites-3514099a6e05&usg=AOvVaw23b9hXoVlJgSrT3R2XVkQZ) (https://synsense.gitlab.io/sinabs/howto/python_pyenv_pipenv.html)
-13. list chrome extensions
-14. powershell brew setup? (https://formulae.brew.sh/cask/powershell#default)
-15. vscode telemtery disable?, install paradise for vscode (https://themes.vscode.one/theme/nickesc/q4IdC2a6) (https://css-tricks.com/creating-a-vs-code-theme/) (https://medium.com/wearelaika/vscode-create-your-own-custom-theme-extension-96c67bd753f6)
-16. notes in workspace! setup dirs, then aliases/functions/scripts (use note as function base, note + name puts it in a general category, note + category + name makes a new note in a specific category, note new + category makes a new category for notes, note open + category changes the active dir to the category)
-.ardupy? (https://github.com/Seeed-Studio/ArduPy) (https://marketplace.visualstudio.com/items?itemName=Seeed.seeed-micropython-ide)
-. decide on notch/menubar shit
-. add headers to remaining files
+13. conda
 5. go through each file, make sure it's done
 
+~
+desktop
+doc
+...
+Workspace
+    Projects
+        Code
+            Python
+            Java
+            Web
+            ...
+        Art
+            Graphic Design
+            Drawing
+            Video
+            ...
+        Other
+    Profile
+    Notes
+    Data
+    .test
+    .hidden
+    __space__
+    .history
+    nano
+    zsh
+    .dotfiles
+    config
+    setup
+    ...
+      
+        

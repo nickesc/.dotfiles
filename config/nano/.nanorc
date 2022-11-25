@@ -1,0 +1,141 @@
+
+#      ███████   ██████   ███████   ██████  ██████  █████
+#     ░░██░░░██ ░░░░░░██ ░░██░░░██ ██░░░░██░░██░░█ ██░░░██
+#      ░██  ░██  ███████  ░██  ░██░██   ░██ ░██ ░ ░██  ░░
+#   ██ ░██  ░██ ██░░░░██  ░██  ░██░██   ░██ ░██   ░██   ██
+#  ░██ ███  ░██░░████████ ███  ░██░░██████ ░███   ░░█████
+#  ░░ ░░░   ░░  ░░░░░░░░ ░░░   ░░  ░░░░░░  ░░░     ░░░░░
+
+
+set autoindent
+set backup
+set backupdir ~/Workspace/__space__/.history/nano
+set historylog
+set tabsize 4
+set linenumbers
+set mouse
+set tabstospaces
+set positionlog
+set cutfromcursor
+set indicator
+set softwrap
+set guidestripe 121
+set fill 120
+set smarthome
+set wordbounds
+set atblanks
+set zap
+set quickblank
+#set minibar
+set trimblanks
+set stateflags
+
+set functioncolor blue
+set numbercolor grey
+set stripecolor bold,red,grey
+set statuscolor bold,black,blue
+set titlecolor bold,black,white
+set selectedcolor black,white
+set keycolor black,white
+set scrollercolor white
+#set promptcolor
+#set minicolor
+#set errorcolor
+
+unbind M-R main
+unbind M-G main
+unbind M-Space main
+unbind ^Space main
+unbind ^A main
+unbind ^E main
+unbind ^P main
+unbind ^_ main
+unbind M-- main
+unbind M-+ main
+unbind M-_ main
+unbind M-= main
+unbind M-Q main
+unbind M-W main
+unbind M-T main
+
+#bind key function menu
+bind ^F whereis main
+bind ^R replace main
+bind ^B findprevious main
+bind ^N findnext main
+bind ^Z undo main
+bind ^Y redo main
+bind ^C copy main
+bind ^k cut main
+#cutrestoffile
+
+bind ^V paste main
+bind ^\ location main
+bind ^/ gotoline main
+bind M-Space anchor main
+bind M-, prevanchor main
+bind M-. nextanchor main
+bind ^E end main
+bind ^W home main
+bind M-J fulljustify main
+bind M-] indent main
+bind M-[ unindent main
+bind ^] findbracket main
+bind M-H nohelp main
+bind Sh-M-H zero main
+bind M-X comment main
+bind Sh-M-I insert main
+bind M-+ nextbuf main
+bind M-- prevbuf main
+bind M-Z suspend main
+
+
+bind ^F whereis help
+bind ^B findprevious help
+bind ^N findnext help
+
+bind M-\ firstline gotoline
+bind M-/ lastline gotoline
+bind M-( beginpara gotoline
+bind M-) endpara gotoline
+
+#bind ^/ gotoline search
+bind ^V paste search
+bind ^V paste replace
+
+unbind ^Y browser
+unbind ^V browser
+unbind ^P browser
+bind ^F whereis browser
+bind ^B findprevious browser
+bind ^N findnext browser
+
+unbind ^Y whereisfile
+unbind ^V whereisfile
+
+bind ^X cancel search
+bind ^X cancel replace
+bind ^X cancel replacewith
+bind ^X cancel yesno
+bind ^X cancel gotoline
+bind ^X cancel writeout
+bind ^X cancel insert
+bind ^X exit browser
+bind ^X exit help
+bind ^X cancel whereisfile
+bind ^X cancel gotodir
+bind ^X cancel execute
+bind ^X cancel spell
+bind ^X cancel linter
+#bind ^X cancel all
+
+# https://gist.github.com/Herteby/148b858a367baf96d38f776234af500a
+# https://www.nano-editor.org/dist/latest/cheatsheet.html
+# https://www.nano-editor.org/dist/latest/nano.html
+# https://opensource.apple.com/source/nano/nano-3/nano/nanorc.sample.auto.html
+# https://linuxhint.com/configure_nano_text_editor_nanorc/
+
+
+include ~/Workspace/__space__/.dotfiles/config/nano/nanorc/*.nanorc
+
+

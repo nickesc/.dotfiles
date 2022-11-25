@@ -1,5 +1,15 @@
 #!/usr/bin/env zsh
 
+#   ██                                   ██
+#  ░██                                  ░██
+#  ░██       ██████  ██████████   █████ ░██      ██████  █████  ███     ██
+#  ░██████  ██░░░░██░░██░░██░░██ ██░░░██░██████ ░░██░░█ ██░░░██░░██  █ ░██
+#  ░██░░░██░██   ░██ ░██ ░██ ░██░███████░██░░░██ ░██ ░ ░███████ ░██ ███░██
+#  ░██  ░██░██   ░██ ░██ ░██ ░██░██░░░░ ░██  ░██ ░██   ░██░░░░  ░████░████
+#  ░██  ░██░░██████  ███ ░██ ░██░░██████░██████ ░███   ░░██████ ███░ ░░░██
+#  ░░   ░░  ░░░░░░  ░░░  ░░  ░░  ░░░░░░ ░░░░░   ░░░     ░░░░░░ ░░░    ░░░
+
+
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -55,11 +65,14 @@ xattr -d -r com.apple.quarantine ~/Library/QuickLook
 qlmanage -r cache
 qlmanage -r
 
-defaults write org.n8gray.QLColorCode font Monaco
-defaults write org.n8gray.QLColorCode fontSizePoints 9
+#defaults write org.n8gray.QLColorCode font Monaco
+#defaults write org.n8gray.QLColorCode fontSizePoints 9
 
-defaults write org.n8gray.QLColorCode darkTheme Zenburn-dark
-defaults write org.n8gray.QLColorCode lightTheme Zenburn-light
+#defaults write org.n8gray.QLColorCode darkTheme Zenburn-dark
+#defaults write org.n8gray.QLColorCode lightTheme Zenburn-light
+
+brew tap homebrew/cask-versions
+brew install --cask virtualbox-beta
 
 dotnet tool install --global PowerShell
 

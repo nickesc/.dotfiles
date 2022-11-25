@@ -1,0 +1,81 @@
+
+                ██ ██   ██
+               ░██░░   ░██
+    █████      ░██ ██ ██████  ██████  ██████  ██████
+   ██░░░██  ██████░██░░░██░  ██░░░░██░░██░░█ ██░░░░
+  ░███████ ██░░░██░██  ░██  ░██   ░██ ░██ ░ ░░█████
+  ░██░░░░ ░██  ░██░██  ░██  ░██   ░██ ░██    ░░░░░██
+  ░░██████░░██████░██  ░░██ ░░██████ ░███    ██████
+   ░░░░░░  ░░░░░░ ░░    ░░   ░░░░░░  ░░░    ░░░░░░
+
+
+There are a number of editors available with the default installation:
+
+    Command line
+        nano (default) - basic, more similar to modern text editors
+                         config file: ~/Workspace/__space__/.dotfiles/config/nano/.nanorc
+        vim            - advanced text editor with a focus on customizability and productivity
+                         config file: ~/Workspace/__space__/.dotfiles/config/.vimrc
+                         config source: https://github.com/amix/vimrc
+    
+    Code
+        Pycharm - IDE for professional Python development
+        Webstorm - JavaScript IDE
+        Rider - .NET IDE
+        IntelliJ IDEA - Java IDE by JetBrains
+        CLion - C and C++ IDE
+        AppCode - IDE for Swift, Objective-C, C, and C++ development
+        Fleet - Next-generation IDE by JetBrains
+        Android Studio - Tools for building Android applications
+        Visual Studio Code - lightweight, extendable editor; support for many langauges from extensions
+        Arduino IDE - Electronics prototyping platform
+        MARS - Mips Assembly and Runtime Simulator
+        RStudio - Data science software focusing on R and Python
+        Mu - Small, simple editor for beginner Python programmers and CircuitPython/MicroPython
+        Eclipse - Eclipse IDE for Java developers
+            
+    Photo
+        Adobe Photoshop - Edit, composite, and create beautiful images
+        Adobe Illustrator - Create beautiful vector art and illustrations
+        Adobe Lightroom - Edit, organize, store, and share photos
+    
+    Video
+        Adobe Premiere Pro - Industry-standard pro video and film editing
+        Adobe Media Encoder - Quickly output video files
+        Adobe After Effects - Cinematic visual effects and motion graphics
+    
+    Audio
+        Adobe Audition - Bring stories to life with audio
+        Audacity - Multi-track audio editor and recorder
+        Bfxr - program for people looking to make sound effects for computer games
+        Bosca Ceoil - A free easy to use tool for creating music
+        
+    Text
+        Notion - App to write, plan, collaborate, and get organized
+        LibreOffice - Office suite
+        Sublime Text - Text editor for code, markup and prose
+        Atom - Text editor
+        MacTeX - Full TeX Live distribution with GUI applications
+        MacDown - Open-source Markdown editor
+    
+    Game Dev
+        # Blender - 3D creation suite
+        Sweet Home 3D - Interior design application
+        Tiled - Flexible level editor
+        Godot - An open source game development engine
+        Unity - A cross-platform game engine
+        Unreal Engine - A 3D computer graphics game engine by Epic Games
+    
+    Other
+        Adobe Acrobat - software to view, create, manipulate, print and manage PDFs
+        Numi - Calculator and converter application
+        MuseScore - Open-source music notation software
+        MagicaVoxel - 8-bit 3D voxel editor and interactive path tracing renderer
+        Balsamiq Wireframes - UI wireframing tool
+        Beekeeper Studio - Cross platform SQL editor and database management app
+        
+        
+        
+        
+        
+    

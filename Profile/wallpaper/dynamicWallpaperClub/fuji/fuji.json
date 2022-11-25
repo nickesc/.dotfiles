@@ -1,0 +1,35 @@
+[
+  {
+    "fileName": "1000.jpeg",
+    "isPrimary": true,
+    "isForLight": true,
+    "azimuth": 150.0,
+    "altitude": 50.0
+  },
+  {
+    "fileName": "0500.jpeg",
+    "azimuth": 80.0,
+    "altitude": -9.0
+  },
+  {
+    "fileName": "0700.jpeg",
+    "azimuth": 100.0,
+    "altitude": 10.0
+  },
+  {
+    "fileName": "1530.jpeg",
+    "azimuth": 250.0,
+    "altitude": 25.0
+  },
+  {
+    "fileName": "1800.jpeg",
+    "azimuth": 270.0,
+    "altitude": 0.0
+  },
+  {
+    "fileName": "2030.jpeg",
+    "isForDark": true,
+    "azimuth": 330.0, 
+    "altitude": -50.0
+  }
+]

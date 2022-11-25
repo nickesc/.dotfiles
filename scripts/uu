@@ -1,5 +1,36 @@
 #!/usr/bin/env zsh
 
+#   ██   ██ ██   ██
+#  ░██  ░██░██  ░██
+#  ░██  ░██░██  ░██
+#  ░██  ░██░██  ░██
+#  ░░██████░░██████
+#   ░░░░░░  ░░░░░░
+#
+# uu by N. Escobar (https://github.com/nickesc)
+#                  (https://github.com/nickesc/.dotfiles)
+#                  (https://nickesc.github.io)
+#                  (https://nickesc.com)
+#
+# Tip: uu must be executed in your current shell; source the file or use '. uu' if the alias does not work
+#
+# Usage:    uu <update>
+#
+# Updates:
+#            all|a - update all; does not force updates
+#        default|d - update the default, safe list (os cask node ruby py rust font omz)
+#              mas - update Mac App Store apps
+#       os [force] - update MacOS; 'force' will install app and OS updates
+#     brew [force] - update Homebrew Formulae; 'force' will only update Forulae and ignore Casks
+#     cask [force] - update Homebrew Casks and Formulae; 'force' will force auto-updating Casks to update
+#     node [force] - update n and npm; 'force' will update global npm packages
+#     ruby [force] - update RubyGems; 'force' will update Gems
+#       py [force] - update and cleanup pyenv and conda; 'force' will update pip
+#             rust - update rust and cargo with rustup to the latest stable versions
+#               go - update GO
+#             font - update font tools like fnt
+#              omz - update omz
+
 #source ~/.zshrc
 
 uuos(){

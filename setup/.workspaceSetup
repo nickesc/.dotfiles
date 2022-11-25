@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+#                              ██
+#                             ░██             ██████
+#   ███     ██  ██████  ██████░██  ██  ██████░██░░░██  ██████    █████   █████
+#  ░░██  █ ░██ ██░░░░██░░██░░█░██ ██  ██░░░░ ░██  ░██ ░░░░░░██  ██░░░██ ██░░░██
+#   ░██ ███░██░██   ░██ ░██ ░ ░████  ░░█████ ░██████   ███████ ░██  ░░ ░███████
+#   ░████░████░██   ░██ ░██   ░██░██  ░░░░░██░██░░░   ██░░░░██ ░██   ██░██░░░░
+#   ███░ ░░░██░░██████ ░███   ░██░░██ ██████ ░██     ░░████████░░█████ ░░██████
+#  ░░░    ░░░  ░░░░░░  ░░░    ░░  ░░ ░░░░░░  ░░       ░░░░░░░░  ░░░░░   ░░░░░░
+
+export DFWORKSPACE="$HOME/Workspace"
+
+mkdir -p $DFWORKSPACE/__space__/.history/nano
+mkdir -p $DFWORKSPACE/__space__/.history/zsh
+mkdir -p $DFWORKSPACE/Code/python
+mkdir -p $DFWORKSPACE/Code/java
+mkdir -p $DFWORKSPACE/Code/webDev
+mkdir -p $DFWORKSPACE/Code/gameDev
+mkdir -p $DFWORKSPACE/Art/Graphic Design
+mkdir -p $DFWORKSPACE/Art/Photography
+mkdir -p $DFWORKSPACE/Art/Video
+mkdir -p $DFWORKSPACE/Writing/Scripts
+mkdir -p $DFWORKSPACE/Writing/Articles
+mkdir -p $DFWORKSPACE/Writing/Blog
+mkdir -p $DFWORKSPACE/Data
+mkdir -p $DFWORKSPACE/.test
+mkdir -p $DFWORKSPACE/.hidden
+
+. ~/Workspace/__space__/.dotfiles/setup/.profileSetup

@@ -1,16 +1,67 @@
 {
-    "darkblack":"#111111",
-    "black":"#151515",
-    "brightblack":"#424242",
-    "grey":"#6d6d6d",
-    "brightgrey":"#aaaaaa",
-    "white":"#c7c7c7",
-    "brightwhite":"#e8e3e3",
-    "red":"#b66467",
-    "green":"#8c977d",
-    "yellow":"#d9bc8c",
-    "blue":"#8da3b9",
-    "darkblue":"#6483a3",
-    "magenta":"#a988b0",
-    "cyan":"#8aa6a2"
+    "theme": {
+        "name": "Paradise",
+        "url": "https://github.com/paradise-theme/paradise",
+        "license": "MIT",
+        "contributors": {
+            "creator": {
+                "name": "Manas140",
+                "urls": [
+                    "https://github.com/Manas140",
+                    "https://github.com/paradise-theme",
+                    "https://marketplace.visualstudio.com/publishers/Manas"
+                ]
+            },
+            "forker": {
+                "name": "nickesc",
+                "urls": [
+                    "https://github.com/nickesc",
+                    "https://nickesc.github.io",
+                    "https://marketplace.visualstudio.com/publishers/nickesc"
+                ]
+            }
+        },
+        "themes": {
+            "Terminal": "./paradise.terminal",
+            "Alacritty": "https://github.com/paradise-theme/paradise/tree/main/cfg/alacritty",
+            "Blender": "https://github.com/paradise-theme/paradise/tree/main/cfg/blender",
+            "Dunst": "https://github.com/paradise-theme/paradise/tree/main/cfg/dunst",
+            "Foot": "https://github.com/paradise-theme/paradise/tree/main/cfg/foot",
+            "Kitty": "https://github.com/paradise-theme/paradise/tree/main/cfg/kitty",
+            "Lite-xl": "https://github.com/paradise-theme/paradise/tree/main/cfg/lite-xl/colors",
+            "PowerShell": "https://github.com/paradise-theme/paradise/tree/main/oth/powershell",
+            "Zathura": "https://github.com/paradise-theme/paradise/tree/main/cfg/zathura",
+            "Gtk": "https://github.com/paradise-theme/gtk",
+            "Nvim": [
+                "https://github.com/Manas140/Conscious",
+                "https://github.com/Mayooonaiselol/Daydream.nvim"
+            ],
+            "Vscode": {
+                "Manas140": {
+                    "repo": "https://github.com/paradise-theme/vscode",
+                    "vsMarketplace": "https://marketplace.visualstudio.com/items?itemName=Manas.paradise-vscode"
+                },
+                "nickesc": {
+                    "repo": "https://github.com/nickesc/vscode-paradise-nickesc",
+                    "vsMarketplace": "https://marketplace.visualstudio.com/items?itemName=nickesc.vscode-paradise-nickesc"
+                }
+            }
+        },
+        "colors": {
+            "darkblack": "#111111",
+            "black": "#151515",
+            "brightblack": "#424242",
+            "grey": "#6d6d6d",
+            "brightgrey": "#aaaaaa",
+            "white": "#c7c7c7",
+            "brightwhite": "#e8e3e3",
+            "red": "#b66467",
+            "green": "#8c977d",
+            "yellow": "#d9bc8c",
+            "blue": "#8da3b9",
+            "darkblue": "#6483a3",
+            "magenta": "#a988b0",
+            "cyan": "#8aa6a2"
+        }
+    }
 }

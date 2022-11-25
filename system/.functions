@@ -8,49 +8,27 @@
 #  ░██  ░██  ░░██████ ███  ░██░░█████   ░░██ ░██░░██████  ███  ░██ ██████
 #  ░░   ░░    ░░░░░░ ░░░   ░░  ░░░░░     ░░  ░░  ░░░░░░  ░░░   ░░ ░░░░░░
     
-# Get named var (usage: get "VAR_NAME")
+
+## Terminal Utilities
+    # Get named var (usage: get "VAR_NAME")
 get() {
   echo "${!1}"
 }
-
-# Add to path
+    # Add to path
 prepend-path() {
   [ -d $1 ] && PATH="$1:$PATH"
 }
-
+    # clear the local Workspace test dir
 cleartest() {
     touch ~/Workspace/.test/TempClearTestDoc
     rm -rf ~/Workspace/.test/{*,.*}
 }
-
-
-# Change working directory to the top-most Finder window location
-
-function cdf() {
-    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
-}
-
-# Copies the contents of a given file to the system or X Windows clipboard
-#
-# copyfile <file>
+    # copyfile <file> : Copies the contents of a given file to the system or X Windows clipboard
 function copyfile {
   emulate -L zsh
   clipcopy $1
 }
-
-transfer() {
-  tmpfile=$( mktemp -t transferXXX )
-  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) >> $tmpfile;
-  cat $tmpfile;
-  cat $tmpfile | pbcopy;
-  rm -f $tmpfile;
-}
-
-logonickesc() {
-    printf "\n\n            ██         ██                            \n           ░░         ░██                            \n   ███████  ██  █████ ░██  ██  █████   ██████  █████ \n  ░░██░░░██░██ ██░░░██░██ ██  ██░░░██ ██░░░░  ██░░░██\n   ░██  ░██░██░██  ░░ ░████  ░███████░░█████ ░██  ░░ \n   ░██  ░██░██░██   ██░██░██ ░██░░░░  ░░░░░██░██   ██\n   ███  ░██░██░░█████ ░██░░██░░██████ ██████ ░░█████\n  ░░░   ░░ ░░  ░░░░░  ░░  ░░  ░░░░░░ ░░░░░░   ░░░░░\n"
-}
-
-# Bash Function To Extract File Archives Of Various Types
+    # Bash Function To Extract File Archives Of Various Types
 extract () {
      if [ -f $1 ] ; then
          case $1 in
@@ -71,8 +49,32 @@ extract () {
          echo "'$1' is not a valid file"
      fi
 }
+function f() {
+  find . -name "$1" 2>&1 | grep -v 'Permission denied'
+}
+    # kill all detached screens
+killscreens () {
+    screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill
+}
+    # Change working directory to the top-most Finder window location
+function cdf() {
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+}
+    
+
+## Dir Utilities
+    
 
 
+# Network Utilities
+    # upload to transfer.sh
+transfer() {
+  tmpfile=$( mktemp -t transferXXX )
+  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) >> $tmpfile;
+  cat $tmpfile;
+  cat $tmpfile | pbcopy;
+  rm -f $tmpfile;
+}
 function whois() {
   local domain=$(echo "$1" | awk -F/ '{print $3}'); # get domain from URL
   if [ -z $domain ] ; then
@@ -85,7 +87,6 @@ function whois() {
   # strip extra fluff
   /usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q';
 }
-
 # Show all names (CNs and SANs) in SSL cert for a given domain.
 function getcertnames() {
   if [ -z "${1}" ]; then
@@ -119,9 +120,17 @@ function getcertnames() {
   fi;
 }
 
-function f() {
-  find . -name "$1" 2>&1 | grep -v 'Permission denied'
+
+## Custom Functions
+
+    # nickesc ascii graphic
+logonickesc() {
+    printf "\n\n            ██         ██                            \n           ░░         ░██                            \n   ███████  ██  █████ ░██  ██  █████   ██████  █████ \n  ░░██░░░██░██ ██░░░██░██ ██  ██░░░██ ██░░░░  ██░░░██\n   ░██  ░██░██░██  ░░ ░████  ░███████░░█████ ░██  ░░ \n   ░██  ░██░██░██   ██░██░██ ░██░░░░  ░░░░░██░██   ██\n   ███  ░██░██░░█████ ░██░░██░░██████ ██████ ░░█████\n  ░░░   ░░ ░░  ░░░░░  ░░  ░░  ░░░░░░ ░░░░░░   ░░░░░\n"
 }
+
+
+
+
 
 encrypt (){
 
@@ -383,9 +392,7 @@ sdkupgrade(){
     sdk upgrade
 }
 
-export DATA="$HOME/Workspace/data"
-
-export DATA="$HOME/testdata"
+export DATA="$HOME/Workspace/Data"
 
 postgresqlinit(){
     if [ $# -eq 0 ]; then

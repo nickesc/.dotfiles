@@ -1,5 +1,21 @@
-mkdir -p ~/Workspace/__space__/.dotfiles/profile/refs
-mkdir -p ~/Workspace/__space__/.dotfiles/profile/avatar/logo
+#!/usr/bin/env zsh
+
+#                             ████ ██  ██
+#   ██████                   ░██░ ░░  ░██
+#  ░██░░░██ ██████  ██████  ██████ ██ ░██  █████
+#  ░██  ░██░░██░░█ ██░░░░██░░░██░ ░██ ░██ ██░░░██
+#  ░██████  ░██ ░ ░██   ░██  ░██  ░██ ░██░███████
+#  ░██░░░   ░██   ░██   ░██  ░██  ░██ ░██░██░░░░
+#  ░██     ░███   ░░██████   ░██  ░██ ███░░██████
+#  ░░      ░░░     ░░░░░░    ░░   ░░ ░░░  ░░░░░░
+
+
+
+
+export DFPROFILE="$HOME/Workspace/__space__/.dotfiles/Profile"
+
+mkdir -p $DFPROFILE/refs
+mkdir -p $DFPROFILE/avatar
 
 git clone \
   --depth 1  \
@@ -9,11 +25,11 @@ git clone \
 ;
 cd N.-Escobar-Media-Branding
 git sparse-checkout set Logos/nickesc
-cp -a Logos/nickesc ~/Workspace/__space__/.dotfiles/profile/avatar
+cp -a Logos/nickesc $DFPROFILE/avatar
 git sparse-checkout set Logos/nescobar
-cp -a Logos/nescobar ~/Workspace/__space__/.dotfiles/profile/avatar
+cp -a Logos/nescobar $DFPROFILE/avatar
 git sparse-checkout set Logos/signature
-cp -a Logos/signature ~/Workspace/__space__/.dotfiles/profile/refs
+cp -a Logos/signature $DFPROFILE/refs
 rm -fr .git
 cd ..
 rm -r N.-Escobar-Media-Branding
@@ -26,7 +42,7 @@ git clone \
 ;
 cd nickesc.github.io
 git sparse-checkout set assets/Resume.pdf
-cp -a assets/Resume.pdf ~/Workspace/__space__/.dotfiles/profile/refs
+cp -a assets/Resume.pdf $DFPROFILE/refs
 rm -fr .git
 cd ..
 rm -r nickesc.github.io

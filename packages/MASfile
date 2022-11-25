@@ -12,17 +12,16 @@ cask_args appdir: "/Applications"
 
 mas "Xcode", id: 497799835
 mas "Bear", id: 1091189122
-mas "Yoink", id: 457622435
 mas "Highland 2", id: 1171820258
+mas "Yoink", id: 457622435
 mas "iMazing HEIC Converter", id: 1292198261
+mas "EXIFPurge", id: 784466108
+mas "Any File Info", id: 731859284
 mas "Hotspot Shield", id: 771076721
 mas "VPN Unlimited", id: 694633015
 mas "Spark", id: 1176895641
 mas "Genki Arcade", id: 1555925018
-mas "EXIFPurge", id: 784466108
 mas "Teleprompter", id: 417605357
-mas "Any File Info", id: 731859284
-mas "HiddenMe", id: 467040476
 
 mas "Wayback Machine", id: 1472432422
 mas "Dashlane", id: 517914548

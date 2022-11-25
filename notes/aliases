@@ -25,14 +25,16 @@ Terminal Utilities:
     cpwd - copy current absolute directory path
     get <var> - get named variable
     ip - get machine's IP address
-    path - get the PATH printed on seperate lines
+    printpath - get the PATH printed on seperate lines
     f <keyword> - fast, recursive search for file name in directories
     
 System:
     desktopshow/desktophide - show/hide desktop icons
     showhidden/hidehidden - show/hide hidden files
+    spoton/spotoff - turn spotlight search on/off
     ql <target> - quick look file from command line
     osupdate - update macOS
+    emptytrash - empty system trash and clear files
     afk - put the screen to sleep
     badge - Ring the terminal bell (useful after long commands)
     ios - open iOS simulator
@@ -59,10 +61,12 @@ Clear/Reset:
     nomnom - killall
     cleartest - clear the test directory
     flushdns - flush the DNS
+    killscreens - kill all detached screens
     killfinder - quit and reloads Finder
     killdock - quits and reloads the dock
     killmenubar - quits and reloads the menu bar
     killos - quits and reloads all three
+    
     
 Useful Plugin Aliases:
 

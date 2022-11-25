@@ -180,7 +180,7 @@ export QMK_HOME='~/Workspace/__space__/qmk_firmware' # Optional, set the locatio
 #  source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
 #  source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
 #fi
-#HISTFILE="$HOME/Workspace/__space__/.dotfiles/.zhistory"
+#HISTFILE="$HOME/Workspace/__space__/.history/zsh/.zhistory"
 #setopt APPEND_HISTORY
 #HISTSIZE=5000
 #SAVEHIST=1000

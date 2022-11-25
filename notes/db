@@ -13,16 +13,16 @@ PosgreSQL Installation Information:
     PostgreSQL is installed with brew.
     By default, automatically starts the default server as a background brew service (daemon) at launch.
     
-    To initialize a PosgreSQL server in the ~/Workspace/data/postgresql folder:
+    To initialize a PosgreSQL server in the ~/Workspace/Data/postgresql folder:
         postgresqlinit <name> [start]  # optionally start the server at the same time
     To start a PosgreSQL server:
         postgresqlstart         # starts the default server
         or
-        postgresqlstart <name>  # starts a named server in the ~/Workspace/data/postgresql folder
+        postgresqlstart <name>  # starts a named server in the ~/Workspace/Data/postgresql folder
     To stop a PosgreSQL server:
         postgresqlstop          # stop the default server
         or
-        postgresqlstop <name>   # stop a named server in the ~/Workspace/data/postgresql folder
+        postgresqlstop <name>   # stop a named server in the ~/Workspace/Data/postgresql folder
     To access the currenlty running server:
         psql postgres
     

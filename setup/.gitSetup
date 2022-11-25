@@ -1,5 +1,15 @@
 #!/usr/bin/env zsh
 
+#           ██   ██
+#    █████ ░░   ░██
+#   ██░░░██ ██ ██████
+#  ░██  ░██░██░░░██░
+#  ░░██████░██  ░██
+#   ░░░░░██░██  ░██
+#    █████ ░██  ░░██
+#   ░░░░░  ░░    ░░
+
+
 # symlink .gitconfig
 
 git config --global init.defaultBranch main

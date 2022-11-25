@@ -68,8 +68,6 @@ pip3 install scipy
 pip3 install matplotlib
 pip3 install pandas
 pip3 install sympy
-pip3 install nose
-pip3 install unittest2
 pip3 install seaborn
 pip3 install scikit-learn
 pip3 install "ipython[all]"
@@ -83,19 +81,9 @@ pip3 install urllib3
 pip3 install pytest
 pip3 install pillow
 pip3 install nltk
-pip3 install adafruit-ampy
 sudo pip3 install rshell
+pip3 install adafruit-ampy
 
-###############################################################################
-# Install IPython Profile
-###############################################################################
-
-echo "------------------------------"
-echo "Installing IPython Notebook Default Profile"
-
-# Add the IPython profile
-mkdir -p ~/.ipython
-cp -r ~/Workspace/__space__/.dotfiles/config/iPython ~/.ipython/profile_default
 
 echo "------------------------------"
 echo "Script completed."

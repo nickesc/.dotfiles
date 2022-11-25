@@ -1,5 +1,30 @@
 #!/usr/bin/env zsh
 
+#                       ██
+#                      ░██
+#   ███████   ██████  ██████  █████
+#  ░░██░░░██ ██░░░░██░░░██░  ██░░░██
+#   ░██  ░██░██   ░██  ░██  ░███████
+#   ░██  ░██░██   ░██  ░██  ░██░░░░
+#   ███  ░██░░██████   ░░██ ░░██████
+#  ░░░   ░░  ░░░░░░     ░░   ░░░░░░
+#
+# note by N. Escobar (https://github.com/nickesc)
+#                    (https://github.com/nickesc/.dotfiles)
+#                    (https://nickesc.github.io)
+#                    (https://nickesc.com)
+#
+# Tip: note must be executed in your current shell; source the file or use '. note' if the alias does not work
+#
+#     note - create notes and notebooks as directories in your Workspace (~/Worksapce/Notes/[notebook])
+#
+# Usage:    note <name> - creates a note in the General notebook
+#           note <notebook> <name> - creates a note in a new or existing notebook
+#           note book|b <notebook> [note] - opens or creates a notebook or note
+#           note close|c <notebook> - deletes a notebook
+#           note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks
+#           note project|p <notebook> <projectPath> - symlink a notebook to a project folder
+
 export NOTES="$HOME/Workspace/Notes"
 mkdir -p "$NOTES"
 
@@ -10,13 +35,13 @@ notehelp(){
     printf "\n          note <notebook> <name> - creates a note in a new or existing notebook"
     printf "\n          note book|b <notebook> [note] - opens or creates a notebook or note"
     printf "\n          note close|c <notebook> - deletes a notebook"
-    printf "\n          note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks\n\n"
+    printf "\n          note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks"
     printf "\n          note project|p <notebook> <projectPath> - symlink a notebook to a project folder\n\n"
 }
 
 notebookinfo(){
-    printf "\nNotebook: $1\nNotes:\n\n    "
-    ls -AF
+    printf "\nNotebook: $1\nNotes:\n\n"
+    \ls -Ft --color=auto
     printf "\n"
 }
 
@@ -36,6 +61,7 @@ newnotebook(){
     
     mkdir -p "$NOTES/$notebook"
     cd "$NOTES/$notebook"
+    git init -q --initial-branch=notebook
     if [ $listAfter = 1 ]; then
         notebookinfo $notebook
     fi
@@ -63,6 +89,7 @@ newnote(){
     
         touch "$NOTES/$notebook/$note"
         nano "$NOTES/$notebook/$note"
+        git add -A 1>.git/notebook.log 2>.git/notebook.err && git commit -q -m "$note"
         notebookinfo $notebook
     fi
     
@@ -76,12 +103,12 @@ if [ "$1" = "help" ] || [ "$1" = "h" ]; then
 elif [ "$1" = "list" ] || [ "$1" = "l" ]; then
     temp=$(pwd)
     cd "$NOTES"
-    printf "\nNotebooks:\n\n    "
+    printf "\nNotebooks:\n\n"
     
     if [ "$2" = "-a" ] || [ "$2" = "--all" ]; then
-        ls -dAF */ .*/
+        \ls --color=auto -dA */ .*/
     else
-        ls -dAF */
+        \ls --color=auto -d */
     fi
     
     printf "\n\n"
