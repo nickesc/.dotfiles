@@ -1,0 +1,37 @@
+#!/usr/bin/env zsh
+
+#   ██            ████
+#  ░░            ░██░
+#   ██ ███████  ██████  ██████
+#  ░██░░██░░░██░░░██░  ██░░░░██
+#  ░██ ░██  ░██  ░██  ░██   ░██
+#  ░██ ░██  ░██  ░██  ░██   ░██
+#  ░██ ███  ░██  ░██  ░░██████
+#  ░░ ░░░   ░░   ░░    ░░░░░░
+#
+# info by N. Escobar (https://github.com/nickesc)
+#                    (https://github.com/nickesc/.dotfiles)
+#                    (https://nickesc.github.io)
+#                    (https://nickesc.com)
+#
+# Usage: info [page|help|all]
+
+footer(){
+    printf "\nFor more information, type:\n    info [page]:  "
+    \ls "$HOME/Workspace/__space__/.dotfiles/notes"
+}
+
+if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+    cat "$HOME/Workspace/__space__/.dotfiles/notes/main"
+    printf "\nFor plugin aliases, type:\n    acs"
+    footer
+elif [ "$1" = "all" ]; then
+    cat "$HOME"/Workspace/__space__/.dotfiles/notes/*
+    footer
+elif cat "$HOME/Workspace/__space__/.dotfiles/notes/$1"; then
+    footer
+else
+    echo ""
+    echo "No info page found."
+    footer
+fi

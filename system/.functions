@@ -62,10 +62,6 @@ function cdf() {
 }
     
 
-## Dir Utilities
-    
-
-
 # Network Utilities
     # upload to transfer.sh
 transfer() {
@@ -194,8 +190,9 @@ detach (){
 
 alias eject="detach"
 
+export HISTDIR="$HOME/Workspace/__space__/.history"
 
-export VENVLOG="$HOME/Workspace/__space__/.dotfiles/.venvlog"
+export VENVLOG="$HISTDIR/python/.venvlog"
 
 venvactivate() {
     venvName=$2
@@ -312,8 +309,7 @@ venv3() {
 }
 
 
-export SDKENVLOG="$HOME/Workspace/__space__/.dotfiles/.sdkenvlog"
-#export SDKENVLOG="$HOME/.sdkenvlog"
+export SDKENVLOG="$HISTDIR/sdk/.sdkenvlog"
 
 sdkenvactivate() {
     sdkenvName=$2
@@ -394,6 +390,7 @@ sdkupgrade(){
 
 export DATA="$HOME/Workspace/Data"
 
+
 postgresqlinit(){
     if [ $# -eq 0 ]; then
         printf "\nMust name the server.\nUsage:\n\n    postgresqlinit <name>\n\n"
@@ -403,8 +400,8 @@ postgresqlinit(){
         initdb $DATA/postgresql/"$1"
     
         if [ "$2" = "start" ]; then
-            #touch "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
-            pg_ctl -D "$DATA/postgresql/$1" -l "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
+            #touch "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
+            pg_ctl -D "$DATA/postgresql/$1" -l "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
         fi
     fi
 }
@@ -414,8 +411,8 @@ postgresqlstart() {
         # start the default server on no args
         pg_ctl -D /usr/local/var/postgresql@14 start
     else
-        #touch "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
-        pg_ctl -D "$DATA/postgresql/$1" -l "$DATA/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
+        #touch "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
+        pg_ctl -D "$DATA/postgresql/$1" -l "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
     fi
 }
 
@@ -486,17 +483,4 @@ function symlink {
 }
 
 
-info() {
-    if [ $# -eq 0 ] || [ "$1" = "help" ]; then
-        cat $HOME/Workspace/__space__/.dotfiles/notes/main
-        printf "\nFor plugin aliases:\n    acs"
-        printf "\nFor program specific information:\n    info <page>:"
-        ls $HOME/Workspace/__space__/.dotfiles/notes
-    elif [ "$1" = "all" ]; then
-        cat $HOME/Workspace/__space__/.dotfiles/notes/*
-    elif cat $HOME/Workspace/__space__/.dotfiles/notes/$1; then
-        echo "For more information, type 'info help'"
-    else
-        echo "Command failed"
-    fi
-}
+
