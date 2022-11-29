@@ -9,22 +9,23 @@
 #   ███░ ░░░██░░██████ ░███   ░██░░██ ██████ ░██     ░░████████░░█████ ░░██████
 #  ░░░    ░░░  ░░░░░░  ░░░    ░░  ░░ ░░░░░░  ░░       ░░░░░░░░  ░░░░░   ░░░░░░
 
-export DFWORKSPACE="$HOME/Workspace"
+echo "------------------------------"
+echo "Workspace setup"
 
-mkdir -p $DFWORKSPACE/__space__/.history/nano
-mkdir -p $DFWORKSPACE/__space__/.history/zsh
-mkdir -p $DFWORKSPACE/Code/python
-mkdir -p $DFWORKSPACE/Code/java
-mkdir -p $DFWORKSPACE/Code/webDev
-mkdir -p $DFWORKSPACE/Code/gameDev
-mkdir -p "$DFWORKSPACE/Art/Graphic Design"
-mkdir -p $DFWORKSPACE/Art/Photography
-mkdir -p $DFWORKSPACE/Art/Video
-mkdir -p $DFWORKSPACE/Writing/Scripts
-mkdir -p $DFWORKSPACE/Writing/Articles
-mkdir -p $DFWORKSPACE/Writing/Blog
-mkdir -p $DFWORKSPACE/Data
-mkdir -p $DFWORKSPACE/.test
-mkdir -p $DFWORKSPACE/.hidden
+mkdir -p "$WORKSPACE/__space__/.history/nano"
+mkdir -p "$WORKSPACE/__space__/.history/zsh"
+mkdir -p "$WORKSPACE/Code/python"
+mkdir -p "$WORKSPACE/Code/java"
+mkdir -p "$WORKSPACE/Code/webDev"
+mkdir -p "$WORKSPACE/Code/gameDev"
+mkdir -p "$WORKSPACE/Art/Graphic Design"
+mkdir -p "$WORKSPACE/Art/Photography"
+mkdir -p "$WORKSPACE/Art/Video"
+mkdir -p "$WORKSPACE/Writing/Scripts"
+mkdir -p "$WORKSPACE/Writing/Articles"
+mkdir -p "$WORKSPACE/Writing/Blog"
+mkdir -p "$WORKSPACE/Data"
+mkdir -p "$WORKSPACE/.test"
+mkdir -p "$WORKSPACE/.hidden"
 
-. ~/Workspace/__space__/.dotfiles/setup/.profileSetup
+. "$DOTFILES/setup/.profileSetup"

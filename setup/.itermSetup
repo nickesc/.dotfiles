@@ -9,24 +9,26 @@
 #  ░██  ░░██ ░░██████░███    ███ ░██ ░██░██████
 #  ░░    ░░   ░░░░░░ ░░░    ░░░  ░░  ░░ ░░░░░░
 
+echo "------------------------------"
+echo "iTerm2 setup"
 
 ## install iterm
 brew install --cask iterm2
 
 ## import plist
-cp ~/Workspace/__space__/.dotfiles/config/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+cp "$DOTFILES"/config/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 defaults read com.googlecode.iterm2
 
 ## Tell iTerm to look at the .dotfiles dir for the plist
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Workspace/__space__/.dotfiles/config/iterm2"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES"/config/iterm2
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 defaults read com.googlecode.iterm2
 
 ## Import profile jsons (exported from profile section of iTerm)
 #mkdir -p ~/Library/Application Support/iTerm2/DynamicProfiles
-#symlink ~/Workspace/__space__/.dotfiles/config/iterm2/Profiles.json ~/Library/Application Support/iTerm2/DynamicProfiles -r
+#symlink "$DOTFILES"/config/iterm2/Profiles.json "~/Library/Application Support/iTerm2/DynamicProfiles" -r
 
 # Clone Paradise Theme for further use:
-git clone https://github.com/paradise-theme/paradise.git 
+git clone https://github.com/paradise-theme/paradise.git "$DOTFILES"/themes/paradise
 
-# for more terminal theemes: https://github.com/lysyi3m/macos-terminal-themes
+# for more terminal themes: https://github.com/lysyi3m/macos-terminal-themes

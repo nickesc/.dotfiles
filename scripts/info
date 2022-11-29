@@ -17,18 +17,22 @@
 # Usage: info [page|help|all]
 
 footer(){
-    printf "\nFor more information, type:\n    info [page]:  "
-    \ls "$HOME/Workspace/__space__/.dotfiles/notes"
+    printf "\nFor more information, type:    info [page]\nPages:\n"
+    \ls "$DOTFILES"/notes
+    printf "\n"
 }
 
 if [ $# -eq 0 ] || [ "$1" = "help" ]; then
-    cat "$HOME/Workspace/__space__/.dotfiles/notes/main"
-    printf "\nFor plugin aliases, type:\n    acs"
+    cat "$DOTFILES"/notes/main | less -e
+    cat "$DOTFILES"/notes/main
     footer
 elif [ "$1" = "all" ]; then
-    cat "$HOME"/Workspace/__space__/.dotfiles/notes/*
+    cat "$DOTFILES"/notes/* | less -e
+    cat "$DOTFILES"/notes/*
     footer
-elif cat "$HOME/Workspace/__space__/.dotfiles/notes/$1"; then
+elif [ -f "$DOTFILES/notes/$1" ]; then
+    cat "$DOTFILES/notes/$1" | less -e
+    cat "$DOTFILES/notes/$1"
     footer
 else
     echo ""

@@ -8,12 +8,18 @@
    ███  ░██░░██████  ░░██  ███░ ░░░██░░██████ ░███   ░██░░██
   ░░░   ░░  ░░░░░░    ░░  ░░░    ░░░  ░░░░░░  ░░░    ░░  ░░
 
+Useful Aliases:
+
+    ip - get the current machine's IP address
+    ips -- get the IP addresses of other machiens on your network
+
 Network Troubleshooting:
 
     IF the hostname has changed to something strange (ie. new-host-5 instead of Batcomputer)
         The router likely already has a connected device named Batcomputer.
         One fix: login to the router dashboard (using the IP, an app, etc) and find the hostname you see.
-            Change the hostname to the desired name -- you may need to change the other instance of Batcomputer if you really want that name
+            Change the hostname to the desired name -- you may need to change the other instance of
+            Batcomputer if you really want that name
         Another possible fix: This may not work, and the router may simply change it back, untested
             sudo scutil --set LocalHostName <hostname>  # sets the full hostname (ie. Batcomputer.home)
             # or potentially

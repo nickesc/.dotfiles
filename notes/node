@@ -1,12 +1,12 @@
 
-                          ██
-                         ░██
-   ███████   ██████      ░██  █████
-  ░░██░░░██ ██░░░░██  ██████ ██░░░██
-   ░██  ░██░██   ░██ ██░░░██░███████
-   ░██  ░██░██   ░██░██  ░██░██░░░░
-   ███  ░██░░██████ ░░██████░░██████
-  ░░░   ░░  ░░░░░░   ░░░░░░  ░░░░░░
+                          ██               ██
+                         ░██              ░░
+   ███████   ██████      ░██  █████        ██  ██████
+  ░░██░░░██ ██░░░░██  ██████ ██░░░██      ░██ ██░░░░
+   ░██  ░██░██   ░██ ██░░░██░███████      ░██░░█████
+   ░██  ░██░██   ░██░██  ░██░██░░░░  ██ ██░██ ░░░░░██
+   ███  ░██░░██████ ░░██████░░██████░██░░███  ██████
+  ░░░   ░░  ░░░░░░   ░░░░░░  ░░░░░░ ░░  ░░░  ░░░░░░
 
  Node.js Installation Information:
 
@@ -38,6 +38,5 @@
     * careful when switching versions, global packages may become unusable:
         npm update -g
     
-    Default npm installations are found in the NPMfile ~/Workspace/__space__/.dotfiles/packages/NPMfile
+    Default npm installations are found in the npm-file ~/Workspace/__space__/.dotfiles/packages/npm
     npm configurations are found in ~/.npmrc (symlink from dotfiles)
-    

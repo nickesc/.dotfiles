@@ -37,4 +37,3 @@
     Ruby installations are found in ~/.rubies/
     The default Ruby version is found in ~/.ruby-version (symlink from dotfiles)
     Gem configurations are found in ~/.gemrc (symlink from dotfiles)
-

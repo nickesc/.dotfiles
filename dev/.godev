@@ -8,6 +8,8 @@
 #    █████  ░░░░░░
 #   ░░░░░
 
+echo "------------------------------"
+echo "Go Development"
 
 # install go using homebrew
 brew install go

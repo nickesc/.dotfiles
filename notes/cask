@@ -1,12 +1,15 @@
 
                              ██
                             ░██
-    █████   ██████    ██████░██  ██
-   ██░░░██ ░░░░░░██  ██░░░░ ░██ ██
-  ░██  ░░   ███████ ░░█████ ░████
-  ░██   ██ ██░░░░██  ░░░░░██░██░██
-  ░░█████ ░░████████ ██████ ░██░░██
-   ░░░░░   ░░░░░░░░ ░░░░░░  ░░  ░░
+    █████   ██████    ██████░██  ██  ██████
+   ██░░░██ ░░░░░░██  ██░░░░ ░██ ██  ██░░░░
+  ░██  ░░   ███████ ░░█████ ░████  ░░█████
+  ░██   ██ ██░░░░██  ░░░░░██░██░██  ░░░░░██
+  ░░█████ ░░████████ ██████ ░██░░██ ██████
+   ░░░░░   ░░░░░░░░ ░░░░░░  ░░  ░░ ░░░░░░
+
+Insatllation of applications with Homebrew is managed by:
+    ~/Workspace/__space__/.dotfiles/packages/Caskfile
 
 Homebrew Casks:
 
@@ -121,7 +124,6 @@ Homebrew Casks:
         wine-stable - Compatibility layer to run Windows applications
 
 MAS Apps:
-
     Xcode - IDE and text editor for MacOS
     Bear - a focused, flexible notes app
     Highland 2 - a better way to write screenplays
@@ -138,7 +140,6 @@ MAS Apps:
     Dashlane Safari extension - the perfect place for all your passwords
 
 Manually Installed:
-
     Creative Cloud - apps and services for photography, designa and video
     VDownloader - software that allows you to download videos as MP4 files
     SD Clone - Fastest, easiest and most reliable way to clone SD cards
@@ -150,12 +151,15 @@ Manually Installed:
     Logitech Options - an application that customizes your Logitech devices
     Bosca Ceoil - A free easy to use tool for creating music
     Blender - 3D creation suite
+    Anaconda - Distribution of Python and R for scientific computing
+        After Anaconda installation execute:
+            # init conda, the following command write scripts into your shell init file automatically
+            conda init
+            # disable init of env "base"
+            conda config --set auto_activate_base false
     +
     vscode
     chrome
     firefox
     iterm2
     xquartz
-    
-    
-    

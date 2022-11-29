@@ -16,33 +16,33 @@ get() {
 }
     # Add to path
 prepend-path() {
-  [ -d $1 ] && PATH="$1:$PATH"
+  [ -d "$1" ] && PATH="$1:$PATH"
 }
     # clear the local Workspace test dir
 cleartest() {
-    touch ~/Workspace/.test/TempClearTestDoc
-    rm -rf ~/Workspace/.test/{*,.*}
+    touch "$TESTDIR"/TempClearTestDoc
+    rm -rf "$TESTDIR"/{*,.*}
 }
     # copyfile <file> : Copies the contents of a given file to the system or X Windows clipboard
 function copyfile {
   emulate -L zsh
-  clipcopy $1
+  clipcopy "$1"
 }
     # Bash Function To Extract File Archives Of Various Types
 extract () {
-     if [ -f $1 ] ; then
-         case $1 in
-             *.tar.bz2)   tar xjf $1     ;;
-             *.tar.gz)    tar xzf $1     ;;
-             *.bz2)       bunzip2 $1     ;;
-             *.rar)       rar x $1       ;;
-             *.gz)        gunzip $1      ;;
-             *.tar)       tar xf $1      ;;
-             *.tbz2)      tar xjf $1     ;;
-             *.tgz)       tar xzf $1     ;;
-             *.zip)       unzip $1       ;;
-             *.Z)         uncompress $1  ;;
-             *.7z)        7z x $1    ;;
+     if [ -f "$1" ] ; then
+         case "$1" in
+             *.tar.bz2)   tar xjf "$1"     ;;
+             *.tar.gz)    tar xzf "$1"     ;;
+             *.bz2)       bunzip2 "$1"     ;;
+             *.rar)       rar x "$1"       ;;
+             *.gz)        gunzip "$1"      ;;
+             *.tar)       tar xf "$1"      ;;
+             *.tbz2)      tar xjf "$1"     ;;
+             *.tgz)       tar xzf "$1"     ;;
+             *.zip)       unzip "$1"       ;;
+             *.Z)         uncompress "$1"  ;;
+             *.7z)        7z x "$1"    ;;
              *)           echo "'$1' cannot be extracted via extract()" ;;
          esac
      else
@@ -58,7 +58,7 @@ killscreens () {
 }
     # Change working directory to the top-most Finder window location
 function cdf() {
-    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
 }
     
 
@@ -132,10 +132,10 @@ encrypt (){
 
     usage="\nusage:   encrypt <target> [password] [size]\n         encrypt create <name> [password] [size]\n         encrypt help\nEncrypts traget into a sparse bundle, default 5gb max-size\nFor more help see 'hdiutil help'\n\n"
     if [ $# -eq 0 ] || [ "$1" = "help" ]; then
-        printf $usage
+        printf "%s" "$usage"
     elif [ "$1" = "create" ]; then
         if [ $# -eq 1 ]; then
-            printf $usage
+            printf "%s" "$usage"
         elif [ $# -eq 2 ]; then
             hdiutil create -encryption -stdinpass -volname $(basename -s ".${2##*.}" "$2") -size 5g -type SPARSEBUNDLE "$2"
         elif [ $# -eq 3 ]; then
@@ -190,16 +190,16 @@ detach (){
 
 alias eject="detach"
 
-export HISTDIR="$HOME/Workspace/__space__/.history"
+
 
 export VENVLOG="$HISTDIR/python/.venvlog"
 
 venvactivate() {
-    venvName=$2
+    venvName="$2"
     venvlog="$VENVLOG"
     if [ "$1" = "init" ]; then
         verb="Initialized";
-        printf "\nCreating new venv as (%s)...\n" $venvName;
+        printf "\nCreating new venv as (%s)...\n" "$venvName";
     else
         verb="Started";
     fi
@@ -207,47 +207,48 @@ venvactivate() {
     
     venvpath=`find ~+ -type f -name "activate" -maxdepth 3`
     
-    source $venvpath
+    source "$venvpath"
     if [ $? -eq 0 ]; then
-        touch $VENVLOG
-        grep -qxF $venvpath $VENVLOG || echo $venvpath >> $VENVLOG
+        touch "$VENVLOG"
+        grep -qxF "$venvpath" "$VENVLOG" || echo "$venvpath" >> "$VENVLOG"
         #source $venvName/bin/activate
         pyv=$(python -V)
         version=${pyv#* }
         #pyv="Python"
-        printf "%s virtual environment (%s) in Python %s -- don't forget to type 'deactivate' or 'venv end' when you're done! \n" $verb $venvName $version;
+        printf "%s virtual environment (%s) in Python %s -- don't forget to type 'deactivate' or 'venv end' when you're done! \n" "$verb" "$venvName" "$version";
     else
-        printf "%s could not be found -- do you have the right directory?\n" $venvName;
+        printf "%s could not be found -- do you have the right directory?\n" "$venvName";
     fi
 }
 
 venvusage() {
-    printf "\n venv [action] <venv>\n\nUsage:\n\nvenv help              --  use to display 'venv' usage. \n\nvenv init <venvName>   --  use to create a new venv in the current directory. If venvName is left blank, the default "venv" is used. \n\nvenv start <venvName>  --  use to activate the venv in the current directory. If venvName is left blank, the default "venv" is used. \n\nvenv end               --  used to deactivate the current venv.\n\nvenv log               --  used to open the 'venv' log file, logging all venvs created with this tool. The log is currently saved at '%s'\n\nUse 'venv2' for explicit Python 2 virtualenv and 'venv3' for explicit Python 3 venv -- 'venv' defaults to Python 3.\nUse 'sdkenv' for Java/Scala/Kotlin virtual environments\n\nFunctions wrap built-in Python 'venv' tool for Python 3 and 'virtualenv' for Python to create virtual environments, Python versions are managed by pyenv\n\n" $VENVLOG;
+    printf "\n venv [action] <venv>\n\nUsage:\n\nvenv help              --  use to display 'venv' usage. \n\nvenv init <venvName>   --  use to create a new venv in the current directory. If venvName is left blank, the default "venv" is used. \n\nvenv start <venvName>  --  use to activate the venv in the current directory. If venvName is left blank, the default "venv" is used. \n\nvenv end               --  used to deactivate the current venv.\n\nvenv log               --  used to open the 'venv' log file, logging all venvs created with this tool. The log is currently saved at '%s'\n\nUse 'venv2' for explicit Python 2 virtualenv and 'venv3' for explicit Python 3 venv -- 'venv' defaults to Python 3.\nUse 'sdkenv' for Java/Scala/Kotlin virtual environments\n\nFunctions wrap built-in Python 'venv' tool for Python 3 and 'virtualenv' for Python to create virtual environments, Python versions are managed by pyenv\n\n" "$VENVLOG";
 }
 
 
 
 venv() {
+    echo "Probably don't use this, 'pipenv' will probably be better/at least the same and is updated, has resources and community support"
     if [ $# -eq 0 ] || [ "$1" = "help" ]; then
         venvusage
     elif [ $# -ge 1 ]; then
         if [[ -z "${2+present}" ]]; then
             venvName="venv";
         else
-            venvName=$2;
+            venvName="$2";
         fi;
         if [ "$1" = "init" ]; then
-            python -m venv $venvName;
-            touch $VENVLOG
-            echo `find ~+ -type f -name "activate" -maxdepth 3` >> $VENVLOG
-            venvactivate $1 $venvName ;
+            python -m venv "$venvName";
+            touch "$VENVLOG"
+            echo `find ~+ -type f -name "activate" -maxdepth 3` >> "$VENVLOG"
+            venvactivate "$1" "$venvName" ;
         elif [ "$1" = "start" ]; then
-            venvactivate $1 $venvName;
+            venvactivate "$1" "$venvName";
         elif [ "$1" = "end" ]; then
             deactivate;
         elif [ "$1" = "log" ]; then
-            touch $VENVLOG
-            open $VENVLOG;
+            touch "$VENVLOG"
+            open "$VENVLOG";
         else
             venvusage
         fi
@@ -255,26 +256,27 @@ venv() {
 }
 
 venv2() {
+    echo "Probably don't use this, 'pipenv' will probably be better/at least the same and is updated, has resources and community support"
     if [ $# -eq 0 ] || [ "$1" = "help" ]; then
         venvusage
     elif [ $# -ge 1 ]; then
         if [[ -z "${2+present}" ]]; then
             venvName="venv";
         else
-            venvName=$2;
+            venvName="$2";
         fi;
         if [ "$1" = "init" ]; then
-            virtualenv $venvName;
-            touch $VENVLOG
-            echo `find ~+ -type f -name "activate" -maxdepth 3` >> $VENVLOG
-            venvactivate $1 $venvName ;
+            virtualenv "$venvName";
+            touch "$VENVLOG"
+            echo `find ~+ -type f -name "activate" -maxdepth 3` >> "$VENVLOG"
+            venvactivate "$1" "$venvName" ;
         elif [ "$1" = "start" ]; then
-            venvactivate $1 $venvName;
+            venvactivate "$1" "$venvName";
         elif [ "$1" = "end" ]; then
             deactivate;
         elif [ "$1" = "log" ]; then
-            touch $VENVLOG
-            open $VENVLOG;
+            touch "$VENVLOG"
+            open "$VENVLOG";
         else
             venvusage
         fi
@@ -282,41 +284,58 @@ venv2() {
 }
 
 venv3() {
+    echo "Probably don't use this, 'pipenv' will probably be better/at least the same and is updated, has resources and community support"
     if [ $# -eq 0 ] || [ "$1" = "help" ]; then
         venvusage
     elif [ $# -ge 1 ]; then
         if [[ -z "${2+present}" ]]; then
             venvName="venv";
         else
-            venvName=$2;
+            venvName="$2";
         fi;
         if [ "$1" = "init" ]; then
-            python3 -m venv $venvName;
-            touch $VENVLOG
-            echo `find ~+ -type f -name "activate" -maxdepth 3` >> $VENVLOG
-            venvactivate $1 $venvName ;
+            python3 -m venv "$venvName";
+            touch "$VENVLOG"
+            echo `find ~+ -type f -name "activate" -maxdepth 3` >> "$VENVLOG"
+            venvactivate "$1" "$venvName" ;
         elif [ "$1" = "start" ]; then
-            venvactivate $1 $venvName;
+            venvactivate "$1" "$venvName";
         elif [ "$1" = "end" ]; then
             deactivate;
         elif [ "$1" = "log" ]; then
-            touch $VENVLOG
-            open $VENVLOG;
+            touch "$VENVLOG"
+            open "$VENVLOG";
         else
             venvusage
         fi
     fi
 }
 
+pipenvstart(){
+    if [ $# -eq 0 ]; then
+        pipenv --python "$PYMAIN"
+    elif [ "$1" = "--help" ] || [ "$1" = "help" ] || [ "$1" = "-h" ]; then
+        echo "pipenvstart initializes a new pipenv project and enters its shell."
+        echo "When passed with a version number, it will attempt to create a virtual environment with that Python version."
+        echo "Usage:    pipenvstart [python_version]"
+    else
+        pipenv --python $1
+    fi
+    echo "Don't forget to use 'pipenvend', 'exit' or Ctrl+D to close the pipenv shell"
+    pipenv shell
+}
+pipenvend(){
+    exit
+}
 
 export SDKENVLOG="$HISTDIR/sdk/.sdkenvlog"
 
 sdkenvactivate() {
-    sdkenvName=$2
+    sdkenvName="$2"
     sdkenvlog="$SDKENVLOG"
     if [ "$1" = "init" ]; then
         verb="Initialized";
-        printf "\nCreating new sdkenv as (%s)...\n" $sdkenvName;
+        printf "\nCreating new sdkenv as (%s)...\n" "$sdkenvName";
     else
         verb="Started";
     fi
@@ -326,19 +345,19 @@ sdkenvactivate() {
     
     sdk env
     if [ $? -eq 0 ]; then
-        touch $SDKENVLOG
-        grep -qxF $sdkenvpath $SDKENVLOG || echo $sdkenvpath >> $SDKENVLOG
+        touch "$SDKENVLOG"
+        grep -qxF "$sdkenvpath" "$SDKENVLOG" || echo "$sdkenvpath" >> "$SDKENVLOG"
         vertext=$(sdk current)
         version=${vertext#* }
         distro=${version#* }
-        printf "%s virtual environment (%s) %s -- don't forget to type 'sdk env clear' or 'sdkenv end' when you're done! \n\n" $verb $sdkenvName $version;
+        printf "%s virtual environment (%s) %s -- don't forget to type 'sdk env clear' or 'sdkenv end' when you're done! \n\n" "$verb" "$sdkenvName" "$version";
     else
-        printf "%s could not be found -- do you have the right directory?\n\n" $sdkenvName;
+        printf "%s could not be found -- do you have the right directory?\n\n" "$sdkenvName";
     fi
 }
 
 sdkenvusage() {
-    printf "\n sdkenv [action]\n\nUsage:\n\nsdkenv help   --  use to display 'sdkenv' usage. \n\nsdkenv init   --  use to create a new sdkenv in the current directory. \n\nsdkenv start  --  use to activate the sdkenv in the current directory.\n\nsdkenv end    --  used to clear the current sdkenv.\n\nsdkenv log    --  used to open the 'sdkenv' log file, logging all sdkenv created with this tool. The log is currently saved at '%s'\n\nUse 'venv' for Python virtual environments\n\nFunctions wrap SDKMAN!!\n\n" $SDKENVLOG;
+    printf "\n sdkenv [action]\n\nUsage:\n\nsdkenv help   --  use to display 'sdkenv' usage. \n\nsdkenv init   --  use to create a new sdkenv in the current directory. \n\nsdkenv start  --  use to activate the sdkenv in the current directory.\n\nsdkenv end    --  used to clear the current sdkenv.\n\nsdkenv log    --  used to open the 'sdkenv' log file, logging all sdkenv created with this tool. The log is currently saved at '%s'\n\nUse 'venv' for Python virtual environments\n\nFunctions wrap SDKMAN!!\n\n" "$SDKENVLOG";
 }
 
 
@@ -350,20 +369,20 @@ sdkenv() {
         if [[ -z "${2+present}" ]]; then
             sdkenvName="sdkenv";
         else
-            sdkenvName=$2;
+            sdkenvName="$2";
         fi;
         if [ "$1" = "init" ]; then
             sdk env init;
-            touch $SDKENVLOG
-            echo `find ~+ -maxdepth 1 -type f -name ".sdkmanrc"` >> $SDKENVLOG
-            sdkenvactivate $1 $sdkenvName
+            touch "$SDKENVLOG"
+            echo `find ~+ -maxdepth 1 -type f -name ".sdkmanrc"` >> "$SDKENVLOG"
+            sdkenvactivate "$1" "$sdkenvName"
         elif [ "$1" = "start" ]; then
-            sdkenvactivate $1 $sdkenvName
+            sdkenvactivate "$1" "$sdkenvName"
         elif [ "$1" = "end" ]; then
             sdk env clear;
         elif [ "$1" = "log" ]; then
-            touch $SDKENVLOG
-            open $SDKENVLOG;
+            touch "$SDKENVLOG"
+            open "$SDKENVLOG";
         else
             sdkenvusage
         fi
@@ -395,13 +414,13 @@ postgresqlinit(){
     if [ $# -eq 0 ]; then
         printf "\nMust name the server.\nUsage:\n\n    postgresqlinit <name>\n\n"
     else
-        mkdir -p $DATA/postgresql/"$1"
-        mkdir -p $DATA/postgresql/logs/"$1"
-        initdb $DATA/postgresql/"$1"
+        mkdir -p "$DATADIR"/postgresql/"$1"
+        mkdir -p "$DATADIR"/postgresql/logs/"$1"
+        initdb "$DATADIR"/postgresql/"$1"
     
         if [ "$2" = "start" ]; then
             #touch "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
-            pg_ctl -D "$DATA/postgresql/$1" -l "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
+            pg_ctl -D "$DATADIR"/postgresql/"$1" -l "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
         fi
     fi
 }
@@ -412,7 +431,7 @@ postgresqlstart() {
         pg_ctl -D /usr/local/var/postgresql@14 start
     else
         #touch "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log"
-        pg_ctl -D "$DATA/postgresql/$1" -l "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
+        pg_ctl -D "$DATADIR"/postgresql/"$1" -l "$HISTDIR/postgresql/logs/$1/$(date '+%Y-%m-%d %H:%M:%S').log" start
     fi
 }
 
@@ -421,7 +440,7 @@ postgresqlstop() {
         # stop the default server on no args
         pg_ctl -D /usr/local/var/postgresql@14 stop
     else
-        pg_ctl -D "$DATA/postgresql/$1" stop
+        pg_ctl -D "$DATADIR"/postgresql/"$1" stop
     fi
 }
 
@@ -433,6 +452,11 @@ dbstatus(){
 
 }
 
+kraken () {
+    
+    /Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)
+}
+
 
 
 # SymLink the file, if it doesn't already exist
@@ -441,28 +465,28 @@ dbstatus(){
 # 3) Create the new link
 
 # symlink <target> <destination> [--force][-f]
-function symlink {  
+function symlink {
     
     usage="usage: symlink <target> <destination> [--force|-f]|[--remove|-r]"
     
     if [ "$1" = "help" ] || [ $# -eq 0 ]; then
-        echo $usage
+        echo "$usage"
     elif [ $# -ge 2 ]; then
         echo " "
         echo "WORKING ON: $1"
         # does it exist
-        f="$(basename $1)"
-        g="$(readlink -f $1)"
+        f="$(basename "$1")"
+        g="$(readlink -f "$1")"
         if [[ -e "$2/$f" ]] || [[ -h "$2/$f" ]]; then
             echo "    WARNING: $2/$f already exists"
             if [[ $* == *-f* ]]; then
                 echo "    FORCING LINK OF $g TO $2"
                 unlink "$2/$f"
-                ln -s $g $2
+                ln -s "$g" "$2"
             elif [[ $* == *-r* ]]; then
                 echo "    UNSAFELY FORCING LINK OF $g TO $2"
                 rm "$2/$f"
-                ln -s $g $2
+                ln -s "$g" "$2"
             else
                 echo "    SKIPPING $g."
                 echo " "
@@ -473,12 +497,12 @@ function symlink {
         else
           # create the link
           echo "    Linking $g to $2"
-          ln -s $g $2
+          ln -s "$g" "$2"
         fi
         echo " "
     else
-        echo "symlink: $@: Invalid arguments"
-        echo $usage
+        echo "symlink: Invalid arguments"
+        echo "$usage"
     fi
 }
 

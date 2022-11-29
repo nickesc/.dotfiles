@@ -25,8 +25,10 @@ Terminal Utilities:
     cpwd - copy current absolute directory path
     get <var> - get named variable
     ip - get machine's IP address
+    ips - get IP addresses of the other machines on your network
     printpath - get the PATH printed on seperate lines
     f <keyword> - fast, recursive search for file name in directories
+    condaon/condaoff - activate/deactivate the conda base environment in the next shell
     
 System:
     desktopshow/desktophide - show/hide desktop icons
@@ -69,7 +71,6 @@ Clear/Reset:
     
     
 Useful Plugin Aliases:
-
     acs - view all aliases provied by plugins
     wd - warp directory
         wd add [target] - add a warp point at the current/target directory
@@ -95,24 +96,28 @@ Useful Plugin Aliases:
     sm [target] - launch sublime-merge, opening the targetr if there is one
     
 Scripts:
-    
     pfetch - fetch system infomation with pfetch
     colorscheme - display the main terminal colorscheme in various combinations
+    blocks - display the terminal colorscheme in blocks
     uu - universal update
+    note - note book directory manager with git enabled by default
+    info - get info on .dotfiles and the computer configuration
     
 
 Folder Aliases:
-    
     dl - ~/Downloads
     dt - ~/Desktop
+    icloud - ~/Library/Mobile\ Documents/com~apple~CloudDocs
     space - ~/Workspace
-    _space - ~/Workspace/__space__
-    projects - ~/Workspace/projects
+    projects - ~/Workspace/code
+    art - ~/Workspace/art
+    writing - ~/Workspace/writing
     test - ~/Workspace/.test
+    data - ~/Workspace/Data
+    _space - ~/Workspace/__space__
     dotfiles - ~/Workspace/__space__/.dotfiles
     
 Application Aliases:
-
     chrome
     firefox
     safari
@@ -121,4 +126,4 @@ Application Aliases:
     xcode
     sublime
     fontbook
-    
+    kraken - opens the current repository in GitKraken

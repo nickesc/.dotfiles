@@ -10,14 +10,14 @@
 #  ░░       ░░ ░░        ░░   ░░ ░░░  ░░░░░░
 
 echo "------------------------------"
-echo "Setting up pip."
+echo "pip Packages"
 
 # Install pip
-python -m ensurepip --upgrade
+python3 -m ensurepip --upgrade
 python2 -m ensurepip --upgrade
 
 # update pip
-pip install --upgrade pip
+pip3 install --upgrade pip
 pip2 install --upgrade pip
 
 
@@ -26,6 +26,7 @@ pip2 install --upgrade pip
 ###############################################################################
 
 pip2 install virtualenv
+pip3 install pipenv
 
 ###############################################################################
 # Python 2 Enviroment                                                         #
@@ -85,7 +86,4 @@ sudo pip3 install rshell
 pip3 install adafruit-ampy
 
 
-echo "------------------------------"
-echo "Script completed."
-echo "Usage: use python/pip or python3/pip3 for Python 3.10.6"
-echo "Usage: use python2/pip2 for Python 2.7.18"
+

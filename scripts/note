@@ -14,9 +14,10 @@
 #                    (https://nickesc.github.io)
 #                    (https://nickesc.com)
 #
-# Tip: note must be executed in your current shell; source the file or use '. note' if the alias does not work
-#
 #     note - create notes and notebooks as directories in your Workspace (~/Worksapce/Notes/[notebook])
+#
+# Tip: note must be executed in your current shell to automatically switch to the active note directory;
+#      source the file or use '. note' if an alias is not installed
 #
 # Usage:    note <name> - creates a note in the General notebook
 #           note <notebook> <name> - creates a note in a new or existing notebook
@@ -25,22 +26,65 @@
 #           note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks
 #           note project|p <notebook> <projectPath> - symlink a notebook to a project folder
 
-export NOTES="$HOME/Workspace/Notes"
+export NOTES="$WORKSPACE/Notes"
+export NOTEHIST="$HISTDIR/note"
 mkdir -p "$NOTES"
 
+function symlink {
+    
+    usage="usage: symlink <target> <destination> [--force|-f]|[--remove|-r]"
+    
+    if [ "$1" = "help" ] || [ $# -eq 0 ]; then
+        echo "$usage"
+    elif [ $# -ge 2 ]; then
+        echo " "
+        echo "WORKING ON: $1"
+        # does it exist
+        f="$(basename "$1")"
+        g="$(readlink -f "$1")"
+        if [[ -e "$2/$f" ]] || [[ -h "$2/$f" ]]; then
+            echo "    WARNING: $2/$f already exists"
+            if [[ $* == *-f* ]]; then
+                echo "    FORCING LINK OF $g TO $2"
+                unlink "$2/$f"
+                ln -s "$g" "$2"
+            elif [[ $* == *-r* ]]; then
+                echo "    UNSAFELY FORCING LINK OF $g TO $2"
+                rm "$2/$f"
+                ln -s "$g" "$2"
+            else
+                echo "    SKIPPING $g."
+                echo " "
+                echo "    USE symlink $1 $2 --force TO FORCE A LINK"
+                echo "    USE symlink $1 $2 --remove TO UNSAFELY FORCE A LINK"
+            fi
+        # does not exist
+        else
+          # create the link
+          echo "    Linking $g to $2"
+          ln -s "$g" "$2"
+        fi
+        echo " "
+    else
+        echo "symlink: Invalid arguments"
+        echo "$usage"
+    fi
+}
+
 notehelp(){
-    printf "\nTip: note must be executed in your current shell; source the file or use '. note' if the alias does not work"
-    printf "\n\n    note - create notes and notebooks as directories in your Workspace (~/Worksapce/Notes/[notebook])\n"
-    printf "\nUsage:    note <name> - creates a note in the General notebook"
-    printf "\n          note <notebook> <name> - creates a note in a new or existing notebook"
-    printf "\n          note book|b <notebook> [note] - opens or creates a notebook or note"
-    printf "\n          note close|c <notebook> - deletes a notebook"
-    printf "\n          note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks"
-    printf "\n          note project|p <notebook> <projectPath> - symlink a notebook to a project folder\n\n"
+    printf "\nTip: note must be executed in your current shell to automatically switch to the active note directory;
+    printf "\n     source the file or use '. note' if an alias is not installed
+    printf "\n\n    note - create notes and notebooks as directories in your Workspace (%s/[notebook])\n" "$NOTES"
+    printf "\n  Usage:   note <name> - creates a note in the General notebook"
+    printf "\n           note <notebook> <name> - creates a note in a new or existing notebook"
+    printf "\n           note book|b <notebook> [note] - opens or creates a notebook or note"
+    printf "\n           note close|c <notebook> - deletes a notebook"
+    printf "\n           note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks"
+    printf "\n           note project|p <notebook> <projectPath> - symlink a notebook to a project folder\n\n"
 }
 
 notebookinfo(){
-    printf "\nNotebook: $1\nNotes:\n\n"
+    printf "\nNotebook: $1\nNotes:\n"
     \ls -Ft --color=auto
     printf "\n"
 }
@@ -60,8 +104,9 @@ newnotebook(){
     fi
     
     mkdir -p "$NOTES/$notebook"
+    mkdir -p "$NOTEHIST"
     cd "$NOTES/$notebook"
-    git init -q --initial-branch=notebook
+    git init --initial-branch=notebook >> "$NOTEHIST"/"$notebook".log 2>&1
     if [ $listAfter = 1 ]; then
         notebookinfo $notebook
     fi
@@ -80,16 +125,9 @@ newnote(){
         return 1
     else
         note="$name.md"
-        
-        #num=2
-        #while [ -e "$note" ]; do
-        #    note="$name_$num.md"
-        #    num=$(( num + 1 ))
-        #done
-    
         touch "$NOTES/$notebook/$note"
-        nano "$NOTES/$notebook/$note"
-        git add -A 1>.git/notebook.log 2>.git/notebook.err && git commit -q -m "$note"
+        $EDITOR "$NOTES/$notebook/$note"
+        git add -Av >> "$NOTEHIST"/"$notebook".log 2>&1 && git commit -m "$note" >> "$NOTEHIST"/"$notebook".log 2>&1
         notebookinfo $notebook
     fi
     
@@ -103,7 +141,7 @@ if [ "$1" = "help" ] || [ "$1" = "h" ]; then
 elif [ "$1" = "list" ] || [ "$1" = "l" ]; then
     temp=$(pwd)
     cd "$NOTES"
-    printf "\nNotebooks:\n\n"
+    printf "\nNotebooks:\n"
     
     if [ "$2" = "-a" ] || [ "$2" = "--all" ]; then
         \ls --color=auto -dA */ .*/
@@ -111,7 +149,7 @@ elif [ "$1" = "list" ] || [ "$1" = "l" ]; then
         \ls --color=auto -d */
     fi
     
-    printf "\n\n"
+    printf "\n"
     cd "$temp"
 
 # if ask for new note with specified name and notebook ('note book test example')
@@ -128,9 +166,11 @@ elif [ "$1" = "project" ] || [ "$1" = "p" ]; then
     destination="$3"
     if [ $# -ge  3 ]; then
         symlink "$target" "$destination"
+        echo "\nLinked $target to $destination\n" >> "$NOTEHIST"/"$2".log 2>&1
     else
         echo "note: project: Unable to link notebook '$2' with project '$3' - were the correct arguments provided?"
         echo "    usage:  note project [notebook] [projectPath]"
+        echo "\nFailed to link $target to $destination\n" >> "$NOTEHIST"/"$2".log 2>&1
         return 1
     fi
     
@@ -138,7 +178,7 @@ elif [ "$1" = "project" ] || [ "$1" = "p" ]; then
 elif [ "$1" = "close" ] || [ "$1" = "c" ] && [ $# -ge 2 ]; then
     if [ -d "$NOTES/$2" ]; then
         yn="n"
-        read -k "yn?Close the $2 notebook (y|n [default]): "
+        read -k "yn?Close the $2 notebook? (y|n [default]): "
         printf "\n"
         if [ "$yn" = "y" ] || [ "$yn" = "Y" ]; then
             currloc=$(echo "$(pwd)" | tr '[:upper:]' '[:lower:]')
@@ -146,7 +186,11 @@ elif [ "$1" = "close" ] || [ "$1" = "c" ] && [ $# -ge 2 ]; then
             if [ "$currloc" = "$noteloc" ]; then
                 cd "$NOTES"
             fi
+            rm -rf "$NOTES/$2/.git"
+            printf "\nShredding:\n"
             rm -rv "$NOTES/$2"
+            printf "\nClosed the $2 notebook.\n"
+            echo "\nClosed the $2 notebook.\n" >> "$NOTEHIST"/"$notebook".log 2>&1
         else
             echo "Aborted closing the $2 notebook"
             return 1

@@ -40,4 +40,3 @@
     
     SDK installations are found in ~/.sdkman/candidates/
     SDKMAN configurations are found in ~/.sdkman/etc/config (symlink from dotfiles)
-    

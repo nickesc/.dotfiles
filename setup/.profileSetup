@@ -9,15 +9,13 @@
 #  ░██     ░███   ░░██████   ░██  ░██ ███░░██████
 #  ░░      ░░░     ░░░░░░    ░░   ░░ ░░░  ░░░░░░
 
+echo "------------------------------"
+echo "Profile setup"
 
+cp -R "$DOTFILES/Profile" "$WORKSPACE"
 
-
-export DFPROFILE="$DFWORKSPACE/Profile"
-
-cp -R ~/Workspace/__space__/.dotfiles/Profile $DFWORKSPACE
-
-mkdir -p $DFPROFILE/refs
-mkdir -p $DFPROFILE/avatar
+mkdir -p "$PROFILEDIR"/refs
+mkdir -p "$PROFILEDIR"/avatar
 
 git clone \
   --depth 1  \
@@ -27,11 +25,11 @@ git clone \
 ;
 cd N.-Escobar-Media-Branding
 git sparse-checkout set Logos/nickesc
-cp -a Logos/nickesc $DFPROFILE/avatar
+cp -a Logos/nickesc "$PROFILEDIR"/avatar
 git sparse-checkout set Logos/nescobar
-cp -a Logos/nescobar $DFPROFILE/avatar
+cp -a Logos/nescobar "$PROFILEDIR"/avatar
 git sparse-checkout set Logos/signature
-cp -a Logos/signature $DFPROFILE/refs
+cp -a Logos/signature "$PROFILEDIR"/refs
 rm -fr .git
 cd ..
 rm -r N.-Escobar-Media-Branding
@@ -44,7 +42,7 @@ git clone \
 ;
 cd nickesc.github.io
 git sparse-checkout set assets/Resume.pdf
-cp -a assets/Resume.pdf $DFPROFILE/refs
+cp -a assets/Resume.pdf "$PROFILEDIR"/refs
 rm -fr .git
 cd ..
 rm -r nickesc.github.io

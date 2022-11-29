@@ -9,6 +9,8 @@
 #  ░███   ░░██████░██████   ██
 #  ░░░     ░░░░░░ ░░░░░    ░░
 
+echo "------------------------------"
+echo "Ruby Development"
 
 # install dependencies
 brew install automake bison openssl readline libyaml gdbm libffi

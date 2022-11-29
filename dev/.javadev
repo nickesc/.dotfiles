@@ -9,6 +9,8 @@
 #  ░░███ ░░████████  ░░██   ░░████████
 #   ░░░   ░░░░░░░░    ░░     ░░░░░░░░
 
+echo "------------------------------"
+echo "Java Development"
 
 # install SDKMAN!
 curl -s "https://get.sdkman.io" | bash
@@ -20,7 +22,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
 
 # copy and overwrite config file to enable auto-answer
-cp -f "$HOME/Workspace/__space__/.dotfiles/config/sdkman/configTemp" "$HOME/.sdkman/etc/config"
+cp -f "$DOTFILES"/config/sdkman/configTemp "$HOME/.sdkman/etc/config"
 
 # install the latest java version
 sdk install scala
@@ -37,11 +39,11 @@ sdk default java 17.0.4-tem
 # copy and overwrite config file to disable auto-answer
 
 rm "$HOME/.sdkman/etc/config"
-ln -s "$HOME/Workspace/__space__/.dotfiles/config/sdkman/config" "$HOME/.sdkman/etc/"
-# cp -f "$HOME/Workspace/__space__/.dotfiles/config/sdkman/config2" "$HOME/.sdkman/etc/config"
+ln -s "$DOTFILES"/config/sdkman/config "$HOME/.sdkman/etc/"
+# cp -f "$DOTFILES"/config/sdkman/config2 "$HOME/.sdkman/etc/config"
 
 # reload the shell
-source $HOME/.zshrc
+source "$HOME"/.zshrc
 
 # check for upgrades to those versions
 sdk upgrade

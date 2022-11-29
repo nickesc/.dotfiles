@@ -10,6 +10,9 @@
 #  ░░   ░░  ░░░░░░  ░░░  ░░  ░░  ░░░░░░ ░░░░░   ░░░     ░░░░░░ ░░░    ░░░
 
 
+echo "------------------------------"
+echo "Homebrew Setup"
+
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -35,11 +38,16 @@ brew upgrade --all
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
+echo "------------------------------"
+echo "Install modern Bash"
+
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion@2
 echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
 
+echo "------------------------------"
+echo "Install other tools"
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -47,38 +55,8 @@ brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 brew install wget --with-iri
-brew install vim --with-override-system-vi
-brew install imagemagick --with-webp
-brew install gnu-sed --with-default-names
-
-
-
-brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/Brewfile
-brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/Caskfile
-brew bundle install --file=~/Workspace/__space__/.dotfiles/packages/MASfile
-
-# quicklook plugins qlimagesize qlcolorcode(?) quicklookase qlvideo
-brew install qlstephen qlmarkdown suspicious-package apparency
-xattr -r ~/Library/QuickLook
-xattr -d -r com.apple.quarantine ~/Library/QuickLook
-
-qlmanage -r cache
-qlmanage -r
-
-#defaults write org.n8gray.QLColorCode font Monaco
-#defaults write org.n8gray.QLColorCode fontSizePoints 9
-
-#defaults write org.n8gray.QLColorCode darkTheme Zenburn-dark
-#defaults write org.n8gray.QLColorCode lightTheme Zenburn-light
-
-brew tap homebrew/cask-versions
-brew install --cask virtualbox-beta
-
-dotnet tool install --global PowerShell
-
-brew install qmk/qmk/qmk
-export QMK_HOME='~/Workspace/__space__/qmk_firmware' # Optional, set the location for `qmk_firmware`
-qmk setup  # This will clone `qmk/qmk_firmware` and optionally set up your build environment
 
 # Remove outdated versions from the cellar.
+brew update
 brew cleanup
+brew doctor

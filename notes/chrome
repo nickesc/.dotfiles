@@ -10,37 +10,68 @@
 
 Chrome Extension List:
 
-    Adblock Plus - free ad blocker      | https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb
-    AdBlock — best ad blocker           | https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom
-    +Bypass Paywalls                    | https://github.com/iamadamdev/bypass-paywalls-chrome
-    Bulk URL Opener                     | https://chrome.google.com/webstore/detail/bulk-url-opener/kgnfciolbjojfdbbelbdbhhocjmhenep
-    Chrome Remote Desktop               | https://chrome.google.com/webstore/detail/chrome-remote-desktop/inomeogfingihgjfjlpeplalcfajhgai
-    cocopy                              | https://github.com/pokutuna/chrome-cocopy
-    Color by Fardos - Color Picker      | https://chrome.google.com/webstore/detail/color-by-fardos-color-pic/iibpgpkhpfggipbacjfeijkloidhmiei
-    Cookie Rwemover                     | https://chrome.google.com/webstore/detail/cookie-remover/kcgpggonjhmeaejebeoeomdlohicfhce
-    Dashlane                            | https://chrome.google.com/webstore/detail/dashlane-%E2%80%94-password-manag/fdjamakpfbbddfjaooikfcpapjohcfmg
-    File Icons for GitHub and GitLab    | https://github.com/homerchen19/github-file-icons
-    GitHub Downloader                   | https://chrome.google.com/webstore/detail/github-downloader/jplmabjbdhggnlhndkdfciacklbjcfel
-    GitHub Repository Size              | https://github.com/harshjv/github-repo-size
-    *Google Translate                   | https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb
-    *h264ify                            | https://github.com/erkserkserks/h264ify
-    Honey                               | https://chrome.google.com/webstore/detail/honey-automatic-coupons-r/bmnlcjabgnpnenekpadlanbbkooimhnj
-    Hover Zoom+                         | https://github.com/extesy/hoverzoom/
-    JSONVue                             | https://github.com/gildas-lormeau/JSONVue
-    OctoLinker                          | https://chrome.google.com/webstore/detail/octolinker/jlmafbaeoofdegohdhinkhilhclaklkp
-    Picture-in-Picture Extension        | https://github.com/GoogleChromeLabs/picture-in-picture-chrome-extension
-    *Privacy Badger                     | https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp
-    RMS (Run My Script) - Script runner | https://chrome.google.com/webstore/detail/rms-run-my-script-script/bifnofbpdbdmgopjoidbicngijjmlogj
-    Save All Resources                  | https://github.com/up209d/ResourcesSaverExt
-    Session Buddy                       | https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko
-    Simple mass downloader              | https://chrome.google.com/webstore/detail/simple-mass-downloader/abdkkegmcbiomijcbdaodaflgehfffed
-    Tab Manager Plus for Chrome         | https://github.com/stefanXO/Tab-Manager-Plus
-    Teleparty                           | https://chrome.google.com/webstore/detail/netflix-party-is-now-tele/oocalimimngaihdkbihfgmpkcpnmlaoa
-    Turbo Download Manager              | https://chrome.google.com/webstore/detail/turbo-download-manager-3r/pabnknalmhfecdheflmcaehlepmhjlaa
-    uBlacklist                          | https://github.com/iorate/ublacklist
-    *uBlock Origin                      | https://github.com/gorhill/uBlock
-    Wayback Machine                     | https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak
-    Web Maker                           | https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh
+    Adblock Plus - free ad blocker
+        https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb
+    AdBlock — best ad blocker
+        https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom
+    +Bypass Paywalls
+        https://github.com/iamadamdev/bypass-paywalls-chrome
+    Bulk URL Opener
+        https://chrome.google.com/webstore/detail/bulk-url-opener/kgnfciolbjojfdbbelbdbhhocjmhenep
+    Chrome Remote Desktop
+        https://chrome.google.com/webstore/detail/chrome-remote-desktop/inomeogfingihgjfjlpeplalcfajhgai
+    cocopy
+        https://github.com/pokutuna/chrome-cocopy
+    Color by Fardos - Color Picker
+        https://chrome.google.com/webstore/detail/color-by-fardos-color-pic/iibpgpkhpfggipbacjfeijkloidhmiei
+    Cookie Rwemover
+        https://chrome.google.com/webstore/detail/cookie-remover/kcgpggonjhmeaejebeoeomdlohicfhce
+    Dashlane
+        https://chrome.google.com/webstore/detail/dashlane-%E2%80%94-password-manag/fdjamakpfbbddfjaooikfcpapjohcfmg
+    File Icons for GitHub and GitLab
+        https://github.com/homerchen19/github-file-icons
+    GitHub Downloader
+        https://chrome.google.com/webstore/detail/github-downloader/jplmabjbdhggnlhndkdfciacklbjcfel
+    GitHub Repository Size
+        https://github.com/harshjv/github-repo-size
+    *Google Translate
+        https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb
+    *h264ify
+        https://github.com/erkserkserks/h264ify
+    Honey
+        https://chrome.google.com/webstore/detail/honey-automatic-coupons-r/bmnlcjabgnpnenekpadlanbbkooimhnj
+    Hover Zoom+
+        https://github.com/extesy/hoverzoom/
+    JSONVue
+        https://github.com/gildas-lormeau/JSONVue
+    OctoLinker
+        https://chrome.google.com/webstore/detail/octolinker/jlmafbaeoofdegohdhinkhilhclaklkp
+    Picture-in-Picture Extension
+        https://github.com/GoogleChromeLabs/picture-in-picture-chrome-extension
+    *Privacy Badger
+        https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp
+    RMS (Run My Script) - Script runner
+        https://chrome.google.com/webstore/detail/rms-run-my-script-script/bifnofbpdbdmgopjoidbicngijjmlogj
+    Save All Resources
+        https://github.com/up209d/ResourcesSaverExt
+    Session Buddy
+        https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko
+    Simple mass downloader
+        https://chrome.google.com/webstore/detail/simple-mass-downloader/abdkkegmcbiomijcbdaodaflgehfffed
+    Tab Manager Plus for Chrome
+        https://github.com/stefanXO/Tab-Manager-Plus
+    Teleparty
+        https://chrome.google.com/webstore/detail/netflix-party-is-now-tele/oocalimimngaihdkbihfgmpkcpnmlaoa
+    Turbo Download Manager
+        https://chrome.google.com/webstore/detail/turbo-download-manager-3r/pabnknalmhfecdheflmcaehlepmhjlaa
+    uBlacklist
+        https://github.com/iorate/ublacklist
+    *uBlock Origin
+        https://github.com/gorhill/uBlock
+    Wayback Machine
+        https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak
+    Web Maker
+        https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh
     
     * - disabled by default
     + - manually installed

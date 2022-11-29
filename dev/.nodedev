@@ -9,6 +9,8 @@
 #   ███  ░██░░██████ ░░██████░░██████░██░░███  ██████
 #  ░░░   ░░  ░░░░░░   ░░░░░░  ░░░░░░ ░░  ░░░  ░░░░░░
 
+echo "------------------------------"
+echo "Node.JS Development"
 
 # install n from Homebrew https://github.com/tj/n
 #brew install n
@@ -28,7 +30,7 @@ npm --version
 
 
 # run the NPMfile
-$HOME/Workspace/__space__/.dotfiles/packages/NPMfile
+. "$DOTFILES"/packages/npm
 
 # reload the shell
 source $HOME/.zshrc

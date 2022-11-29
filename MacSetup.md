@@ -345,3 +345,34 @@ Workspace
     ...
       
         
+
+
+# at the end, before install
+update spaceship prompt?
+
+
+
+#xcode-select --install
+
+#DOTPATH=$(pwd)
+
+#ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+
+
+
+
+
+# softwareupdate -i -a
+
+## still to do:
+# iterm setup
+# install needed fonts
+# omz plugins
+# copy .zshrc
+# install langs (pyenv, sdkman, nvm, go, others)
+#
+
+
+
+
+

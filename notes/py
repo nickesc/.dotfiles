@@ -1,11 +1,12 @@
-                   
-   ██████   ██   ██
-  ░██░░░██ ░░██ ██
-  ░██  ░██  ░░███
-  ░██████    ░██
-  ░██░░░     ██
-  ░██       ██
-  ░░       ░░
+
+                      ██   ██
+   ██████   ██   ██  ░██  ░██
+  ░██░░░██ ░░██ ██  ██████░██       ██████  ███████
+  ░██  ░██  ░░███  ░░░██░ ░██████  ██░░░░██░░██░░░██
+  ░██████    ░██     ░██  ░██░░░██░██   ░██ ░██  ░██
+  ░██░░░     ██      ░██  ░██  ░██░██   ░██ ░██  ░██
+  ░██       ██       ░░██ ░██  ░██░░██████  ███  ░██
+  ░░       ░░         ░░  ░░   ░░  ░░░░░░  ░░░   ░░
 
 Python Installation Information:
 
@@ -28,7 +29,9 @@ Python Installation Information:
     For more pyenv usage:
         pyenv help
     For information on Python virtual environments:
-        venv
+        pipenv --help
+        or
+        pipenvstart --help   ## small wrapper to for pipenv
     
     To run as iPython:
         ipython <target>
@@ -41,8 +44,10 @@ Python Installation Information:
     To install pip packages from piprequirements.txt in the current directory
         pipreq
     
-    Default Python installations are found in the Pipfile ~/Workspace/__space__/.dotfiles/packages/Pipfile
-    Python installations are found in ~/.pyenv/versions/
+    Default Python package installations are found in the pip-file:
+        ~/Workspace/__space__/.dotfiles/packages/pip
+    Python installations are found in:
+        ~/.pyenv/versions/
     
 Global Pip Packages:
 
@@ -66,4 +71,3 @@ Global Pip Packages:
     nltk - Natural Language Toolkit
     rshell - A remote shell for working with MicroPython boards
     adafruit-ampy - A command line tool to interact with a CircuitPython or MicroPython boards over a serial connection
-    

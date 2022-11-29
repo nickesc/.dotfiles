@@ -9,7 +9,7 @@
 #  ░░ ░░░░░░   ░░░░░░ ░░░░░░  ░░░░░░  ░░  ░░░░░░  ░░░   ░░ ░░░░░   ░░░  ░░░░░░ ░░░    ░░░░░
 
 
-logonickesc
+#logonickesc
 printf "\n\n"
 
 if ! command -v neofetch &> /dev/null; then

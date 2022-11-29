@@ -9,6 +9,8 @@
 #  ░░██████ ░██  ░██   ███ ░██ ░██  ██        ██████ ██████ ░██  ░██
 #   ░░░░░░  ░░   ░░   ░░░  ░░  ░░  ░░        ░░░░░░ ░░░░░░  ░░   ░░
 
+echo "------------------------------"
+echo "Oh My ZSH setup"
 
 ## download and install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -18,8 +20,8 @@ omz update
 
 # download and symlink spaceship theme
 # https://github.com/spaceship-prompt/spaceship-prompt
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git ~/Workspace/__space__/.dotfiles/themes/omz/spaceship-prompt --depth=1
-ln -s ~/Workspace/__space__/.dotfiles/themes/omz/spaceship-prompt "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$DOTFILES"/themes/omz/spaceship-prompt --depth=1
+ln -s "$DOTFILES"/themes/omz/spaceship-prompt "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -30,8 +32,19 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # https://github.com/Chick2D/neofetch-themes
 
 mkdir -p ~/.config/neofetch
-ln -s ~/Workspace/__space__/.dotfiles/config/neofetch/config.conf ~/.config/neofetch
-brew install neofetch
+ln -s "$DOTFILES"/config/neofetch/config.conf ~/.config/neofetch
+
+# create warprc file for wd
+mkdir "$HISTDIR/wd"
+touch "$HISTDIR/wd/.warprc"
+
+# create python history dir
+mkdir "$HISTDIR/python"
+
+# create sdkman history dir
+mkdir "$HISTDIR/sdk"
+
+
 
 # reload the shell
 source $HOME/.zshrc

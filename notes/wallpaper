@@ -8,61 +8,51 @@
    ███░ ░░░██░░████████ ███ ███░██     ░░████████░██     ░░██████░███
   ░░░    ░░░  ░░░░░░░░ ░░░ ░░░ ░░       ░░░░░░░░ ░░       ░░░░░░ ░░░
 
-To select Dynamic Wallpapers, you may need to take a few steps
-If a custom Dynamic Wallpaper only shows the dark version of the wallpaper:
+To use Dynamic Wallpapers, you may need to take a few steps.
 
-    potential solution 1: workaround for auto-dark selection (recommended)
-    
-        1. don't set the custom wallpaper in Desktop settings
-        2. set the wallpaper to a default Dynamic Wallpaper -- like the Montery graphic
-        3. set the wallpaper to "Light" then "Dynamic"
-        4. close the Desktop settings
-        5. set the new wallpaper by right-clicking on an image in Finder and selecting "Set Desktop Picture"
-    
-    potential soution 3: navigate the unselectable menu with tab (not recommended)
-    
-        1. open Keyboard settings and go to the Shortcuts submenu
-        2. tick "use keyboard navigation to move focus between controls"
-        3. go back to the Desktop settings
-        4. select the desired wallpaper
-        5. press tab until you reach the Dynamic Wallpaper dropdown
-        6. select Dynamic
-    
-    potential solution 2: move files to "/System/Library/Desktop Pictures" (untested, not recommended)
+    If a custom Dynamic Wallpaper only shows the dark version of the wallpaper:
+        potential solution 1: workaround for auto-dark selection (recommended)
+            1. don't set the custom wallpaper in Desktop settings
+            2. set the wallpaper to a default Dynamic Wallpaper -- like the Montery graphic
+            3. set the wallpaper to "Light" then "Dynamic"
+            4. close the Desktop settings
+            5. set the new wallpaper by right-clicking on an image in Finder and selecting "Set Desktop Picture"
         
-        1. in a terminal, execute 'open "/System/Library/Desktop Pictures"'
-        2. copy over desired wallpapers to "/System/Library/Desktop Pictures" [MUST DISABLE SIP - ONLY DO THIS IF YOU ARE POSITIVE YOU KNOW WHAT THAT MEANS]
-        3. select them from the Apple Wallpapers section in the wallpaper settings
-    
-    potential solution 3: move files to "/Library/Desktop Pictures" (untested, not recommended)
-    
-        1. create a new folder "/Library/Desktop Pictures" if it does not exist
-        2. copy over desired wallpapers to "/Library/Desktop Pictures"
-        3. select them from the Apple Wallpapers section in the wallpaper settings
+        potential soution 2: navigate the unselectable menu with tab (not recommended)
+            1. open Keyboard settings and go to the Shortcuts submenu
+            2. tick "use keyboard navigation to move focus between controls"
+            3. go back to the Desktop settings
+            4. select the desired wallpaper
+            5. press tab until you reach the Dynamic Wallpaper dropdown
+            6. select Dynamic
         
-To create Dynamic Wallpapers:
+        potential solution 3: move files to "/System/Library/Desktop Pictures" (untested, not recommended)
+            1. in a terminal, execute 'open "/System/Library/Desktop Pictures"'
+            2. copy over desired wallpapers to "/System/Library/Desktop Pictures" [MUST DISABLE SIP - ONLY DO THIS IF YOU ARE POSITIVE YOU KNOW WHAT THAT MEANS]
+            3. select them from the Apple Wallpapers section in the wallpaper settings
+        
+        potential solution 4: move files to "/Library/Desktop Pictures" (untested, not recommended)
+        
+            1. create a new folder "/Library/Desktop Pictures" if it does not exist
+            2. copy over desired wallpapers to "/Library/Desktop Pictures"
+            3. select them from the Apple Wallpapers section in the wallpaper settings
+            
+    To create Dynamic Wallpapers:
+        Option 1: Dynamic Wallpaper Club (recommended)
+            https://dynamicwallpaper.club/create
 
-    Option 1: Dynamic Wallpaper Club (recommended)
-    
-        https://dynamicwallpaper.club/create
-
-    option 2: wallpapper (not recommended, time and sun methods are both impossible to get right)
-    
-        https://github.com/mczachurski/wallpapper
-        https://itnext.io/macos-mojave-dynamic-wallpaper-fd26b0698223
+        option 2: wallpapper (not recommended, time and sun methods are both impossible to get right)
+            https://github.com/mczachurski/wallpapper
+            https://itnext.io/macos-mojave-dynamic-wallpaper-fd26b0698223
+            helper function for creating wallpapers:
+                function walp(){
+                    wallpapper -i "$1".json -o "$1".heic && wallpapper -e "$1".heic
+                }
+            
+        Option 3: 24 Hour Wallpaper (completely untested and $10)
+            https://apps.apple.com/us/app/24-hour-wallpaper/id1226087575?ls=1&mt=12
         
-        function walp(){
-            wallpapper -i "$1".json -o "$1".heic && wallpapper -e "$1".heic
-        }
-        
-    Option 3: 24 Hour Wallpaper (completely untested and $10)
-    
-        https://apps.apple.com/us/app/24-hour-wallpaper/id1226087575?ls=1&mt=12
-    
-    Tools:
-    
-        elevation and azimuth calculator: https://keisan.casio.com/exec/system/1224682277
-        dynamic wallpaper seperator: https://strukturag.github.io/libheif/
-        wallpapers location: https://nono.ma/location-of-apple-desktop-pictures-big-sur
-    
-    
+        Tools:
+            elevation and azimuth calculator: https://keisan.casio.com/exec/system/1224682277
+            dynamic wallpaper seperator: https://strukturag.github.io/libheif/
+            wallpapers location: https://nono.ma/location-of-apple-desktop-pictures-big-sur

@@ -69,5 +69,13 @@ note list test26
 note l
 note l tet27
 
+note book test28 test29
+note project
+note project test28
+note project test30
+note project test28 ~/Desktop
+note project test28 ~/Desktop/Help
+
+
 
 #test project, list --all, chapters

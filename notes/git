@@ -15,7 +15,6 @@ Git Installation Information
     The global .gitattributes is located at ~/.gitattributes (symlinked from dotfiles).
     
     Main Configurations:
-    
         name: N. Escobar
         email: nick@nescobar.media
         github: nickesc
@@ -24,7 +23,6 @@ Git Installation Information
         color ui: auto
     
     Aliases:
-    
         g - git
         amend - ammend commit
         br - branch
@@ -41,5 +39,3 @@ Git Installation Information
         
     For more configurations:
         gitconfig
-        
-        

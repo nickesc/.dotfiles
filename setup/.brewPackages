@@ -1,0 +1,47 @@
+#!/usr/bin/env zsh
+
+echo "------------------------------"
+echo "Homebrew Package Installation"
+
+brew install vim --with-override-system-vi
+brew install imagemagick --with-webp
+brew install gnu-sed --with-default-names
+
+echo "------------------------------"
+echo "Brewfile"
+brew bundle install --file="$DOTFILES"/packages/Brewfile
+
+echo "------------------------------"
+echo "Caskfile"
+brew bundle install --file="$DOTFILES"/packages/Caskfile
+
+echo "------------------------------"
+echo "MASfile"
+brew bundle install --file="$DOTFILES"/packages/MASfile
+
+
+echo "------------------------------"
+echo "More tools from brew"
+
+# quicklook plugins qlimagesize qlcolorcode(?) quicklookase qlvideo
+brew install qlstephen qlmarkdown suspicious-package apparency
+xattr -r ~/Library/QuickLook
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
+qlmanage -r cache
+qlmanage -r
+
+
+brew tap homebrew/cask-versions
+brew install --cask virtualbox-beta
+
+dotnet tool install --global PowerShell
+
+brew install qmk/qmk/qmk
+export QMK_HOME="$__SPACE__/qmk_firmware" # Optional, set the location for `qmk_firmware`
+qmk setup  # This will clone `qmk/qmk_firmware` and optionally set up your build environment
+
+brew update
+brew upgrade
+brew cleanup
+brew doctor

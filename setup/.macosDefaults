@@ -9,10 +9,12 @@
 #   ███ ░██ ░██░░████████░░█████ ░░██████  ██████   ░░██████░░██████  ░██  ░░████████░░██████ ███  ░░██  ██████
 #  ░░░  ░░  ░░  ░░░░░░░░  ░░░░░   ░░░░░░  ░░░░░░     ░░░░░░  ░░░░░░   ░░    ░░░░░░░░  ░░░░░░ ░░░    ░░  ░░░░░░
 
+echo "------------------------------"
+echo "MacOS defaults"
 
 COMPUTER_NAME="Batcomputer"
 
-# ~/.macos — https://mths.be/macos
+# source: https://mths.be/macos
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change

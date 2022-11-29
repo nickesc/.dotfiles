@@ -10,6 +10,9 @@
 #    ░░    ░░░░░░  ░░░   ░░    ░░  ░░░░░░
 
 
+echo "------------------------------"
+echo "Font setup"
+
 # http://collletttivo.it/
 # https://beautifulwebtype.com/
 # https://www.typewolf.com/
@@ -20,74 +23,74 @@
 
 # Copy files from the fonts folder
 
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/FivoSans/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Objectivity/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Jost/fonts/Jost/Jost-VF.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Jost/fonts/StGeorge/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Dejavu/ttf/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Droid/droid/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/BrassMono/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/CooperHewitt/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Arkibal/OTF/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Ignazio/desktop/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/MaziusDisplay/desktop/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Messapia/desktop/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/NectoMono/desktop/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Ortica/desktop/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Selawik/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/CourierScreenplay/*.ttf $HOME/Library/Fonts
+cp -vf "$DOTFILES"/fonts/FivoSans/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Objectivity/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Jost/fonts/Jost/Jost-VF.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Jost/fonts/StGeorge/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Dejavu/ttf/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Droid/droid/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/BrassMono/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/CooperHewitt/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Arkibal/OTF/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Ignazio/desktop/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/MaziusDisplay/desktop/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Messapia/desktop/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/NectoMono/desktop/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Ortica/desktop/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Selawik/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/CourierScreenplay/*.ttf "$HOME"/Library/Fonts
 
 # Clone fonts from GitHub
 
 # Download and install Powerline-fonts
-git clone https://github.com/powerline/fonts.git ~/Workspace/__space__/.dotfiles/fonts/powerline  --depth=1
-~/Workspace/__space__/.dotfiles/fonts/powerline/install.sh
+git clone https://github.com/powerline/fonts.git "$DOTFILES"/fonts/powerline  --depth=1
+"$DOTFILES"/fonts/powerline/install.sh
 
 # Download ibm-courier
-git clone https://github.com/dse/ibm-courier.git ~/Workspace/__space__/.dotfiles/fonts/ibm-courier
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/ibm-courier/fonts/*.otf $HOME/Library/Fonts
+git clone https://github.com/dse/ibm-courier.git "$DOTFILES"/fonts/ibm-courier
+cp -vf "$DOTFILES"/fonts/ibm-courier/fonts/*.otf "$HOME"/Library/Fonts
 
 # download public sans
-git clone https://github.com/uswds/public-sans.git ~/Workspace/__space__/.dotfiles/fonts/public-sans
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/public-sans/fonts/otf/*.otf $HOME/Desktop
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/public-sans/fonts/variable/*.ttf $HOME/Desktop
+git clone https://github.com/uswds/public-sans.git "$DOTFILES"/fonts/public-sans
+cp -vf "$DOTFILES"/fonts/public-sans/fonts/otf/*.otf "$HOME"/Desktop
+cp -vf "$DOTFILES"/fonts/public-sans/fonts/variable/*.ttf "$HOME"/Desktop
 
 # gidole https://github.com/larsenwork/Gidole
-git clone https://github.com/larsenwork/Gidole.git ~/Workspace/__space__/.dotfiles/fonts/gidole
-unzip ~/Workspace/__space__/.dotfiles/fonts/gidole/gidole.zip -d ~/Workspace/__space__/.dotfiles/fonts/gidole
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/gidole/GidoleFont/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/gidole/GidoleFont/*.otf $HOME/Library/Fonts
+git clone https://github.com/larsenwork/Gidole.git "$DOTFILES"/fonts/gidole
+unzip "$DOTFILES"/fonts/gidole/gidole.zip -d "$DOTFILES"/fonts/gidole
+cp -vf "$DOTFILES"/fonts/gidole/GidoleFont/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/gidole/GidoleFont/*.otf "$HOME"/Library/Fonts
 
 # Cairo and Cairo Play
-git clone https://github.com/Gue3bara/Cairo.git ~/Workspace/__space__/.dotfiles/fonts/Cairo
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Cairo/fonts/Cairo/variable/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Cairo/fonts/CairoPlay/variable/*.ttf $HOME/Library/Fonts
+git clone https://github.com/Gue3bara/Cairo.git "$DOTFILES"/fonts/Cairo
+cp -vf "$DOTFILES"/fonts/Cairo/fonts/Cairo/variable/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Cairo/fonts/CairoPlay/variable/*.ttf "$HOME"/Library/Fonts
 
 # Muli
-git clone https://github.com/vernnobile/MuliFont.git ~/Workspace/__space__/.dotfiles/fonts/Muli
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Muli/version-2.0/italic/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Muli/version-2.0/roman/*.ttf $HOME/Library/Fonts
+git clone https://github.com/vernnobile/MuliFont.git "$DOTFILES"/fonts/Muli
+cp -vf "$DOTFILES"/fonts/Muli/version-2.0/italic/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/Muli/version-2.0/roman/*.ttf "$HOME"/Library/Fonts
 
 # Chunk Five
-git clone https://github.com/theleagueof/chunk.git ~/Workspace/__space__/.dotfiles/fonts/ChunkFive
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/ChunkFive/*.otf $HOME/Library/Fonts
+git clone https://github.com/theleagueof/chunk.git "$DOTFILES"/fonts/ChunkFive
+cp -vf "$DOTFILES"/fonts/ChunkFive/*.otf "$HOME"/Library/Fonts
 
 # Sprat
-git clone https://github.com/EthanNakache/Sprat-type.git ~/Workspace/__space__/.dotfiles/fonts/Sprat
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/Sprat/*.ttf $HOME/Library/Fonts
+git clone https://github.com/EthanNakache/Sprat-type.git "$DOTFILES"/fonts/Sprat
+cp -vf "$DOTFILES"/fonts/Sprat/*.ttf "$HOME"/Library/Fonts
 
 # iA Writer
-git clone https://github.com/iaolo/iA-Fonts.git ~/Workspace/__space__/.dotfiles/fonts/iA
-cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Duo/Variable/*.ttf" $HOME/Library/Fonts
-cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Duospace/OTF (Mac)/*.ttf" $HOME/Library/Fonts
-cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Mono/Variable/*.ttf" $HOME/Library/Fonts
-cp -vf "~/Workspace/__space__/.dotfiles/fonts/iA/iA Writer Quattro/Variable/*.ttf" $HOME/Library/Fonts
+git clone https://github.com/iaolo/iA-Fonts.git "$DOTFILES"/fonts/iA
+cp -vf "$DOTFILES/fonts/iA/iA Writer Duo/Variable/*.ttf" "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Duospace/OTF (Mac)/*.ttf" "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Mono/Variable/*.ttf" "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Quattro/Variable/*.ttf" "$HOME"/Library/Fonts
 
-git clone https://github.com/iaolo/iA-Fonts.git ~/Workspace/__space__/.dotfiles/fonts/iA
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Duo"/Variable/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Duospace"/"OTF (Mac)"/*.otf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Mono"/Variable/*.ttf $HOME/Library/Fonts
-cp -vf ~/Workspace/__space__/.dotfiles/fonts/iA/"iA Writer Quattro"/Variable/*.ttf $HOME/Library/Fonts
+git clone https://github.com/iaolo/iA-Fonts.git "$DOTFILES"/fonts/iA
+cp -vf "$DOTFILES"/fonts/iA/"iA Writer Duo"/Variable/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/iA/"iA Writer Duospace"/"OTF (Mac)"/*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/iA/"iA Writer Mono"/Variable/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES"/fonts/iA/"iA Writer Quattro"/Variable/*.ttf "$HOME"/Library/Fonts
 
 # fnt for font package manager
 brew install fnt

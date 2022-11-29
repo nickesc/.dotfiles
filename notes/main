@@ -27,13 +27,20 @@ Main Configuration Information:
         pgDn - recall the last command in history
         
     This terminal uses zsh with oh-my-zsh. Main terminal configurations are stored in ~/.zshrc
-    To edit the configuration:
-        zshconfig
+        To edit the configuration:
+            zshconfig
     
-    Many packages and apps are installed using Homebrew. Default package installation lists are located in ~/Workspace/__space__/.dotfiles/packages/Brewfile and ~/Workspace/__space__/.dotfiles/packages/Caskfile
+    Many packages and apps are installed using Homebrew. Default package installation lists are located in:
+        ~/Workspace/__space__/.dotfiles/packages
 
-    .editor config defines universal editor options, compatible with many editors. Mainly sets indents to 4 spaces
+    .editor config defines universal editor options, compatible with many editors. Mainly handles whitespace
+    for editors like VSCode, XCode, JetBrains IDEs, Nano, Vim, Sublime and more on the system
     
     Themes:
-        Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), oh-my-zsh-syntax-highlighting and the terminal use Paradise (https://github.com/paradise-theme/paradise)
-        Header font by xero <x@xero.nu> (https://github.com/xero/dotfiles/blob/master/figlet/3d.flf) using FIGlet.js (https://github.com/patorjk/figlet.js)
+        Oh-My-Zsh uses the Spaceship theme (https://spaceship-prompt.sh/), oh-my-zsh-syntax-highlighting
+        and the terminal use Paradise (https://github.com/paradise-theme/paradise)
+        Header font by xero <x@xero.nu> (https://github.com/xero/dotfiles/blob/master/figlet/3d.flf)
+        using FIGlet.js (https://github.com/patorjk/figlet.js)
+
+    For a built-in that lists plugin aliases, type:
+        acs

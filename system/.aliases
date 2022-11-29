@@ -12,6 +12,9 @@
 alias sudo='sudo '
 alias _="sudo"
 
+# scripts
+alias uu=". uu"
+alias note=". note"
 
 ## Command replacment/abbreviation
 alias ls="ls -A --color=auto"
@@ -31,15 +34,18 @@ alias h='history'
 #alias egrep='egrep --color=auto'
 
 
+
 ## Directory Shortcuts
-alias space="cd ~/Workspace"
-alias _space="cd ~/Workspace/__space__"
-alias projects="cd ~/Workspace/projects"
-alias test="cd ~/Workspace/.test"
-alias hidden="cd ~/Workspace/.hidden"
-alias data="cd ~/Workspace/Data"
-alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias dotfiles="cd ~/Workspace/__space__/.dotfiles"
+alias space="cd $WORKSPACE"
+alias _space="cd $__SPACE__"
+alias projects="cd $CODEDIR"
+alias art="cd $ARTDIR"
+alias writing="cd $WRITINGDIR"
+alias test="cd $TESTDIR"
+alias hidden="cd $HIDDENDIR"
+alias data="cd $DATADIR"
+alias icloud="cd $ICLOUDDIR"
+alias dotfiles="cd $DOTFILES"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
     # Easier navigation: .., ..., ...., ....., ~ and -
@@ -88,6 +94,7 @@ alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 alias wifis="airport -s"
     # get machine's ip address
 alias ip="ipconfig getifaddr en0"
+alias ips="arp -a"
     # Share local directory as a HTTP server
 alias pyserver="python3 -m http.server"
     # Run proper IPython regarding current virtualenv (if any)
@@ -143,6 +150,9 @@ alias badge="tput bel"
 alias rustenv="rustup override set"
 alias venvend="deactivate"
 alias newreact="npx create-react-app"
+
+alias condaon="conda config --set auto_activate_base true"
+alias condaoff="conda config --set auto_activate_base false"
 
 alias pipdump="pip freeze > piprequirements.txt"
 alias pipreq="pip install -r piprequirements.txt"

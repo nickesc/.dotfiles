@@ -11,7 +11,6 @@
  Zsh Configuration Information:
     
     Main terminal configurations are stored in ~/.zshrc.
-    
         The .zshrc stores important startup configurations, including sourcing functions and aliases and setting up Oh-My-Zsh plugins and themes
         The ~/.zshrc_local file is also sourced at the end, which allows for machine specific aliases and functions
         Some configurations are stored in ~/.zprofile, but it is reserved for use when needed
@@ -33,6 +32,8 @@
                 (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh)
             pyenv - looks for pyenv and loads it if it's found
                 (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv)
+            pipenv - provides  features to simplify use of Pipenv while working in zsh like auto switching to virtual environments
+                (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pipenv)
             brew - adds several aliases for common brew commands
                 (https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew)
             web-search - adds aliases for searching with Google and other popular services

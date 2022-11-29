@@ -9,6 +9,11 @@
 #  ░██       ██       ░░██ ░██  ░██░░██████  ███  ░██
 #  ░░       ░░         ░░  ░░   ░░  ░░░░░░  ░░░   ░░
 
+echo "------------------------------"
+echo "Python Development"
+
+export PYVERSION_="$PYMAIN"
+export PY2VERSION_="$PY2MAIN"
 
 # Install dependencies for python
 brew install openssl readline sqlite3 xz zlib tcl-tk
@@ -17,7 +22,7 @@ brew install openssl readline sqlite3 xz zlib tcl-tk
 brew install pyenv
 
 # enable shims and autocompletion
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 # setup pyenv
 # in .zshrc
@@ -34,17 +39,21 @@ echo 'eval "$(pyenv init -)"' >> ~/.zprofile
 source $HOME/.zshrc
 
 # install python 3 and python 2
-pyenv install 3.10.6
-pyenv install 2.7.18
+pyenv install "$PYVERSION_"
+pyenv install "$PY2VERSION_"
 
 # set latest version as global python version
-pyenv global 3.10.6 2.7.18
-
-# run pipfile
-~/Workspace/__space__/.dotfiles/packages/Pipfile
+pyenv global "$PYVERSION_" "$PY2VERSION_"
 
 brew install pipx
 pipx ensurepath
 
-## add pyenv aliases
+# run pipfile
+. "$DOTFILES"/packages/pip
 
+echo "------------------------------"
+echo "Pydev completed."
+echo "Usage: use python/pip or python3/pip3 for Python $PYVERSION_"
+echo "Usage: use python2/pip2 for $PY2VERSION_"
+echo "Usage: use pyenv to manage global Python virtual environments for Python $PY2VERSION_ and Python $PYVERSION_"
+echo "Usage: use pipenv to manage Python virtual environments for individual projects"
