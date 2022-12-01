@@ -76,6 +76,5 @@ note project test30
 note project test28 ~/Desktop
 note project test28 ~/Desktop/Help
 
-
-
-#test project, list --all, chapters
+note list
+note list --all

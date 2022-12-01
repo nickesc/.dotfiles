@@ -47,3 +47,8 @@ rm -fr .git
 cd ..
 rm -r nickesc.github.io
 
+# Clone Paradise Theme for further use:
+git clone https://github.com/paradise-theme/paradise.git "$DOTFILES"/themes/paradise
+
+# for more terminal themes: https://github.com/lysyi3m/macos-terminal-themes
+

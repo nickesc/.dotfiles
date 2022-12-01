@@ -87,10 +87,10 @@ cp -vf "$DOTFILES/fonts/iA/iA Writer Mono/Variable/*.ttf" "$HOME"/Library/Fonts
 cp -vf "$DOTFILES/fonts/iA/iA Writer Quattro/Variable/*.ttf" "$HOME"/Library/Fonts
 
 git clone https://github.com/iaolo/iA-Fonts.git "$DOTFILES"/fonts/iA
-cp -vf "$DOTFILES"/fonts/iA/"iA Writer Duo"/Variable/*.ttf "$HOME"/Library/Fonts
-cp -vf "$DOTFILES"/fonts/iA/"iA Writer Duospace"/"OTF (Mac)"/*.otf "$HOME"/Library/Fonts
-cp -vf "$DOTFILES"/fonts/iA/"iA Writer Mono"/Variable/*.ttf "$HOME"/Library/Fonts
-cp -vf "$DOTFILES"/fonts/iA/"iA Writer Quattro"/Variable/*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Duo/Variable/"*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Duospace/OTF (Mac)/"*.otf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Mono/Variable/"*.ttf "$HOME"/Library/Fonts
+cp -vf "$DOTFILES/fonts/iA/iA Writer Quattro/Variable/"*.ttf "$HOME"/Library/Fonts
 
 # fnt for font package manager
 brew install fnt

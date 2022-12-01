@@ -13,17 +13,12 @@
 echo "------------------------------"
 echo "Homebrew Setup"
 
-# Ask for the administrator password upfront.
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until the script has finished.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 # Check for Homebrew,
 # Install if we don't have it
-if test ! $(which brew); then
+if \test ! $(which brew); then
   echo "Installing homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 
@@ -36,7 +31,7 @@ brew update
 brew upgrade --all
 
 # Save Homebrew’s installed location.
-BREW_PREFIX=$(brew --prefix)
+export BREW_PREFIX=$(brew --prefix)
 
 echo "------------------------------"
 echo "Install modern Bash"
@@ -45,6 +40,7 @@ echo "Install modern Bash"
 brew install bash
 brew install bash-completion@2
 echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+mkdir -p "$HISTDIR/bash"
 
 echo "------------------------------"
 echo "Install other tools"
@@ -52,7 +48,7 @@ echo "Install other tools"
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+#ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 brew install wget --with-iri
 

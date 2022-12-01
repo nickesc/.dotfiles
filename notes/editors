@@ -25,6 +25,8 @@ There are a number of editors available with the default installation:
         IntelliJ IDEA - Java IDE by JetBrains
         CLion - C and C++ IDE
         AppCode - IDE for Swift, Objective-C, C, and C++ development
+        Goland - A Go IDE with extended support for JavaScript, TypeScript, and databases
+        RubyMine - The most intelligent Ruby and Rails IDE
         Fleet - Next-generation IDE by JetBrains
         Android Studio - Tools for building Android applications
         Visual Studio Code - lightweight, extendable editor; support for many langauges from extensions

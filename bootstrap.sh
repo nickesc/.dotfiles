@@ -12,12 +12,22 @@
 
 # MUST INSTALL HOMEBREW AND GIT BEFORE RUNNING
 
+if [ "$(uname -s)" != "Darwin" ]; then
+    echo "Non-MacOS Devide detected"
+    return 0
+fi
+if [ "$(uname -m)" != "arm64" ]; then
+    echo "Non-Apple Silicon Devide detected"
+    return 0
+fi
+if ! is-at-least 12 "$(sw_vers -productVersion)"; then
+    echo "MacOS Monterey or newer not detected"
+    return 0
+fi
+
 
 ### System Setup
-## sudo
-
-
-## Start the bootstrap
+## Start the bootstrap/sudo
 yn="n"
 read -k "yn?Start the bootstrap (y|n [default & abort]): "
 echo ""
@@ -41,7 +51,7 @@ read -k "yn?Start MacOS preparation (y [default]|n [abort]|s [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Preparing MacOS..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.macosPrep
+    . ~/Workspace/__space__/.dotfiles/setup/.macosPrep
 elif [ "$yn" = "s" ] || [ "$yn" = "S" ]; then
     echo "Skipping MacOS preperation."
 else
@@ -56,20 +66,26 @@ yn="y"
 read -k "yn?Start linking config files (y [default]|n [abort]|s [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
-    echo "Linking config files..."
-    #cp ~/Workspace/__space__/.dotfiles/.zshrc_first ~/.zshrc
-    #symlink ~/Workspace/__space__/.dotfiles/.zlogout ~
-    #symlink ~/Workspace/__space__/.dotfiles/.zprofile ~
-    #symlink ~/Workspace/__space__/.dotfiles/.bash_profile ~
-    #symlink ~/Workspace/__space__/.dotfiles/.bashrc ~
+    
+    ## for shell config load order see:
+    ## https://medium.com/@rajsek/zsh-bash-startup-files-loading-order-bashrc-zshrc-etc-e30045652f2e
+    ## https://youngstone89.medium.com/unix-introduction-bash-startup-files-loading-order-562543ac12e9
 
-    #symlink ~/Workspace/__space__/.dotfiles/config/.editorconfig ~
-    #symlink ~/Workspace/__space__/.dotfiles/config/.gemrc ~
-    #symlink ~/Workspace/__space__/.dotfiles/config/.npmrc ~
-    #symlink ~/Workspace/__space__/.dotfiles/config/.screenrc ~
-    #symlink ~/Workspace/__space__/.dotfiles/config/.tmux.conf ~
-    #symlink ~/Workspace/__space__/.dotfiles/config/.vimrc ~
-    #symlink ~/Workspace/__space__/.dotfiles/config/nano/.nanorc ~
+    echo "Linking config files..."
+    cp ~/Workspace/__space__/.dotfiles/.zshrc_first ~/.zshrc
+    symlink ~/Workspace/__space__/.dotfiles/.zlogout ~
+    symlink ~/Workspace/__space__/.dotfiles/.zprofile ~
+    symlink ~/Workspace/__space__/.dotfiles/.bash_profile ~
+    symlink ~/Workspace/__space__/.dotfiles/.bashrc ~
+    symlink ~/Workspace/__space__/.dotfiles/.profile ~
+
+    symlink ~/Workspace/__space__/.dotfiles/config/.editorconfig ~
+    symlink ~/Workspace/__space__/.dotfiles/config/.gemrc ~
+    symlink ~/Workspace/__space__/.dotfiles/config/.npmrc ~
+    symlink ~/Workspace/__space__/.dotfiles/config/.screenrc ~
+    symlink ~/Workspace/__space__/.dotfiles/config/.tmux.conf ~
+    symlink ~/Workspace/__space__/.dotfiles/config/.vimrc ~
+    symlink ~/Workspace/__space__/.dotfiles/config/nano/.nanorc ~
     source ~/.zshrc
 elif [ "$yn" = "s" ] || [ "$yn" = "S" ]; then
     echo "Skipping config link."
@@ -86,7 +102,7 @@ read -k "yn?Setup the Workspace (y [default]|n [abort]|s [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up the Workspace..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.workspaceSetup
+    . ~/Workspace/__space__/.dotfiles/setup/.workspaceSetup
 elif [ "$yn" = "s" ] || [ "$yn" = "S" ]; then
     echo "Skipping workspace setup."
 else
@@ -102,7 +118,7 @@ read -k "yn?Set MacOS defaults (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting MacOS defaults..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.macosDefaults
+    . ~/Workspace/__space__/.dotfiles/setup/.macosDefaults
 else
     echo "Skipping default setup."
 fi
@@ -115,7 +131,7 @@ read -k "yn?Setup git (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up git..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.gitSetup
+    . ~/Workspace/__space__/.dotfiles/setup/.gitSetup
 else
     echo "Skipping git setup."
 fi
@@ -127,7 +143,7 @@ read -k "yn?Setup Homebrew (y [default]|n [abort]|s [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up Homebrew..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.brewSetup
+    . ~/Workspace/__space__/.dotfiles/setup/.brewSetup
 elif [ "$yn" = "s" ] || [ "$yn" = "S" ]; then
     echo "Skipping Homebrew setup."
 else
@@ -143,7 +159,7 @@ read -k "yn?Setup oh-my-zsh (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up oh-my-zsh..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.omzSetup
+    . ~/Workspace/__space__/.dotfiles/setup/.omzSetup
 else
     echo "Skipping oh-my-zsh setup."
 fi
@@ -156,10 +172,10 @@ read -k "yn?Clean up zsh files (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Cleaing up zsh..."
-    #rm ~/.zshrc
-    #symlink ~/Workspace/__space__/.dotfiles/.zshrc ~
-    #cp .zshrc_local ~
-    #source ~/.zshrc
+    rm ~/.zshrc
+    symlink ~/Workspace/__space__/.dotfiles/.zshrc ~
+    cp .zshrc_local ~
+    source ~/.zshrc
 else
     echo "Skipping zsh cleanup."
 fi
@@ -172,7 +188,7 @@ read -k "yn?Install and set up iTerm2 (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up iTerm2..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.itermSetup
+    . ~/Workspace/__space__/.dotfiles/setup/.itermSetup
 else
     echo "Skipping iTerm2 setup."
 fi
@@ -184,7 +200,7 @@ read -k "yn?Install Homebrew packages (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Installing packages..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.brewPackages
+    . ~/Workspace/__space__/.dotfiles/setup/.brewPackages
 else
     echo "Skipping package installation."
 fi
@@ -196,7 +212,7 @@ read -k "yn?Install and setup additional fonts (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up fonts..."
-    #. ~/Workspace/__space__/.dotfiles/setup/.fontSetup
+    . ~/Workspace/__space__/.dotfiles/setup/.fontSetup
 else
     echo "Skipping font setup."
 fi
@@ -208,13 +224,13 @@ read -k "yn?Setup the development environment (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up the development environment..."
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.pydev
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.nodedev
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.javadev
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.rubydev
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.rustdev
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.godev
-    #. /Users/nickesc/Workspace/__space__/.dotfiles/dev/.dbdev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.pydev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.nodedev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.rubydev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.godev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.dbdev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.javadev
+    . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.rustdev
                             
 else
     echo "Skipping development environment setup."
@@ -227,6 +243,7 @@ read -k "yn?Clean up the bootstrap (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Cleaing up the bootstrap..."
+    sudo xcode-select --switch /Applications/Xcode.app/
     #source ~/.zshrc
 else
     echo "Skipping bootstrap cleanup."

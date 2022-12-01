@@ -25,8 +25,6 @@ sdk version
 cp -f "$DOTFILES"/config/sdkman/configTemp "$HOME/.sdkman/etc/config"
 
 # install the latest java version
-sdk install scala
-
 sdk install java 8.0.345-zulu
 sdk install java 11.0.16-zulu
 sdk install java 18.0.2-tem
@@ -35,9 +33,7 @@ sdk install java 17.0.4-tem
 sdk default java 17.0.4-tem
 
 
-
 # copy and overwrite config file to disable auto-answer
-
 rm "$HOME/.sdkman/etc/config"
 ln -s "$DOTFILES"/config/sdkman/config "$HOME/.sdkman/etc/"
 # cp -f "$DOTFILES"/config/sdkman/config2 "$HOME/.sdkman/etc/config"
@@ -47,5 +43,3 @@ source "$HOME"/.zshrc
 
 # check for upgrades to those versions
 sdk upgrade
-
-# add sdkman aliases

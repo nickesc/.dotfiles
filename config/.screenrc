@@ -24,6 +24,6 @@ defbce "on"
 # Always start `screen` with UTF-8 enabled (`screen -U`)
 defutf8 on
 
-hardstatus             alwayslastline
+hardstatus alwayslastline
 #hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'

@@ -31,15 +31,18 @@ xattr -d -r com.apple.quarantine ~/Library/QuickLook
 qlmanage -r cache
 qlmanage -r
 
-
 brew tap homebrew/cask-versions
 brew install --cask virtualbox-beta
 
 dotnet tool install --global PowerShell
 
-brew install qmk/qmk/qmk
 export QMK_HOME="$__SPACE__/qmk_firmware" # Optional, set the location for `qmk_firmware`
-qmk setup  # This will clone `qmk/qmk_firmware` and optionally set up your build environment
+mkdir -p "$QMK_HOME"
+brew tap qmk/qmk
+brew install qmk
+brew install hid_bootloader_cli
+#brew install qmk/qmk/qmk
+qmk setup -H "$QMK_HOME" # This will clone `qmk/qmk_firmware` and optionally set up your build environment
 
 brew update
 brew upgrade

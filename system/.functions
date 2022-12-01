@@ -319,7 +319,7 @@ pipenvstart(){
         echo "When passed with a version number, it will attempt to create a virtual environment with that Python version."
         echo "Usage:    pipenvstart [python_version]"
     else
-        pipenv --python $1
+        pipenv --python "$1"
     fi
     echo "Don't forget to use 'pipenvend', 'exit' or Ctrl+D to close the pipenv shell"
     pipenv shell
@@ -454,7 +454,7 @@ dbstatus(){
 
 kraken () {
     
-    /Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)
+    /Applications/GitKraken.app/Contents/MacOS/GitKraken -p "$(pwd)"
 }
 
 

@@ -19,7 +19,7 @@ echo "Node.JS Development"
 curl -L https://bit.ly/n-install | bash -s -- -
 
 # reload the shell
-source $HOME/.zshrc
+source "$HOME"/.zshrc
 
 # install the lts version of node
 n lts
@@ -33,6 +33,4 @@ npm --version
 . "$DOTFILES"/packages/npm
 
 # reload the shell
-source $HOME/.zshrc
-
-## add n aliases
+source "$HOME"/.zshrc

@@ -16,7 +16,7 @@ echo "Rust Development"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # reload the shell
-source $HOME/.zshrc
+source "$HOME"/.zshrc
 
 rustup update
 rustup default stable

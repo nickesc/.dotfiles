@@ -58,7 +58,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 
 ## Editor Shortcuts
 alias xcode="xed"
-alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
+#alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
 
 
 ## App Shortcuts
@@ -66,7 +66,7 @@ alias chrome="open -a /Applications/Google\ Chrome.app"
 alias firefox="open -a /Applications/Firefox.app"
 alias safari="open -a Safari"
     # Open iOS Simulator
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias fontbook="open -b com.apple.FontBook"
 
 
@@ -75,11 +75,13 @@ alias fontbook="open -b com.apple.FontBook"
 alias permex="chmod +x"
 alias reload="source ~/.zshrc"
     # edit global zsh configuration
-alias zshconfig="xcode ~/.zshrc"
+alias zshconfig="$EDITOR ~/.zshrc"
+    # edit global bash configuration
+alias bashconfig="$EDITOR ~/.bash_profile"
     # edit local zsh configuration
-alias zshlocal="xcode ~/.zshrc_local"
+alias zshlocal="$EDITOR ~/.zshrc_local"
     # edit global git configuration
-alias gitconfig="xcode ~/.gitconfig"
+alias gitconfig="$EDITOR ~/.gitconfig"
     # Quick-Look preview files from the command line
 alias ql="qlmanage -p &>/dev/null"
     # view list of dirs from dirpersist plugin
@@ -101,6 +103,7 @@ alias pyserver="python3 -m http.server"
 alias ipython="python3 -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
     # update homebrew
 alias brewup="brew update; brew upgrade; brew cleanup; brew doctor "
+    # to keep an empty directory tracked in git
 alias keep="touch .gitkeep"
 alias gitkeep="keep"
 

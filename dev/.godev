@@ -17,5 +17,5 @@ brew install go
 # check Go version
 go version
 
-# echo the GOPATH variable to ensure it is in the projects folder
-echo $GOPATH
+# echo the GOPATH variable to ensure it is in the code folder
+echo "$GOPATH"

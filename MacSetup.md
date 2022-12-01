@@ -349,6 +349,16 @@ Workspace
 
 # at the end, before install
 update spaceship prompt?
+uncomment Go in zshrc, bash_profile, and zprofile
+uncomment vscode line in zshrc
+uncomment bash line zshrc
+uncomment pyenv line zshrc
+
+delete apps?
+
+# skip
+omz
+iterm
 
 
 

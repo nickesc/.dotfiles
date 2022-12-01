@@ -18,3 +18,4 @@ symlink ~/Workspace/__space__/.dotfiles/config/git/.gitignore ~
 
 # set the default branch for new repositories to MAIN not master
 git config --global init.defaultBranch main
+git config --global core.excludesfile ~/.gitignore

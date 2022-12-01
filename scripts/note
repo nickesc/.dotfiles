@@ -14,17 +14,51 @@
 #                    (https://nickesc.github.io)
 #                    (https://nickesc.com)
 #
-#     note - create notes and notebooks as directories in your Workspace (~/Worksapce/Notes/[notebook])
+#   note - create notes and notebooks as directories in your Workspace (~/Worksapce/Notes/[notebook]);
+#          notebooks and note actions are automatically tracked by git on a 'notebook' branch;
+#          notebooks also have a log file that tracks git and notebook actions and a .notebook file
+#          that contains important informtation about the notebook including name, location, logfile
+#          location, any created notes and any linked directories
 #
-# Tip: note must be executed in your current shell to automatically switch to the active note directory;
-#      source the file or use '. note' if an alias is not installed
+#   Tip:   note must be executed in your current shell to automatically switch to the active note directory;
+#          source the file or use '. note' if an alias is not installed
 #
-# Usage:    note <name> - creates a note in the General notebook
-#           note <notebook> <name> - creates a note in a new or existing notebook
-#           note book|b <notebook> [note] - opens or creates a notebook or note
-#           note close|c <notebook> - deletes a notebook
-#           note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks
-#           note project|p <notebook> <projectPath> - symlink a notebook to a project folder
+# Usage:                            note <name> - creates a note in the general notebook
+#                        note <notebook> <name> - creates a note in a new or existing notebook
+#                 note book|b <notebook> [note] - opens or creates a notebook or note
+#                       note close|c <notebook> - deletes a notebook
+#                        note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks
+#       note project|p <notebook> <projectPath> - symlink a notebook to a project folder
+#           note shred|p <notebook> <note_name> - symlink a notebook to a project folder\n\n
+#
+# Usage examples:
+#
+#    To open the 'note' note in the general notebook:
+#       note
+#
+#    To open or create a note in the general notebook:
+#       note <note_name>
+#
+#    To open or create a note in a named notebook:
+#        note book <notebook> <note_name>
+#          or
+#        note <notebook> <note_name>
+#
+#    To open or create a notebook:
+#        note book <notebook>
+#
+#    To delete a note:
+#        note shred <notebook> <note_name>
+#
+#    To delete a notebook:
+#        note close <notebook>
+#
+#    To create a shortcut to a notebook in a project directory:
+#        note project <notebook> <destination>
+#
+#    To list all noteboks:
+#        note list
+
 
 export NOTES="$WORKSPACE/Notes"
 export NOTEHIST="$HISTDIR/note"
@@ -72,15 +106,16 @@ function symlink {
 }
 
 notehelp(){
-    printf "\nTip: note must be executed in your current shell to automatically switch to the active note directory;
-    printf "\n     source the file or use '. note' if an alias is not installed
+    printf "\n    Tip: note must be executed in your current shell to automatically switch to the active note directory;"
+    printf "\n         source the file or use '. note' if an alias is not installed"
     printf "\n\n    note - create notes and notebooks as directories in your Workspace (%s/[notebook])\n" "$NOTES"
-    printf "\n  Usage:   note <name> - creates a note in the General notebook"
-    printf "\n           note <notebook> <name> - creates a note in a new or existing notebook"
-    printf "\n           note book|b <notebook> [note] - opens or creates a notebook or note"
-    printf "\n           note close|c <notebook> - deletes a notebook"
-    printf "\n           note list|l [--all|-a] - lists all notebooks; use the '--all' flag to show hidden notebooks"
-    printf "\n           note project|p <notebook> <projectPath> - symlink a notebook to a project folder\n\n"
+    printf "\n  Usage:                       note <note_name> - creates a note in the general notebook"
+    printf "\n                    note <notebook> <note_name> - creates a note in a new or existing notebook"
+    printf "\n             note book|b <notebook> [note_name] - opens or creates a notebook or note"
+    printf "\n                        note close|c <notebook> - deletes a notebook"
+    printf "\n                         note list|l [--all|-a] - lists all notebooks; '--all' flag shows hidden notebooks"
+    printf "\n        note project|p <notebook> <projectPath> - symlink a notebook to a project folder"
+    printf "\n            note shred|p <notebook> <note_name> - symlink a notebook to a project folder\n\n"
 }
 
 notebookinfo(){
@@ -93,7 +128,7 @@ newnotebook(){
     notebook="$1"
     num=2
     
-    if [ "$notebook" = "book" ] || [ "$notebook" = "b" ] || [ "$notebook" = "close" ] || [ "$notebook" = "c" ] || [ "$notebook" = "help" ] || [ "$notebook" = "h" ] || [ "$notebook" = "project" ] || [ "$notebook" = "p" ]; then
+    if [ "$notebook" = "book" ] || [ "$notebook" = "b" ] || [ "$notebook" = "close" ] || [ "$notebook" = "c" ] || [ "$notebook" = "help" ] || [ "$notebook" = "h" ] || [ "$notebook" = "project" ] || [ "$notebook" = "p" ] || [ "$notebook" = "shred" ] || [ "$notebook" = "s" ]; then
         echo "note: $notebook: Unable to create notebook with the name '$notebook' - is it a note command (help, book, close, list, etc.)?"
         return 1
     fi
@@ -105,8 +140,18 @@ newnotebook(){
     
     mkdir -p "$NOTES/$notebook"
     mkdir -p "$NOTEHIST"
+    touch "$NOTEHIST/$notebook.log"
+    echo "Created the $notebook notebook" >> "$NOTEHIST/$notebook.log"
     cd "$NOTES/$notebook"
     git init --initial-branch=notebook >> "$NOTEHIST"/"$notebook".log 2>&1
+    if ! [ -f "$NOTES/$notebook/.notebook" ]; then
+        touch "$NOTES/$notebook/.notebook"
+        echo "name=$notebook" >> "$NOTES/$notebook/.notebook"
+        echo "notedir=$NOTES/$notebook" >> "$NOTES/$notebook/.notebook"
+        echo "notehist=$NOTEHIST/$notebook.log" >> "$NOTES/$notebook/.notebook"
+    fi
+    
+    
     if [ $listAfter = 1 ]; then
         notebookinfo $notebook
     fi
@@ -127,6 +172,7 @@ newnote(){
         note="$name.md"
         touch "$NOTES/$notebook/$note"
         $EDITOR "$NOTES/$notebook/$note"
+        grep -qxF "note=$note" "$NOTES/$notebook/.notebook" || echo "note=$note" >> "$NOTES/$notebook/.notebook"
         git add -Av >> "$NOTEHIST"/"$notebook".log 2>&1 && git commit -m "$note" >> "$NOTEHIST"/"$notebook".log 2>&1
         notebookinfo $notebook
     fi
@@ -166,6 +212,9 @@ elif [ "$1" = "project" ] || [ "$1" = "p" ]; then
     destination="$3"
     if [ $# -ge  3 ]; then
         symlink "$target" "$destination"
+        touch "$target"/.notebook
+        \grep -qxF "link=$destination" "$target"/.notebook || echo "link=$destination" >> "$target"/.notebook
+        
         echo "\nLinked $target to $destination\n" >> "$NOTEHIST"/"$2".log 2>&1
     else
         echo "note: project: Unable to link notebook '$2' with project '$3' - were the correct arguments provided?"
@@ -174,6 +223,28 @@ elif [ "$1" = "project" ] || [ "$1" = "p" ]; then
         return 1
     fi
     
+# if ask for shred note ('note shred notebook note')
+elif [ "$1" = "shred" ] || [ "$1" = "s" ] && [ $# -ge 3 ]; then
+    if [ -f "$NOTES/$2/$3.md" ]; then
+        yn="n"
+        read -k "yn?Shred the $3 note in the $2 notebook? (y|n [default]): "
+        printf "\n"
+        if [ "$yn" = "y" ] || [ "$yn" = "Y" ]; then
+            printf "\nShredding:\n"
+            rm -v "$NOTES/$2/$3.md"
+            sed "/note=$3/d" "$NOTES/$2/.notebook" > "$NOTES/$2/.notbook"
+            mv "$NOTES/$2/.notbook" "$NOTES/$2/.notebook"
+            printf "\nShredded the $3 note in the $2 notebook.\n"
+            echo "\nShredded the $3 note in the $2 notebook.\n" >> "$NOTEHIST"/"$notebook".log 2>&1
+        else
+            echo "Aborted shredding the $3 note"
+            return 1
+        fi
+    else
+        echo "note: $2/$3: '$2/$3' does not match any notes - is the name right?"
+        return 1
+    fi
+
 # if ask for close notebook ('note close test')
 elif [ "$1" = "close" ] || [ "$1" = "c" ] && [ $# -ge 2 ]; then
     if [ -d "$NOTES/$2" ]; then

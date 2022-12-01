@@ -35,16 +35,12 @@ mkdir -p ~/.config/neofetch
 ln -s "$DOTFILES"/config/neofetch/config.conf ~/.config/neofetch
 
 # create warprc file for wd
-mkdir "$HISTDIR/wd"
+mkdir -p "$HISTDIR/wd"
 touch "$HISTDIR/wd/.warprc"
 
 # create python history dir
-mkdir "$HISTDIR/python"
+mkdir -p "$HISTDIR/python"
 
 # create sdkman history dir
-mkdir "$HISTDIR/sdk"
+mkdir -p "$HISTDIR/sdk"
 
-
-
-# reload the shell
-source $HOME/.zshrc
