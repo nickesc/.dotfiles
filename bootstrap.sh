@@ -224,14 +224,27 @@ read -k "yn?Setup the development environment (y [default]|n [skip]): "
 echo ""
 if [ "$yn" = "y" ] || [ "$yn" = "y" ] || [ "$yn" = $'\n' ]; then
     echo "Setting up the development environment..."
+    read -k "cn?Press 'y' to continue to Python development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.pydev
+    read -k "cn?Press 'y' to continue to Node.JS development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.nodedev
+    read -k "cn?Press 'y' to continue to Ruby development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.rubydev
+    read -k "cn?Press 'y' to continue to Go development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.godev
+    read -k "cn?Press 'y' to continue to database development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.dbdev
+    read -k "cn?Press 'y' to continue to Java development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.javadev
+    read -k "cn?Press 'y' to continue to Rust development (any): "
+    echo ""
     . /Users/nickesc/Workspace/__space__/.dotfiles/dev/.rustdev
-                            
 else
     echo "Skipping development environment setup."
 fi
