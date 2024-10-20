@@ -3,10 +3,6 @@
 echo "------------------------------"
 echo "Homebrew Package Installation"
 
-brew install vim
-brew install imagemagick
-brew install gnu-sed
-
 echo "------------------------------"
 echo "Brewfile"
 brew bundle install --file="$DOTFILES"/packages/Brewfile

@@ -26,6 +26,9 @@ brew "moreutils"
 brew "findutils"
 brew "gnupg"
 brew "cmake"
+brew "vim"
+brew "imagemagick"
+brew "gnu-sed"
 
 # Install more recent versions of some macOS tools.
 brew "grep"
