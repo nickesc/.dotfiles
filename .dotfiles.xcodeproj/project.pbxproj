@@ -14,7 +14,6 @@
 		E5FBBE5C2CC58E4E0029CC91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E5FBBE5D2CC58E4E0029CC91 /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
 		E5FBBE5E2CC58E4E0029CC91 /* .profile */ = {isa = PBXFileReference; lastKnownFileType = text; path = .profile; sourceTree = "<group>"; };
-		E5FBBE5F2CC58E4E0029CC91 /* .test */ = {isa = PBXFileReference; lastKnownFileType = text; path = .test; sourceTree = "<group>"; };
 		E5FBBE602CC58E4E0029CC91 /* .zlogout */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zlogout; sourceTree = "<group>"; };
 		E5FBBE612CC58E4E0029CC91 /* .zprofile */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zprofile; sourceTree = "<group>"; };
 		E5FBBE622CC58E4E0029CC91 /* .zshrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zshrc; sourceTree = "<group>"; };
@@ -48,7 +47,6 @@
 				E5FBBE5C2CC58E4E0029CC91 /* .gitignore */,
 				E5FBBE5D2CC58E4E0029CC91 /* .gitmodules */,
 				E5FBBE5E2CC58E4E0029CC91 /* .profile */,
-				E5FBBE5F2CC58E4E0029CC91 /* .test */,
 				E5FBBE602CC58E4E0029CC91 /* .zlogout */,
 				E5FBBE612CC58E4E0029CC91 /* .zprofile */,
 				E5FBBE622CC58E4E0029CC91 /* .zshrc */,
