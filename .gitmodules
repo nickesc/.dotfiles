@@ -1,6 +1,3 @@
 [submodule "themes/paradise/paradise"]
 	path = themes/paradise/paradise
 	url = https://github.com/paradise-theme/paradise
-[submodule "config/nano/nanorc"]
-	path = config/nano/nanorc
-	url = https://github.com/scopatz/nanorc
