@@ -6,13 +6,13 @@
 
 ### Profile:
 - [x] correct the resume.pdf path during copy from website clone
-- [ ] remove paradise theme clone, it is done in submodules
+- [x] remove paradise theme clone, it is done in submodules
 
 ### Bootstrap Script
 - [ ] copies the zshrc to the wrong place!!!! replaces the correct zshrc accidentally!
 - [x] add --recurse-submodules to clone command
-- [ ] make sure nanorc and paradise do not try to clone themselves
-- [ ] add homebrew check:
+- [x] make sure nanorc and paradise do not try to clone themselves
+- [x] add homebrew check:
 ```sh
 # MUST INSTALL XCODE COMMAND LINE TOOLS AND GIT BEFORE RUNNING
 
@@ -99,4 +99,4 @@ export PATH="$PATH:/Users/nickesc/.dotnet/tools"
 
 ### Testing
 - [ ] look into using github action runners on the `macos-latest` platform to test the script when things are changed
-- [ ] will likely need to add more error detection, telling it when to stop if it hits an error and to return the error so the runner knows something went wrong
+- [ ] will likely need to add more error detection, telling it when to stop if it hits an error and to return the error so the runner knows something went wrong -- connect with ;; or && operators to make them dependant on each other

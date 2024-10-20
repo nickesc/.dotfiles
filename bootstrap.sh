@@ -10,8 +10,21 @@
 #  ░░░░░    ░░░░░░   ░░░░░░     ░░  ░░░░░░     ░░  ░░░     ░░░░░░░░ ░░      ░░ ░░░░░░  ░░   ░░
 # 
 
-# MUST INSTALL HOMEBREW AND GIT BEFORE RUNNING
+# MUST INSTALL XCODE COMMAND LINE TOOLS AND GIT BEFORE RUNNING
 
+# Check if Homebrew is installed
+echo -e "Checking for Homebrew installation..."
+
+if ! command -v brew &> /dev/null; then
+    echo -e "Homebrew not found. Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    echo -e "Homebrew found."
+fi
+
+# Check system architecture and OS
 if [ "$(uname -s)" != "Darwin" ]; then
     echo "Non-MacOS Devide detected"
     return 0
@@ -20,8 +33,8 @@ if [ "$(uname -m)" != "arm64" ]; then
     echo "Non-Apple Silicon Devide detected"
     return 0
 fi
-if ! is-at-least 12 "$(sw_vers -productVersion)"; then
-    echo "MacOS Monterey or newer not detected"
+if ! is-at-least 14 "$(sw_vers -productVersion)"; then
+    echo "MacOS Sonoma or newer not detected"
     return 0
 fi
 
