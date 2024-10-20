@@ -28,7 +28,7 @@ brew doctor
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Save Homebrew’s installed location.
 export BREW_PREFIX=$(brew --prefix)

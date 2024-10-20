@@ -46,7 +46,7 @@ fi
 ```
 
 ### Brew Setup
-- [ ] brew upgrade --all is not a command
+- [x] brew upgrade --all is not a command
 - [ ] wget --withiri does not work
 
 ### MacOS Setup:
