@@ -4,6 +4,3 @@
 [submodule "config/nano/nanorc"]
 	path = config/nano/nanorc
 	url = https://github.com/scopatz/nanorc
-[submodule "themes/omz/spaceship-prompt"]
-    path = themes/omz/spaceship-prompt
-    url = https://github.com/spaceship-prompt/spaceship-prompt
