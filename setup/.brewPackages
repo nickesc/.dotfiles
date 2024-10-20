@@ -3,9 +3,9 @@
 echo "------------------------------"
 echo "Homebrew Package Installation"
 
-brew install vim --with-override-system-vi
-brew install imagemagick --with-webp
-brew install gnu-sed --with-default-names
+brew install vim
+brew install imagemagick
+brew install gnu-sed
 
 echo "------------------------------"
 echo "Brewfile"

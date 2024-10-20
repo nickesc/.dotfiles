@@ -55,7 +55,7 @@ fi
 - [x] xattr: /Users/nickesc/Library: No such xattr: com.apple.FinderInfo
 
 ### Brew Packages
-- [ ] all packages at before the brewfile need to have their flags removed --replacesystemvim isn't real
+- [x] all packages at before the brewfile need to have their flags removed --replacesystemvim isn't real
 - [ ] prune packages
 - [ ] add other packages
 
