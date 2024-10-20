@@ -18,7 +18,8 @@
 
 ### Brew Packages
 - [ ] all packages at before the brewfile need to have their flags removed --replacesystemvim isn't real
-
+- [ ] prune packages
+- [ ] add other packages
 
 ### MAS Packages
 - [ ] remove xcode from masfile?
@@ -45,7 +46,7 @@
 - [ ] java update java 17 version
 
 ### .zshrc changes
-- [ ] add jetbrains tools to zshrc
+- [x] add jetbrains tools to zshrc
 ``` sh
 ## Add Jetbrains tools to PATH and look in this folder for scripts
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
