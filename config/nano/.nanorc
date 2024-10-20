@@ -88,6 +88,8 @@ bind Sh-M-I insert main
 bind M-+ nextbuf main
 bind M-- prevbuf main
 bind M-Z suspend main
+bind M-L linenumbers main
+#bind M-W nowrap main
 
 
 bind ^F whereis help

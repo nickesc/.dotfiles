@@ -1,0 +1,126 @@
+{
+    "browserActionLabelDefault": {
+        "description": "Label of the button before the extension has loaded completely.",
+        "message": "Skip Redirect"
+    },
+    "browserActionLabelOff": {
+        "description": "Label of the button when the extension is disabled.",
+        "message": "Skip Redirect отключен"
+    },
+    "browserActionLabelOn": {
+        "description": "Label of the button when the extension is enabled.",
+        "message": "Skip Redirect включен"
+    },
+    "browserActionLabelOnSkipped": {
+        "description": "Label of the button when the extension is enabled and there was a redirect.",
+        "message": "Skip Redirect включен\n\nПоследнее перенаправление:\n\n$sourceUrl$\n➔\n$targetUrl$",
+        "placeholders": {
+            "sourceUrl": {
+                "content": "$1",
+                "example": "https://example.com/out?url=https%3A%2F%2Fmozilla.org"
+            },
+            "targetUrl": {
+                "content": "$2",
+                "example": "https://mozilla.org"
+            }
+        }
+    },
+    "contextMenuLinkLabel": {
+        "description": "Label of the context menu entry to copy the target URL of the link under the cursor.",
+        "message": "Copy target URL"
+    },
+    "contextMenuToolbarLabel": {
+        "description": "Label of the context menu entry to copy last URL.",
+        "message": "Скопировать последний пропущенный URL"
+    },
+    "extensionDescription": {
+        "description": "Description of the extension in the add-on manager.",
+        "message": "Пропускает промежуточные страницы, используемые некоторыми сайтами, до перенаправления на нужную."
+    },
+    "extensionName": {
+        "description": "Name of the extension in the add-on manager.",
+        "message": "Skip Redirect"
+    },
+    "optionsModeNoSkipUrlsList": {
+        "description": "The choice that sets the extension into no-skip-urls-list mode.",
+        "message": "Пропускать перенаправления, за исключением списка 'Непропускаемые URL'."
+    },
+    "optionsModeOff": {
+        "description": "The choice that disables the extension.",
+        "message": "Отключить"
+    },
+    "optionsModeSkipUrlsList": {
+        "description": "The choice that sets the extension into skip-urls-list mode.",
+        "message": "Пропускать перенаправления только из списка 'Пропускаемые URL'."
+    },
+    "optionsNoSkipParametersListContent": {
+        "description": "Label of the text area to edit the no-skip-parameters-list.",
+        "message": "Непропускаемые параметры (поддерживает регулярные выражения)"
+    },
+    "optionsNoSkipUrlsListContent": {
+        "description": "Label of the text area to edit the no-skip-urls-list.",
+        "message": "Непропускаемые URL (поддерживает регулярные выражения)"
+    },
+    "optionsNotificationsDuration": {
+        "description": "Label of the input field to specify how long notifications are shown.",
+        "message": "Время отображения уведомления (от 1 до 10 секунд):"
+    },
+    "optionsNotificationsEnable": {
+        "description": "Label of the checkbox to toggle notifications.",
+        "message": "Включить всплывающее уведомление"
+    },
+    "optionsSectionMode": {
+        "description": "Title of the options section allowing to toggle between no-skip-urls-list and skip-urls-list or disable the extension.",
+        "message": "Режим"
+    },
+    "optionsSectionNotifications": {
+        "description": "Title of the options section allowing to control notifications.",
+        "message": "Уведомления"
+    },
+    "optionsSectionSync": {
+        "description": "Title of the options section allowing to control Sync.",
+        "message": "Синхронизация"
+    },
+    "optionsSkipRedirectsToSameDomain": {
+        "description": "Label of the checkbox that toggles skipping to the same public domain.",
+        "message": "Пропускать перенаправления в том же домене"
+    },
+    "optionsSkipUrlsListContent": {
+        "description": "Label of the text area to edit the skip-urls-list.",
+        "message": "Пропускаемые URL (строки должны соответствовать <a href=\"https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns\">шаблону</a>)"
+    },
+    "optionsSyncExplanation": {
+        "description": "Details about how Sync works.",
+        "message": "Синхронизация связана с синхронизацией учетной записи вашего браузера. Браузер контролирует график синхронизации, и изменения могут быть потеряны при недостаточном времени прошедшем после изменений."
+    },
+    "optionsSyncListsEnable": {
+        "description": "Label of the checkbox to toggle Sync.",
+        "message": "Синхронизировать списки"
+    },
+    "optionsTitle": {
+        "description": "Title of the options view.",
+        "message": "Настройки"
+    },
+    "redirectSkippedBrowserActionBadge": {
+        "description": "Text of the badge shown on the button after a redirect was skipped.",
+        "message": "Skip"
+    },
+    "redirectSkippedNotificationMessage": {
+        "description": "Content of the notification about skipped redirect.",
+        "message": "$sourceUrl$\n➔\n$targetUrl$",
+        "placeholders": {
+            "sourceUrl": {
+                "content": "$1",
+                "example": "https://example.com/out?url=https%3A%2F%2Fmozilla.org"
+            },
+            "targetUrl": {
+                "content": "$2",
+                "example": "https://mozilla.org"
+            }
+        }
+    },
+    "redirectSkippedNotificationTitle": {
+        "description": "Title of the notification about skipped redirect.",
+        "message": "Пропущено перенаправление"
+    }
+}

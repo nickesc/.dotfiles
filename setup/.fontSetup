@@ -20,6 +20,7 @@ echo "Font setup"
 # http://web.mit.edu/kenta/www/three/postscript/0-All.html
 # http://www.ep.ph.bham.ac.uk/general/printing/psfonts.html
 
+# https://v-fonts.com/licenses/open-source
 
 # Copy files from the fonts folder
 
@@ -200,13 +201,12 @@ fnt install slabo27px
 
 fnt install raleway
 fnt install domine
-fnt install dmseriftext
 fnt install sourceserifpro
 fnt install epilogue
 fnt install amstelvaralpha
 fnt install montserrat
 fnt install urbanist
-fnt install assistan
+fnt install assistant
 fnt install inter
 fnt install manrope
 fnt install bitter

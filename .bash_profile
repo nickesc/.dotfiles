@@ -110,7 +110,8 @@ transfer() {
 
 export PATH="$DOTFILES/scripts:$PATH"
 
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+# COMMENTED OUT BC IT WAS CALLING DOCKER FOR NO REASON AND CAUSING ERRORS
+## [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1;
 
@@ -124,6 +125,8 @@ export HISTFILESIZE="${HISTSIZE}";
 export HISTCONTROL='ignoreboth';
 
 export GOPATH="$HOME/Workspace/code/Go"
+
+## UNCOMMENT AFTER GO INSTALL
 #export PATH=$PATH:$(go env GOPATH)/bin
 
 # Append to the Bash history file, rather than overwriting it

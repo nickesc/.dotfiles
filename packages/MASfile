@@ -10,7 +10,7 @@
   
 cask_args appdir: "/Applications"
 
-mas "Xcode", id: 497799835
+#mas "Xcode", id: 497799835
 mas "Bear", id: 1091189122
 mas "Highland 2", id: 1171820258
 mas "Yoink", id: 457622435

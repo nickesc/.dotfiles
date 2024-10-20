@@ -3,26 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXFileReference section */
-		E502AF7428DD053D00EC5AB8 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
-		E502AF7528E0CED500EC5AB8 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
-		E54CD08F28ECBF39005E66B1 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
-		E5CCB6A02922F5CD0039D887 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .dotfiles; sourceTree = "<group>"; };
-		E5CCB6A129309E370039D887 /* .dotfiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .dotfiles; sourceTree = "<group>"; };
+		E5FB59A52CC57B2E0029CC91 /* MacSetup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MacSetup.md; sourceTree = "<group>"; };
+		E5FB5A972CC57B2E0029CC91 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E5FB5B502CC57B2E0029CC91 /* tree.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tree.txt; sourceTree = "<group>"; };
+		E5FBF9742CC57B2E0029CC91 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E5FB59A42CC57B2E0029CC91 /* fonts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = fonts; sourceTree = "<group>"; };
+		E5FB59B82CC57B2E0029CC91 /* notes */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = notes; sourceTree = "<group>"; };
+		E5FB59C12CC57B2E0029CC91 /* packages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = packages; sourceTree = "<group>"; };
+		E5FB5A962CC57B2E0029CC91 /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
+		E5FB5AA22CC57B2E0029CC91 /* scripts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = scripts; sourceTree = "<group>"; };
+		E5FB5AAD2CC57B2E0029CC91 /* setup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = setup; sourceTree = "<group>"; };
+		E5FB5AB22CC57B2E0029CC91 /* system */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = system; sourceTree = "<group>"; };
+		E5FB5B4F2CC57B2E0029CC91 /* themes */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = themes; sourceTree = "<group>"; };
+		E5FBFA902CC57B2E0029CC91 /* config */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = config; sourceTree = "<group>"; };
+		E5FBFA982CC57B2E0029CC91 /* dev */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = dev; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXGroup section */
 		E502AF6B28DD010800EC5AB8 = {
 			isa = PBXGroup;
 			children = (
-				E5CCB6A129309E370039D887 /* .dotfiles */,
-				E5CCB6A02922F5CD0039D887 /* .dotfiles */,
-				E54CD08F28ECBF39005E66B1 /* .dotfiles */,
-				E502AF7528E0CED500EC5AB8 /* .dotfiles */,
-				E502AF7428DD053D00EC5AB8 /* .dotfiles */,
+				E5FBF9742CC57B2E0029CC91 /* bootstrap.sh */,
+				E5FBFA902CC57B2E0029CC91 /* config */,
+				E5FBFA982CC57B2E0029CC91 /* dev */,
+				E5FB59A42CC57B2E0029CC91 /* fonts */,
+				E5FB59A52CC57B2E0029CC91 /* MacSetup.md */,
+				E5FB59B82CC57B2E0029CC91 /* notes */,
+				E5FB59C12CC57B2E0029CC91 /* packages */,
+				E5FB5A962CC57B2E0029CC91 /* Profile */,
+				E5FB5A972CC57B2E0029CC91 /* README.md */,
+				E5FB5AA22CC57B2E0029CC91 /* scripts */,
+				E5FB5AAD2CC57B2E0029CC91 /* setup */,
+				E5FB5AB22CC57B2E0029CC91 /* system */,
+				E5FB5B4F2CC57B2E0029CC91 /* themes */,
+				E5FB5B502CC57B2E0029CC91 /* tree.txt */,
 			);
 			sourceTree = "<group>";
 		};

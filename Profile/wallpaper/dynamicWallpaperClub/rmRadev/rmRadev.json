@@ -1,0 +1,33 @@
+[
+  {
+    "fileName": "0000.jpeg",
+    "time": "2022-11-14T05:00:00Z"
+  },
+  {
+    "fileName": "0500.jpeg",
+    "time": "2022-11-14T10:00:00Z"
+  },
+  {
+    "fileName": "0700.jpeg",
+    "time": "2022-11-14T12:00:00Z"
+  },
+  {
+    "fileName": "1000.jpeg",
+    "isPrimary": true,
+    "isForLight": true,
+    "time": "2022-11-14T15:00:00Z"
+  },
+  {
+    "fileName": "1530.jpeg",
+    "time": "2022-11-14T20:30:00Z"
+  },
+  {
+    "fileName": "1800.jpeg",
+    "isForDark": true,
+    "time": "2022-11-14T23:00:00Z"
+  },
+  {
+    "fileName": "2030.jpeg",
+    "time": "2022-11-14T01:30:00Z"
+  }
+]

@@ -112,6 +112,8 @@ ipython_config.py
 
 # Editor files #
 ################
-.vscode
+#.vscode
 .idea
 
+# Python
+__pycache__/

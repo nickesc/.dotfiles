@@ -1,0 +1,126 @@
+{
+    "browserActionLabelDefault": {
+        "description": "Label of the button before the extension has loaded completely.",
+        "message": "Chuyển hướng nhanh"
+    },
+    "browserActionLabelOff": {
+        "description": "Label of the button when the extension is disabled.",
+        "message": "Chuyển hướng nhanh bị vô hiệu hóa, bấm để bật"
+    },
+    "browserActionLabelOn": {
+        "description": "Label of the button when the extension is enabled.",
+        "message": "Chuyển hướng nhanh đang bật, bấm để tắt"
+    },
+    "browserActionLabelOnSkipped": {
+        "description": "Label of the button when the extension is enabled and there was a redirect.",
+        "message": "Chuyển hướng nhanh đang bật, bấm để tắt\n\nLast redirect:\n\n$sourceUrl$\n➔\n$targetUrl$",
+        "placeholders": {
+            "sourceUrl": {
+                "content": "$1",
+                "example": "https://example.com/out?url=https%3A%2F%2Fmozilla.org"
+            },
+            "targetUrl": {
+                "content": "$2",
+                "example": "https://mozilla.org"
+            }
+        }
+    },
+    "contextMenuLinkLabel": {
+        "description": "Label of the context menu entry to copy the target URL of the link under the cursor.",
+        "message": "Copy target URL"
+    },
+    "contextMenuToolbarLabel": {
+        "description": "Label of the context menu entry to copy last URL.",
+        "message": "Sao chép URL đã chuyển hướng cuối cùng"
+    },
+    "extensionDescription": {
+        "description": "Description of the extension in the add-on manager.",
+        "message": "Bỏ qua các trang trung gian mà một số trang sử dụng trước khi chuyển hướng đến trang cuối cùng."
+    },
+    "extensionName": {
+        "description": "Name of the extension in the add-on manager.",
+        "message": "Chuyển hướng nhanh"
+    },
+    "optionsModeNoSkipUrlsList": {
+        "description": "The choice that sets the extension into no-skip-urls-list mode.",
+        "message": "Bỏ qua tất cả các chuyển hướng ngoại trừ các URL khớp với bất kỳ dòng nào trong danh sách đen."
+    },
+    "optionsModeOff": {
+        "description": "The choice that disables the extension.",
+        "message": "Tắt"
+    },
+    "optionsModeSkipUrlsList": {
+        "description": "The choice that sets the extension into skip-urls-list mode.",
+        "message": "Bỏ qua các chuyển hướng chỉ cho các URL khớp với bất kỳ dòng nào trong danh sách trắng."
+    },
+    "optionsNoSkipParametersListContent": {
+        "description": "Label of the text area to edit the no-skip-urls-list.",
+        "message": "No-skip-parameters-list (you may use regular expressions)"
+    },
+    "optionsNoSkipUrlsListContent": {
+        "description": "Label of the text area to edit the no-skip-urls-list.",
+        "message": "Danh sách đen (you may use regular expressions)"
+    },
+    "optionsNotificationsDuration": {
+        "description": "Label of the input field to specify how long notifications are shown.",
+        "message": "Hiển thị thông báo trong số giây (từ 1 đến 10):"
+    },
+    "optionsNotificationsEnable": {
+        "description": "Label of the checkbox to toggle notifications.",
+        "message": "Bật popup"
+    },
+    "optionsSectionMode": {
+        "description": "Title of the options section allowing to toggle between no-skip-urls-list and skip-urls-list or disable the extension.",
+        "message": "Chế độ"
+    },
+    "optionsSectionNotifications": {
+        "description": "Title of the options section allowing to control notifications.",
+        "message": "Thông báo"
+    },
+    "optionsSectionSync": {
+        "description": "Title of the options section allowing to control Sync.",
+        "message": "Sync"
+    },
+    "optionsSkipRedirectsToSameDomain": {
+        "description": "Label of the checkbox that toggles skipping to the same public domain.",
+        "message": "Bỏ qua các chuyển hướng cho các URL có cùng miền công cộng"
+    },
+    "optionsSkipUrlsListContent": {
+        "description": "Label of the text area to edit the skip-urls-list.",
+        "message": "Danh sách trắng (mỗi dòng cần tuân theo điều này <a href=\"https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns\">pattern</a>)"
+    },
+    "optionsSyncExplanation": {
+        "description": "Details about how Sync works.",
+        "message": "Sync uses your browser's sync account and you need to enable sync for extensions/add-ons in your browser's preferences before enabling it here. The browser controls when data is actually synced and modifications on different devices might get lost if they happen over a short period."
+    },
+    "optionsSyncListsEnable": {
+        "description": "Label of the checkbox to toggle Sync.",
+        "message": "Sync lists"
+    },
+    "optionsTitle": {
+        "description": "Title of the options view.",
+        "message": "Tùy chọn"
+    },
+    "redirectSkippedBrowserActionBadge": {
+        "description": "Text of the badge shown on the button after a redirect was skipped.",
+        "message": "Bỏ qua"
+    },
+    "redirectSkippedNotificationMessage": {
+        "description": "Content of the notification about skipped redirect.",
+        "message": "$sourceUrl$\n➔\n$targetUrl$",
+        "placeholders": {
+            "sourceUrl": {
+                "content": "$1",
+                "example": "https://example.com/out?url=https%3A%2F%2Fmozilla.org"
+            },
+            "targetUrl": {
+                "content": "$2",
+                "example": "https://mozilla.org"
+            }
+        }
+    },
+    "redirectSkippedNotificationTitle": {
+        "description": "Title of the notification about skipped redirect.",
+        "message": "Chuyển hướng nhanh"
+    }
+}

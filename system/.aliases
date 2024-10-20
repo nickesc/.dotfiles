@@ -46,8 +46,8 @@ alias hidden="cd $HIDDENDIR"
 alias data="cd $DATADIR"
 alias icloud="cd $ICLOUDDIR"
 alias dotfiles="cd $DOTFILES"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
+alias dl="cd $DOWNLOADS"
+alias dt="cd $DESKTOP"
     # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -129,6 +129,8 @@ alias ofd="open_command $PWD"
 alias osupdate "sudo softwareupdate -i -a"
     # Lock the screen (when going AFK)
 alias afk="pmset displaysleepnow"
+    # Wake Mac from sleep
+alias wake="caffeinate -u -t 1 || exit 1;"
     # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
     # Enable Spotlight
@@ -148,18 +150,17 @@ alias printpath='echo -e ${PATH//:/\\n}'
 alias badge="tput bel"
 
 
-: '
+
 # Dev Aliases
 alias rustenv="rustup override set"
 alias venvend="deactivate"
 alias newreact="npx create-react-app"
 
-alias condaon="conda config --set auto_activate_base true"
-alias condaoff="conda config --set auto_activate_base false"
-
 alias pipdump="pip freeze > piprequirements.txt"
 alias pipreq="pip install -r piprequirements.txt"
-alias venvend="deactivate"
+
+alias condaon="conda config --set auto_activate_base true"
+alias condaoff="conda config --set auto_activate_base false"
 
 alias pyuse="pyenv global"
 alias sdkuse="sdk default"
@@ -184,13 +185,12 @@ alias mysqlstart="mysql.server start"
 alias mysqlstop="mysql.server stop"
 alias mysqlconnect="mysql -u root -p"
 
+: '
 alias mongodbstart="mongod --config /opt/homebrew/etc/mongod.conf --fork"
 alias mongodbstop="mongo admin --eval "db.shutdownServer()""
 alias mongodbconnect="mongosh"
-
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 '
-
 
 # Suffix-aliases - alias -s extension=name-of-the-tool
 # Markdown files

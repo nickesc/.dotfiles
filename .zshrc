@@ -22,6 +22,8 @@ export CODEDIR="$WORKSPACE/Code"
 export ARTDIR="$WORKSPACE/Art"
 export WRITINGDIR="$WORKSPACE/Writing"
 export DATADIR="$WORKSPACE/Data"
+export DESKTOP="$HOME/Desktop"
+export DOWNLOADS="$HOME/Downloads"
 
 export TESTDIR="$WORKSPACE/.test"
 export HIDDENDIR="$WORKSPACE/.hidden"
@@ -34,7 +36,7 @@ export QMK_HOME="$__SPACE__/qmk_firmware"
 export ICLOUDDIR="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 export PYMAIN="3.11.0"
-export PY2MAIN="2.17.8"
+export PY2MAIN="2.7.18"
 
 # Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -115,11 +117,11 @@ export WD_CONFIG="$HISTDIR/wd/.warprc"
 plugins=(
     xcode
     vscode
-    git
+    #git
     screen
     gh
     pyenv
-    pipenv
+    #pipenv
     brew
     web-search
     universalarchive
@@ -194,6 +196,9 @@ source "$DOTFILES"/system/.functions
 source "$DOTFILES"/system/.keybindings
 source "$HOME"/.zshrc_local
 export PATH="$DOTFILES/scripts:$PATH"
+
+## Add Jetbrains tools to PATH and look inn this folder for scripts
+export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 
 #postgresqlstart
 #mysqlstart
