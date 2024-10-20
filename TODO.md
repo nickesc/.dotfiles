@@ -4,6 +4,10 @@
 - [ ] check out resume and paradise clones and profile setup
 - [x] fix spaceship submodule
 
+### Profile:
+- [ ] correct the resume.pdf path during copy from website clone
+- [ ] remove paradise theme clone, it is done in submodules
+
 ### Bootstrap Script
 - [ ] copies the zshrc to the wrong place!!!! replaces the correct zshrc accidentally!
 - [x] add --recurse-submodules to clone command
@@ -59,6 +63,7 @@ fi
 - [ ] remove xcode from masfile?
 
 ### Fonts
+- [ ] consider adding cloned fonts as submodules
 - [ ] Brew fonts are now on the main keg
 - [ ] jost-VF is missing
 - [ ] stgeord/*.otf missing
@@ -90,3 +95,8 @@ export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 export PATH="$PATH:/Users/nickesc/.dotnet/tools"
 ```
 - [ ] add rust to zshrc (lines added to profile and bashrc and shenv and bashprofile)
+
+
+### Testing
+- [ ] look into using github action runners on the `macos-latest` platform to test the script when things are changed
+- [ ] will likely need to add more error detection, telling it when to stop if it hits an error and to return the error so the runner knows something went wrong
