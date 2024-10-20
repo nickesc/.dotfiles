@@ -83,7 +83,7 @@ fi
 - [x] DONT INSTALL PYTHON 2 PIP PACKAGES
 
 ### Java Dev
-- [ ] java update java 17 version
+- [x] java update java 17 version
 
 ### .zshrc changes
 - [x] add jetbrains tools to zshrc

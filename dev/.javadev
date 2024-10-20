@@ -27,10 +27,11 @@ cp -f "$DOTFILES"/config/sdkman/configTemp "$HOME/.sdkman/etc/config"
 # install the latest java version
 sdk install java 8.0.345-zulu
 sdk install java 11.0.16-zulu
-sdk install java 18.0.2-tem
-sdk install java 17.0.4-tem
+sdk install java 17.0.13-tem
+sdk install java 21.0.5-tem
+sdk install java 23.0.1-tem
 
-sdk default java 17.0.4-tem
+sdk default java 21.0.5-tem
 
 
 # copy and overwrite config file to disable auto-answer
