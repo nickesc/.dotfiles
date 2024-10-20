@@ -60,7 +60,8 @@ fi
 - [ ] add other packages
 
 ### MAS Packages
-- [ ] remove xcode from masfile?
+- [x] remove xcode from masfile?
+- [ ] set up validation that user is logged in to their appleid before downlaoding from the app store
 
 ### Fonts
 - [ ] consider adding cloned fonts as submodules
@@ -78,7 +79,7 @@ fi
 - [ ] brew install --cask font-ar-one-sans font-onest font-gabarito font-mooli font-pixelify-sans font-rethink-sans font-young-serif
 
 ### Python Dev
-- [ ] python dev messed up bc of wrong pyton2 version number x
+- [x] python dev messed up bc of wrong pyton2 version number x
 - [ ] DONT INSTALL PYTHON 2 PIP PACKAGES
 
 ### Java Dev

@@ -35,7 +35,7 @@ export QMK_HOME="$__SPACE__/qmk_firmware"
 
 export ICLOUDDIR="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 
-export PYMAIN="3.11.0"
+export PYMAIN="3.11.10"
 export PY2MAIN="2.7.18"
 
 # Set name of the theme to load
