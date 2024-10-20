@@ -52,7 +52,7 @@ fi
 ### MacOS Setup:
 - [ ] Warning: Idle sleep timings for "Battery Power" may not behave as expected.
   - Display sleep should have a lower timeout than system sleep.
-- [ ] xattr: /Users/nickesc/Library: No such xattr: com.apple.FinderInfo
+- [x] xattr: /Users/nickesc/Library: No such xattr: com.apple.FinderInfo
 
 ### Brew Packages
 - [ ] all packages at before the brewfile need to have their flags removed --replacesystemvim isn't real
