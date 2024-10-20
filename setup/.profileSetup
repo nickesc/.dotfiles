@@ -41,14 +41,11 @@ git clone \
   https://github.com/nickesc/nickesc.github.io \
 ;
 cd nickesc.github.io
-git sparse-checkout set assets/Resume.pdf
-cp -a assets/Resume.pdf "$PROFILEDIR"/refs
+git sparse-checkout set assets/Nick-Escobar-Resume.pdf
+cp -a assets/Nick-Escobar-Resume.pdf "$PROFILEDIR"/refs
 rm -fr .git
 cd ..
 rm -r nickesc.github.io
-
-# Clone Paradise Theme for further use:
-git clone https://github.com/paradise-theme/paradise.git "$DOTFILES"/themes/paradise
 
 # for more terminal themes: https://github.com/lysyi3m/macos-terminal-themes
 

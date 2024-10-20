@@ -5,7 +5,7 @@
 - [x] fix spaceship submodule
 
 ### Profile:
-- [ ] correct the resume.pdf path during copy from website clone
+- [x] correct the resume.pdf path during copy from website clone
 - [ ] remove paradise theme clone, it is done in submodules
 
 ### Bootstrap Script
