@@ -50,7 +50,7 @@ fi
 - [x] wget --with-iri does not work
 
 ### MacOS Setup:
-- [ ] Warning: Idle sleep timings for "Battery Power" may not behave as expected.
+- [x] Warning: Idle sleep timings for "Battery Power" may not behave as expected.
   - Display sleep should have a lower timeout than system sleep.
 - [x] xattr: /Users/nickesc/Library: No such xattr: com.apple.FinderInfo
 

@@ -127,14 +127,14 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Energy saving                                                               #
 ###############################################################################
 
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+# Sleep the display after 10 minutes
+sudo pmset -a displaysleep 10
 
 # Disable machine sleep while charging
 sudo pmset -c sleep 0
 
-# Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
+# Set machine sleep to 20 minutes on battery
+sudo pmset -b sleep 20
 
 
 
