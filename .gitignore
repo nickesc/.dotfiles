@@ -1,5 +1,5 @@
 rmRadev.psd
-.dotfiles.xcodeproj/xcuserdata/
+.dotfiles.xcodeproj/project.xcworkspace/xcuserdata
 *.DS_Store
 *.lock.json
 .test
