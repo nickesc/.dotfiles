@@ -47,7 +47,7 @@ fi
 
 ### Brew Setup
 - [x] brew upgrade --all is not a command
-- [ ] wget --withiri does not work
+- [x] wget --with-iri does not work
 
 ### MacOS Setup:
 - [ ] Warning: Idle sleep timings for "Battery Power" may not behave as expected.

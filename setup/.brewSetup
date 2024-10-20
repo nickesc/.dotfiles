@@ -50,7 +50,7 @@ echo "Install other tools"
 brew install coreutils
 #ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
-brew install wget --with-iri
+brew install wget
 
 # Remove outdated versions from the cellar.
 brew update
