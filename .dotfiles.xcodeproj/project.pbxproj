@@ -9,7 +9,18 @@
 /* Begin PBXFileReference section */
 		E5FB59A52CC57B2E0029CC91 /* MacSetup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MacSetup.md; sourceTree = "<group>"; };
 		E5FB5A972CC57B2E0029CC91 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E5FB5B502CC57B2E0029CC91 /* tree.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tree.txt; sourceTree = "<group>"; };
+		E5FBBE5A2CC58E3F0029CC91 /* .bash_profile */ = {isa = PBXFileReference; lastKnownFileType = text; path = .bash_profile; sourceTree = "<group>"; };
+		E5FBBE5B2CC58E3F0029CC91 /* .bashrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = .bashrc; sourceTree = "<group>"; };
+		E5FBBE5C2CC58E4E0029CC91 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E5FBBE5D2CC58E4E0029CC91 /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		E5FBBE5E2CC58E4E0029CC91 /* .profile */ = {isa = PBXFileReference; lastKnownFileType = text; path = .profile; sourceTree = "<group>"; };
+		E5FBBE5F2CC58E4E0029CC91 /* .test */ = {isa = PBXFileReference; lastKnownFileType = text; path = .test; sourceTree = "<group>"; };
+		E5FBBE602CC58E4E0029CC91 /* .zlogout */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zlogout; sourceTree = "<group>"; };
+		E5FBBE612CC58E4E0029CC91 /* .zprofile */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zprofile; sourceTree = "<group>"; };
+		E5FBBE622CC58E4E0029CC91 /* .zshrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zshrc; sourceTree = "<group>"; };
+		E5FBBE632CC58E4E0029CC91 /* .zshrc_first */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zshrc_first; sourceTree = "<group>"; };
+		E5FBBE642CC58E4E0029CC91 /* .zshrc_local */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zshrc_local; sourceTree = "<group>"; };
+		E5FBBE652CC58E4E0029CC91 /* .zshrc_old */ = {isa = PBXFileReference; lastKnownFileType = text; path = .zshrc_old; sourceTree = "<group>"; };
 		E5FBF9742CC57B2E0029CC91 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -30,6 +41,18 @@
 		E502AF6B28DD010800EC5AB8 = {
 			isa = PBXGroup;
 			children = (
+				E5FBBE5A2CC58E3F0029CC91 /* .bash_profile */,
+				E5FBBE5B2CC58E3F0029CC91 /* .bashrc */,
+				E5FBBE5C2CC58E4E0029CC91 /* .gitignore */,
+				E5FBBE5D2CC58E4E0029CC91 /* .gitmodules */,
+				E5FBBE5E2CC58E4E0029CC91 /* .profile */,
+				E5FBBE5F2CC58E4E0029CC91 /* .test */,
+				E5FBBE602CC58E4E0029CC91 /* .zlogout */,
+				E5FBBE612CC58E4E0029CC91 /* .zprofile */,
+				E5FBBE622CC58E4E0029CC91 /* .zshrc */,
+				E5FBBE632CC58E4E0029CC91 /* .zshrc_first */,
+				E5FBBE642CC58E4E0029CC91 /* .zshrc_local */,
+				E5FBBE652CC58E4E0029CC91 /* .zshrc_old */,
 				E5FBF9742CC57B2E0029CC91 /* bootstrap.sh */,
 				E5FBFA902CC57B2E0029CC91 /* config */,
 				E5FBFA982CC57B2E0029CC91 /* dev */,
@@ -43,7 +66,6 @@
 				E5FB5AAD2CC57B2E0029CC91 /* setup */,
 				E5FB5AB22CC57B2E0029CC91 /* system */,
 				E5FB5B4F2CC57B2E0029CC91 /* themes */,
-				E5FB5B502CC57B2E0029CC91 /* tree.txt */,
 			);
 			sourceTree = "<group>";
 		};
