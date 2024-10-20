@@ -36,6 +36,7 @@ echo "------------------------------"
 echo "Setting up python2 environment."
 
 # Install Python data modules
+: '
 pip2 install numpy
 pip2 install scipy
 pip2 install matplotlib
@@ -55,6 +56,7 @@ pip2 install beautifulsoup4
 pip2 install urllib3
 pip2 install pytest
 pip2 install pillow
+'
 
 ###############################################################################
 # Python 3 Enviroment                                                         #

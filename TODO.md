@@ -80,7 +80,7 @@ fi
 
 ### Python Dev
 - [x] python dev messed up bc of wrong pyton2 version number x
-- [ ] DONT INSTALL PYTHON 2 PIP PACKAGES
+- [x] DONT INSTALL PYTHON 2 PIP PACKAGES
 
 ### Java Dev
 - [ ] java update java 17 version
