@@ -91,9 +91,9 @@ fi
 ## Add Jetbrains tools to PATH and look in this folder for scripts
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 ```
-- [ ] add dotnet zshrc:
+- [x] add dotnet zshrc:
 ```sh
-export PATH="$PATH:/Users/nickesc/.dotnet/tools"
+export PATH="$PATH:$HOME/.dotnet/tools"
 ```
 - [ ] add rust to zshrc (lines added to profile and bashrc and shenv and bashprofile)
 

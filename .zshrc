@@ -191,6 +191,9 @@ export GOPATH="$HOME/Workspace/code/Go"
 ## UNCOMMENT AFTER GO INSTALL
 #export PATH=$PATH:$(go env GOPATH)/bin
 
+# add dotnet tools to PATH
+export PATH="$PATH:/Users/nickesc/.dotnet/tools
+
 source "$DOTFILES"/system/.aliases
 source "$DOTFILES"/system/.functions
 source "$DOTFILES"/system/.keybindings
