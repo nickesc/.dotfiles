@@ -7,6 +7,7 @@
 ### Bootstrap Script
 - [ ] copies the zshrc to the wrong place!!!! replaces the correct zshrc accidentally!
 - [x] add --recurse-submodules to clone command
+- [ ] make sure nanorc and paradise do not try to clone themselves
 - [ ] add homebrew check:
 ```sh
 # MUST INSTALL XCODE COMMAND LINE TOOLS AND GIT BEFORE RUNNING
