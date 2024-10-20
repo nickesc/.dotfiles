@@ -3,7 +3,7 @@
 
 To automate setup using `.dotfile`s, clone the repo using this command:
 
-`git clone https://github.com/nickesc/.dotfiles ~/Workspace/__space__/.dotfiles`
+`git clone --recurse-submodules https://github.com/nickesc/.dotfiles ~/Workspace/__space__/.dotfiles` --depth=1
 
 and run the installer using
 

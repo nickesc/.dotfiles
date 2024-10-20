@@ -2,10 +2,11 @@
 
 ### Theme:
 - [ ] check out resume and paradise clones and profile setup
-- [ ] fix spaceship submodule
+- [x] fix spaceship submodule
 
 ### Bootstrap Script
 - [ ] copies the zshrc to the wrong place!!!! replaces the correct zshrc accidentally!
+- [x] add --recurse-submodules to clone command
 - [ ] add homebrew check:
 ```sh
 # MUST INSTALL XCODE COMMAND LINE TOOLS AND GIT BEFORE RUNNING

@@ -40,7 +40,7 @@ export PY2MAIN="2.7.18"
 
 # Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship-prompt/spaceship"
+ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
