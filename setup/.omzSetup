@@ -18,9 +18,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 omz update
 
 
-# download and symlink spaceship theme
+# symlink spaceship-prompt theme
 # https://github.com/spaceship-prompt/spaceship-prompt
-# git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$DOTFILES"/themes/omz/spaceship-prompt --depth=1
 ln -s "$DOTFILES/themes/omz/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # install zsh-autosuggestions
